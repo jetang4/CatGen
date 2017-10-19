@@ -3,6 +3,13 @@
 <head>
     <style>
 
+/*Create a class of "squares" for the punnett square*/
+.squares
+{
+    border: 2px solid black;
+    padding: 200px;
+}
+
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,32 +23,45 @@
 <h1>CatGen</h1>
 <div class="row">
     <div class="col-sm-6">
-        <p>Select genotype of cat #1</p>
+        <p>Select coat color of female cat</p>
         <select>
             <option value="select coat color">Select Coat Color</option>
-            <option value="black cat male">Black Cat (Male)</option>
-            <option value="black cat female">Black Cat (Female)</option>
+            <!--<option value="black cat male">Black Cat (Male)</option>-->
+            <option value="black cat female">Black</option>
             <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
             <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
-            <option value="brown cat male">Brown Cat (Male)</option>
-            <option value="brown cat female">Brown Cat (Female)</option>
+            <!--<option value="brown cat male">Brown Cat (Male)</option>-->
+            <option value="brown cat female">Brown</option>
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
     </div>
     <div class="col-sm-6">
-        <p>Select genotype of cat #2</p>
+        <p>Select coat color of male cat</p>
         <select>
             <option value="select coat color">Select Coat Color</option>
-            <option value="black cat male">Black Cat (Male)</option>
-            <option value="black cat female">Black Cat (Female)</option>
+            <option value="black cat male">Black</option>
+            <!--<option value="black cat female">Black Cat (Female)</option>-->
             <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
             <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
-            <option value="brown cat male">Brown Cat (Male)</option>
-            <option value="brown cat female">Brown Cat (Female)</option>
+            <option value="brown cat male">Brown</option>
+            <!--<option value="brown cat female">Brown Cat (Female)</option>-->
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
+    </div>
+
+    <div class="row">
+        <table>
+            <tr>
+                <td style="border:2px solid black; padding: 100px;">1</td>
+                <td style="border:2px solid black; padding: 100px;">2</td>
+                </tr>
+            <tr>
+            <td style="border:2px solid black; padding: 100px;">3</td>
+                <td style="border:2px solid black; padding: 100px;">4</td>
+                </tr>
+        </table>
     </div>
 </div>
 </body>

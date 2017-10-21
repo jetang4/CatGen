@@ -28,14 +28,15 @@
         <select>
             <option value="select coat color">Select Coat Color</option>
             <!--<option value="black cat male">Black Cat (Male)</option>-->
-            <option value="black cat female">Black</option>
+            <option value="black cat female" id="blackF">Black</option>
             <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
             <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
             <!--<option value="brown cat male">Brown Cat (Male)</option>-->
-            <option value="brown cat female">Brown</option>
+            <option value="brown cat female" id="brownF">Brown</option>
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
+        <img id="femalecat" src="./cat_white.png">
     </div>
     <div class="col-sm-6">
         <p>Select coat color of male cat</p>
@@ -50,7 +51,9 @@
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
+        <img id="malecat" src="./cat_white.png">
     </div>
+    <input type="submit" onclick="changeCatColor()"></div>
 
 
 
@@ -60,16 +63,44 @@
     <div class="col-sm-12">
         <table id="square">
             <tr>
-                <td style="border:2px solid black; padding: 100px;">1</td>
-                <td style="border:2px solid black; padding: 100px;">2</td>
+                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
             </tr>
             <tr>
-                <td style="border:2px solid black; padding: 100px;">3</td>
-                <td style="border:2px solid black; padding: 100px;">4</td>
+                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
             </tr>
         </table>
     </div>
 </div>
 
+<script>
+
+//    Messy function; when colors have been chosen on dropdown and SUBMIT is clicked, the color of the cat icons change
+//  Only works for female cat currently
+    function changeCatColor()
+    {
+        alert("!!!");
+        if (document.getElementById("brownF").selected)
+        {
+            document.getElementById("femalecat").src = "./cat_brown.png";
+        }
+        else if (document.getElementById("blackF").selected)
+        {
+            document.getElementById("femalecat").src = "./cat_black.png";
+        }
+        if (document.getElementById("brownM").selected)
+        {
+            document.getElementById("malecat").src = "./cat_brown.png";
+        }
+        else if (document.getElementById("blackM").selected)
+        {
+            document.getElementById("malecat").src = "./cat_black.png";
+        }
+
+    }
+</script>
 </body>
 </html>
+
+

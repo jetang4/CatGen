@@ -27,44 +27,45 @@
 <div class="row">
     <div class="col-sm-6">
         <p>Select coat color of female cat</p>
+        <img id="image" src="./cat_white.png"/>
         <select id="cat1">
-            <option value="select coat color">Select Coat Color</option>
+            <option value="./cat_white.png">Select Coat Color</option>
             <!--<option value="black cat male">Black Cat (Male)</option>-->
-            <option value="black cat female" id="heteroblackF">Black (heterozygous)</option>
-            <option value="black cat female" id="homoblackF">Black (homozygous)</option>
-            <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
-            <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
+            <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
+            <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
+            <!--<option value="black spotted cat male">Black Spotted Cat (Male)</option>-->
+            <!--<option value="black spotted cat female">Black Spotted Cat (Female)</option>-->
             <!--<option value="brown cat male">Brown Cat (Male)</option>-->
-            <option value="brown cat female" id="brownF">Brown</option>
+            <option value="./cat_brown.png" id="brownM">Brown</option>
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
-        <img id="femalecat" src="./cat_white.png">
+
     </div>
     <div class="col-sm-6">
         <p>Select coat color of male cat</p>
+        <img id="image2" src="./cat_white.png"/>
         <select id="cat2">
-            <option value="select coat color">Select Coat Color</option>
-            <option value="black cat male" id="heteroblackM">Black (heterozygous)</option>
-            <option value="black cat male" id="homoblackM">Black (homozygous)</option>
+            <option value="./cat_white.png">Select Coat Color</option>
+            <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
+            <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
             <!--<option value="black cat female">Black Cat (Female)</option>-->
             <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
             <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
-            <option value="brown cat male" id="brownM">Brown</option>
+            <option value="./cat_brown.png" id="brownM">Brown</option>
             <!--<option value="brown cat female">Brown Cat (Female)</option>-->
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
-        <img id="malecat" src="./cat_white.png">
+
     </div>
 
 
 </div>
 <!--submit button div= centered, and colored orange-->
-<!--when clicked, changes the color of the cat-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick="changeCatColor(); assignGenotype(); fillPunnettSquare()">select cats</button>
+    <button class="btn-warning" type="submit" onclick=" assignGenotype(); fillPunnettSquare()">select cats</button>
 </div>
 
 <!--creates the punnett square and the cat icons within it-->
@@ -94,26 +95,24 @@
             malegenotype: "homozygousrecessive"
         };
 
-    //    Messy function; when colors have been chosen on dropdown and SUBMIT is clicked, the color of the cat icons change
+    // when selecting cat, colors of cat will change.
     function changeCatColor()
     {
-        if (document.getElementById("brownF").selected)
-        {
-            document.getElementById("femalecat").src = "./cat_brown.png";
-        }
-        else if (document.getElementById("heteroblackF").selected || document.getElementById("homoblackF").selected)
-        {
-            document.getElementById("femalecat").src = "./cat_black.png";
-        }
-        if (document.getElementById("brownM").selected)
-        {
-            document.getElementById("malecat").src = "./cat_brown.png";
-        }
-        else if (document.getElementById("heteroblackM").selected || document.getElementById("homoblackM").selected)
-        {
-            document.getElementById("malecat").src = "./cat_black.png";
-        }
+
+            var img = document.getElementById("image");
+            img.src = this.value;
+            return false;
     }
+    document.getElementById("cat1").onchange = changeCatColor;
+
+    function changeCatColor2()
+    {
+
+        var img = document.getElementById("image2");
+        img.src = this.value;
+        return false;
+    }
+    document.getElementById("cat2").onchange = changeCatColor2;
 
     function assignGenotype()
     {
@@ -163,26 +162,38 @@
             document.getElementById("bottomleft").src= "./cat_brown.png";
             document.getElementById("bottomright").src= "./cat_brown.png";
         }
-//        //both heterozygous
-//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
-//        {
-//
-//        }
-//        //one dominant, one recessive (and vice versa pair)
-//        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
-//        {
-//
-//        }
-//        //one dominant, one het (and vice versa pair)
-//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
-//        {
-//
-//        }
-//        //one recessive, one het (and vice versa pair)
-//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
-//        {
-//
-//        }
+        //both heterozygous
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+       {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_brown.png";
+        }
+        //one dominant, one recessive (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_black.png";
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_black.png";
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_brown.png";
+            document.getElementById("bottomright").src= "./cat_brown.png";
+        }
     }
 
 

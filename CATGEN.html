@@ -64,7 +64,7 @@
 <!--when clicked, changes the color of the cat-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick="changeCatColor(); assignGenotype()">select cats</button>
+    <button class="btn-warning" type="submit" onclick="changeCatColor(); assignGenotype(); fillPunnettSquare()">select cats</button>
 </div>
 
 <!--creates the punnett square and the cat icons within it-->
@@ -72,12 +72,12 @@
     <div class="col-sm-12">
         <table id="square">
             <tr>
-                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
-                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topleft" src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topright" src="./cat_white.png"></td>
             </tr>
             <tr>
-                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
-                <td style="border:2px solid black; padding: 100px;"><img src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomleft" src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomright" src="./cat_white.png"></td>
             </tr>
         </table>
     </div>
@@ -145,7 +145,44 @@
 
     function fillPunnettSquare()
     {
-        if
+        alert("!!!")
+       //both dominant
+        if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_black.png";
+
+        }
+//        //both recessive
+        else if (cat.malegenotype === "homozygousrecessive" && cat.gemalegenotype ==="homozygousrecessive")
+        {
+            document.getElementById("topleft").src= "./cat_brown.png";
+            document.getElementById("topright").src= "./cat_brown.png";
+            document.getElementById("bottomleft").src= "./cat_brown.png";
+            document.getElementById("bottomright").src= "./cat_brown.png";
+        }
+//        //both heterozygous
+//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+//        {
+//
+//        }
+//        //one dominant, one recessive (and vice versa pair)
+//        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
+//        {
+//
+//        }
+//        //one dominant, one het (and vice versa pair)
+//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+//        {
+//
+//        }
+//        //one recessive, one het (and vice versa pair)
+//        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+//        {
+//
+//        }
     }
 
 

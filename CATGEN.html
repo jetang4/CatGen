@@ -5,7 +5,8 @@
 
         /*Create a class of "squares" for the punnett square*/
 
-        #square {
+        #square
+        {
             border: 50px;
             margin: auto;
         }
@@ -63,7 +64,7 @@
 <!--when clicked, changes the color of the cat-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick="changeCatColor()">select cats</button>
+    <button class="btn-warning" type="submit" onclick="changeCatColor(); assignGenotype()">select cats</button>
 </div>
 
 <!--creates the punnett square and the cat icons within it-->
@@ -81,12 +82,21 @@
         </table>
     </div>
 </div>
+<div>
+    <img id="testcat" src="./cat_white.png" onclick=assignGenotype()>
+</div>
 
 <script>
 
+    var cat=
+        {
+            femalegenotype: "homozygousdominant",
+            malegenotype: "homozygousrecessive"
+        };
+
     //    Messy function; when colors have been chosen on dropdown and SUBMIT is clicked, the color of the cat icons change
-    function changeCatColor() {
-        alert("!!!");
+    function changeCatColor()
+    {
         if (document.getElementById("brownF").selected)
         {
             document.getElementById("femalecat").src = "./cat_brown.png";
@@ -103,8 +113,41 @@
         {
             document.getElementById("malecat").src = "./cat_black.png";
         }
-
     }
+
+    function assignGenotype()
+    {
+        if (document.getElementById("brownF").selected)
+        {
+            cat.femalegenotype="homozygousrecessive";
+        }
+        else if (document.getElementById("heteroblackF").selected)
+        {
+            cat.femalegenotype="heterozygous";
+        }
+        else if (document.getElementById("homoblackF").selected)
+        {
+            cat.femalegenotype="homozygousdominant";
+        }
+        if (document.getElementById("brownM").selected)
+        {
+            cat.malegenotype="homozygousrecessive";
+        }
+        else if (document.getElementById("heteroblackM").selected)
+        {
+            cat.malegenotype="heterozygous";
+        }
+        else if (document.getElementById("homoblackM").selected)
+        {
+           cat.malegenotype="homozygousdominant";
+        }
+    }
+
+    function fillPunnettSquare()
+    {
+        if
+    }
+
 
 
 </script>

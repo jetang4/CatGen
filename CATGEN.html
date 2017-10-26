@@ -84,7 +84,8 @@
     </div>
 </div>
 <div>
-    <img id="testcat" src="./cat_white.png" onclick="assignGenotype()">
+    <img id="offspring" onclick="showPossibleData()">
+    <img id="offspringtype2"  onclick="showPossibleData()">
 </div>
 <p id="data"></p>
 
@@ -158,7 +159,7 @@
 
         }
         //both recessive
-        else if (cat.malegenotype === "homozygousrecessive" && cat.gemalegenotype ==="homozygousrecessive")
+        else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
         {
             document.getElementById("topleft").src= "./cat_brown.png";
             document.getElementById("topright").src= "./cat_brown.png";
@@ -196,12 +197,35 @@
             document.getElementById("topright").src= "./cat_black.png";
             document.getElementById("bottomleft").src= "./cat_brown.png";
             document.getElementById("bottomright").src= "./cat_brown.png";
+        }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_black.png";
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_black.png";
+            document.getElementById("bottomright").src= "./cat_black.png";
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("topleft").src= "./cat_black.png";
+            document.getElementById("topright").src= "./cat_black.png";
+            document.getElementById("bottomleft").src= "./cat_brown.png";
+            document.getElementById("bottomright").src= "./cat_brown.png";
         }
     }
     function showPossibleData()
     {
         if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
         {
+            document.getElementById("offspring").src= "./cat_black.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: BB" +
                 "<br>Black: 100%" +
@@ -211,8 +235,9 @@
                 "<br>0% homozygous recessive"
         }
         //both recessive
-        else if (cat.malegenotype === "homozygousrecessive" && cat.gemalegenotype ==="homozygousrecessive")
+        else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
         {
+            document.getElementById("offspring").src= "./cat_brown.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: bb" +
                 "<br>Black: 0%" +
@@ -224,6 +249,8 @@
         //both heterozygous
         else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
         {
+            document.getElementById("offspring").src= "./cat_black.png";
+            document.getElementById("offspringtype2").src= "./cat_brown.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: BB, Bb, bb" +
                 "<br>Black: 75%" +
@@ -235,6 +262,7 @@
         //one dominant, one recessive (and vice versa pair)
         else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
         {
+            document.getElementById("offspring").src= "./cat_black.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: Bb" +
                 "<br>Black: 100%" +
@@ -246,6 +274,7 @@
         //one dominant, one het (and vice versa pair)
         else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
         {
+            document.getElementById("offspring").src= "./cat_black.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: BB, Bb" +
                 "<br>Black: 100%" +
@@ -257,6 +286,44 @@
         //one recessive, one het (and vice versa pair)
         else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
         {
+            document.getElementById("offspring").src= "./cat_black.png";
+            document.getElementById("offspringtype2").src= "./cat_brown.png";
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: Bb, bb" +
+                "<br>Black: 50%" +
+                "<br>Brown: 50%" +
+                "<br>0% homozygous dominant" +
+                "<br>50% heterozygous" +
+                "<br>50% homozygous recessive"
+        }
+        else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("offspring").src= "./cat_black.png";
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: Bb" +
+                "<br>Black: 100%" +
+                "<br>Brown: 0%" +
+                "<br>0% homozygous dominant" +
+                "<br>100% heterozygous" +
+                "<br>0% homozygous recessive"
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("offspring").src= "./cat_black.png";
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: BB, Bb" +
+                "<br>Black: 100%" +
+                "<br>Brown: 0%" +
+                "<br>50% homozygous dominant" +
+                "<br>50% heterozygous" +
+                "<br>0% homozygous recessive"
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("offspring").src= "./cat_black.png";
+            document.getElementById("offspringtype2").src= "./cat_brown.png";
             document.getElementById("data").innerHTML = "Possible offsprings " +
                 "<br>GENOTYPE: Bb, bb" +
                 "<br>Black: 50%" +

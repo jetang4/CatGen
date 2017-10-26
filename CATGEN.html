@@ -65,20 +65,31 @@
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData()">select cats</button>
+    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotype(); fillMaleGenotype();getGenotype()">select cats</button>
 </div>
-
+<p id="printfgenotype"></p>
+<p id="printmgenotype"></p>
 <!--creates the punnett square and the cat icons within it-->
 <div class="row">
     <div class="col-sm-12">
         <table id="square">
             <tr>
-                <td style="border:2px solid black; padding: 100px;"><img id= "topleft" src="./cat_white.png"></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "topright" src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 0px;"></td>
+                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:2px solid black; padding: 20px;"></td>
             </tr>
             <tr>
-                <td style="border:2px solid black; padding: 100px;"><img id= "bottomleft" src="./cat_white.png"></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "bottomright" src="./cat_white.png"></td>
+                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topleft" src="./cat_white.png"><p id="topleftallele"></p></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topright" src="./cat_white.png"><p id="toprightallele"></p></td>
+
+
+            </tr>
+            <tr>
+                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomleft" src="./cat_white.png"><p id="bottomleftallele"></p></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomright" src="./cat_white.png"><p id="bottomrightallele"></p></td>
+
             </tr>
         </table>
     </div>
@@ -88,6 +99,7 @@
     <img id="offspringtype2"  onclick="showPossibleData()">
 </div>
 <p id="data"></p>
+
 
 <script>
 
@@ -221,6 +233,7 @@
             document.getElementById("bottomright").src= "./cat_brown.png";
         }
     }
+    //prints a summary at very bottom to show possible outcomes from parents
     function showPossibleData()
     {
         if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
@@ -335,7 +348,112 @@
 
 
     }
+    //will print parent female and male genotypes
+    function fillFemaleGenotype()
+    {
+        if(cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("printfgenotype").innerHTML = "B B";
+        }
+        if(cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("printfgenotype").innerHTML = "b b";
+        }
+        if(cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("printfgenotype").innerHTML = "B b";
+        }
+    }
+    function fillMaleGenotype()
+    {
+        if(cat.malegenotype == "homozygousdominant")
+        {
+            document.getElementById("printmgenotype").innerHTML = "B B";
+        }
+        if(cat.malegenotype == "homozygousrecessive")
+        {
+            document.getElementById("printmgenotype").innerHTML = "b b";
+        }
+        if(cat.malegenotype == "heterozygous")
+        {
+            document.getElementById("printmgenotype").innerHTML = "B b";
+        }
+    }
+    //will print out all individual alleles
+    function getGenotype()
+    {
+        //both dominant
+        if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("toprightallele").innerHTML = "Alleles: BB";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: BB";
 
+        }
+        //both recessive
+        else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: bb";
+            document.getElementById("toprightallele").innerHTML = "Alleles: bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: bb";
+        }
+        //both heterozygous
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("toprightallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: bb";
+        }
+        //one dominant, one recessive (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("toprightallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: Bb";
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("toprightallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: Bb";
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("toprightallele").innerHTML = "Alleles: bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: bb";
+        }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("toprightallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: Bb";
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: BB";
+            document.getElementById("toprightallele").innerHTML = "Alleles: BB";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: Bb";
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("topleftallele").innerHTML = "Alleles: Bb";
+            document.getElementById("toprightallele").innerHTML = "Alleles: Bb";
+            document.getElementById("bottomleftallele").innerHTML = "Alleles: bb";
+            document.getElementById("bottomrightallele").innerHTML = "Alleles: bb";
+        }
+    }
 
 
 </script>

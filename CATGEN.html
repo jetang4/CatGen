@@ -65,28 +65,28 @@
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotype(); fillMaleGenotype();getGenotype()">select cats</button>
+    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotypeAllele1(); fillMaleGenotypeAllele1();fillFemaleGenotypeAllele2();fillMaleGenotypeAllele2();getGenotype()">select cats</button>
 </div>
-<p id="printfgenotype"></p>
-<p id="printmgenotype"></p>
+
+
 <!--creates the punnett square and the cat icons within it-->
 <div class="row">
     <div class="col-sm-12">
         <table id="square">
             <tr>
-                <td style="border:2px solid black; padding: 0px;"></td>
-                <td style="border:2px solid black; padding: 20px;"></td>
-                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:0px solid black; padding: 0px;"></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printfgenotype1"></p></b></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printfgenotype2"></p></b></td>
             </tr>
             <tr>
-                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printmgenotype1"></p></b></td>
                 <td style="border:2px solid black; padding: 100px;"><img id= "topleft" src="./cat_white.png"><p id="topleftallele"></p></td>
                 <td style="border:2px solid black; padding: 100px;"><img id= "topright" src="./cat_white.png"><p id="toprightallele"></p></td>
 
 
             </tr>
             <tr>
-                <td style="border:2px solid black; padding: 20px;"></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printmgenotype2"></p></b></td>
                 <td style="border:2px solid black; padding: 100px;"><img id= "bottomleft" src="./cat_white.png"><p id="bottomleftallele"></p></td>
                 <td style="border:2px solid black; padding: 100px;"><img id= "bottomright" src="./cat_white.png"><p id="bottomrightallele"></p></td>
 
@@ -113,9 +113,9 @@
     function changeCatColor()
     {
 
-            var img = document.getElementById("image");
-            img.src = this.value;
-            return false;
+        var img = document.getElementById("image");
+        img.src = this.value;
+        return false;
     }
     document.getElementById("cat1").onchange = changeCatColor;
 
@@ -154,14 +154,13 @@
         }
         else if (document.getElementById("homoblackM").selected)
         {
-           cat.malegenotype="homozygousdominant";
+            cat.malegenotype="homozygousdominant";
         }
     }
 
     function fillPunnettSquare()
     {
-        alert("!!!")
-       //both dominant
+        //both dominant
         if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
         {
             document.getElementById("topleft").src= "./cat_black.png";
@@ -180,7 +179,7 @@
         }
         //both heterozygous
         else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
-       {
+        {
             document.getElementById("topleft").src= "./cat_black.png";
             document.getElementById("topright").src= "./cat_black.png";
             document.getElementById("bottomleft").src= "./cat_black.png";
@@ -312,7 +311,7 @@
         else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
         {
             document.getElementById("offspring").src= "./cat_black.png";
-            document.getElementById("data").innerHTML = "Possible offsprings " +
+            document.getElementById("data").innerHTML = "Possible offsprings" +
                 "<br>GENOTYPE: Bb" +
                 "<br>Black: 100%" +
                 "<br>Brown: 0%" +
@@ -324,7 +323,7 @@
         else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
         {
             document.getElementById("offspring").src= "./cat_black.png";
-            document.getElementById("data").innerHTML = "Possible offsprings " +
+            document.getElementById("data").innerHTML = "Possible offsprings" +
                 "<br>GENOTYPE: BB, Bb" +
                 "<br>Black: 100%" +
                 "<br>Brown: 0%" +
@@ -349,34 +348,64 @@
 
     }
     //will print parent female and male genotypes
-    function fillFemaleGenotype()
+    function fillFemaleGenotypeAllele1()
     {
         if(cat.femalegenotype == "homozygousdominant")
         {
-            document.getElementById("printfgenotype").innerHTML = "B B";
+            document.getElementById("printfgenotype1").innerHTML = "B";
         }
         if(cat.femalegenotype == "homozygousrecessive")
         {
-            document.getElementById("printfgenotype").innerHTML = "b b";
+            document.getElementById("printfgenotype1").innerHTML = "b";
         }
         if(cat.femalegenotype == "heterozygous")
         {
-            document.getElementById("printfgenotype").innerHTML = "B b";
+            document.getElementById("printfgenotype1").innerHTML = "B";
         }
     }
-    function fillMaleGenotype()
+    function fillMaleGenotypeAllele1()
     {
         if(cat.malegenotype == "homozygousdominant")
         {
-            document.getElementById("printmgenotype").innerHTML = "B B";
+            document.getElementById("printmgenotype1").innerHTML = "B";
         }
         if(cat.malegenotype == "homozygousrecessive")
         {
-            document.getElementById("printmgenotype").innerHTML = "b b";
+            document.getElementById("printmgenotype1").innerHTML = "b";
         }
         if(cat.malegenotype == "heterozygous")
         {
-            document.getElementById("printmgenotype").innerHTML = "B b";
+            document.getElementById("printmgenotype1").innerHTML = "B";
+        }
+    }
+    function fillFemaleGenotypeAllele2()
+    {
+        if(cat.femalegenotype == "homozygousdominant")
+        {
+            document.getElementById("printfgenotype2").innerHTML = "B";
+        }
+        if(cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("printfgenotype2").innerHTML = "b";
+        }
+        if(cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("printfgenotype2").innerHTML = "b";
+        }
+    }
+    function fillMaleGenotypeAllele2()
+    {
+        if(cat.malegenotype == "homozygousdominant")
+        {
+            document.getElementById("printmgenotype2").innerHTML = "B";
+        }
+        if(cat.malegenotype == "homozygousrecessive")
+        {
+            document.getElementById("printmgenotype2").innerHTML = "b";
+        }
+        if(cat.malegenotype == "heterozygous")
+        {
+            document.getElementById("printmgenotype2").innerHTML = "b";
         }
     }
     //will print out all individual alleles

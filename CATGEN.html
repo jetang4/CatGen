@@ -31,12 +31,12 @@
         <select id="cat1">
             <option value="./cat_white.png">Select Coat Color</option>
             <!--<option value="black cat male">Black Cat (Male)</option>-->
-            <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
-            <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
+            <option value="./cat_black.png" id="heteroblackF">Black (heterozygous)</option>
+            <option value="./cat_black.png" id="homoblackF">Black (homozygous)</option>
             <!--<option value="black spotted cat male">Black Spotted Cat (Male)</option>-->
             <!--<option value="black spotted cat female">Black Spotted Cat (Female)</option>-->
             <!--<option value="brown cat male">Brown Cat (Male)</option>-->
-            <option value="./cat_brown.png" id="brownM">Brown</option>
+            <option value="./cat_brown.png" id="brownF">Brown</option>
             <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
             <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
@@ -65,7 +65,7 @@
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick=" assignGenotype(); fillPunnettSquare()">select cats</button>
+    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare()">select cats</button>
 </div>
 
 <!--creates the punnett square and the cat icons within it-->
@@ -84,7 +84,7 @@
     </div>
 </div>
 <div>
-    <img id="testcat" src="./cat_white.png" onclick=assignGenotype()>
+    <img id="testcat" src="./cat_white.png" onclick="assignGenotype()">
 </div>
 
 <script>
@@ -113,6 +113,8 @@
         return false;
     }
     document.getElementById("cat2").onchange = changeCatColor2;
+
+
 
     function assignGenotype()
     {

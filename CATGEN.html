@@ -65,7 +65,7 @@
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare()">select cats</button>
+    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData()">select cats</button>
 </div>
 
 <!--creates the punnett square and the cat icons within it-->
@@ -86,6 +86,7 @@
 <div>
     <img id="testcat" src="./cat_white.png" onclick="assignGenotype()">
 </div>
+<p id="data"></p>
 
 <script>
 
@@ -156,7 +157,7 @@
             document.getElementById("bottomright").src= "./cat_black.png";
 
         }
-//        //both recessive
+        //both recessive
         else if (cat.malegenotype === "homozygousrecessive" && cat.gemalegenotype ==="homozygousrecessive")
         {
             document.getElementById("topleft").src= "./cat_brown.png";
@@ -196,6 +197,76 @@
             document.getElementById("bottomleft").src= "./cat_brown.png";
             document.getElementById("bottomright").src= "./cat_brown.png";
         }
+    }
+    function showPossibleData()
+    {
+        if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: BB" +
+                "<br>Black: 100%" +
+                "<br>Brown: 0%" +
+                "<br>100% homozygous dominant" +
+                "<br>0% heterozygous" +
+                "<br>0% homozygous recessive"
+        }
+        //both recessive
+        else if (cat.malegenotype === "homozygousrecessive" && cat.gemalegenotype ==="homozygousrecessive")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: bb" +
+                "<br>Black: 0%" +
+                "<br>Brown: 100%" +
+                "<br>0% homozygous dominant" +
+                "<br>0% heterozygous" +
+                "<br>100% homozygous recessive"
+        }
+        //both heterozygous
+        else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: BB, Bb, bb" +
+                "<br>Black: 75%" +
+                "<br>Brown: 25%" +
+                "<br>50% homozygous dominant" +
+                "<br>25% heterozygous" +
+                "<br>25% homozygous recessive"
+        }
+        //one dominant, one recessive (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: Bb" +
+                "<br>Black: 100%" +
+                "<br>Brown: 0%" +
+                "<br>0% homozygous dominant" +
+                "<br>100% heterozygous" +
+                "<br>0% homozygous recessive"
+        }
+        //one dominant, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: BB, Bb" +
+                "<br>Black: 100%" +
+                "<br>Brown: 0%" +
+                "<br>50% homozygous dominant" +
+                "<br>50% heterozygous" +
+                "<br>0% homozygous recessive"
+        }
+        //one recessive, one het (and vice versa pair)
+        else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
+        {
+            document.getElementById("data").innerHTML = "Possible offsprings " +
+                "<br>GENOTYPE: Bb, bb" +
+                "<br>Black: 50%" +
+                "<br>Brown: 50%" +
+                "<br>0% homozygous dominant" +
+                "<br>50% heterozygous" +
+                "<br>50% homozygous recessive"
+        }
+
+
     }
 
 

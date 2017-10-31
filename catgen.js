@@ -1,19 +1,19 @@
 var cat=
     {
-        femalegenotype: "homozygousdominant",
-        malegenotype: "homozygousrecessive"
+        femalegenotype: "",
+        malegenotype: ""
     };
 // when selecting cat, colors of cat will change.
 function changeCatColor()
 {
-    var img = document.getElementById("image");
+    var img = document.getElementById("femaleselectimage");
     img.src = this.value;
     return false;
 }
 document.getElementById("cat1").onchange = changeCatColor;
 function changeCatColor2()
 {
-    var img = document.getElementById("image2");
+    var img = document.getElementById("maleselectimage");
     img.src = this.value;
     return false;
 }

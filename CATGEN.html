@@ -26,8 +26,8 @@
 <div class="row">
     <div class="col-sm-6">
         <p>Select coat color of female cat</p>
-        <img id="femaleselectimage" src="./cat_white.png"/>
-        <select id="cat1dropdownmenu">
+        <img id="image" src="./cat_white.png"/>
+        <select id="cat1">
             <option value="./cat_white.png">Select Coat Color</option>
             <!--<option value="black cat male">Black Cat (Male)</option>-->
             <option value="./cat_black.png" id="heteroblackF">Black (heterozygous)</option>
@@ -43,8 +43,8 @@
     </div>
     <div class="col-sm-6">
         <p>Select coat color of male cat</p>
-        <img id="maleselectimage" src="./cat_white.png"/>
-        <select id="cat2dropdownmenu">
+        <img id="image2" src="./cat_white.png"/>
+        <select id="cat2">
             <option value="./cat_white.png">Select Coat Color</option>
             <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
             <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
@@ -101,10 +101,8 @@
 
 
 <script>
-    // when selecting cat, colors of cat will change.
-    document.getElementById("cat1dropdownmenu").onchange = changeCatColor;
-    document.getElementById("cat2dropdownmenu").onchange = changeCatColor2;
+    document.getElementById("cat1").onchange = changeCatColor;
+    document.getElementById("cat2").onchange = changeCatColor2;
 </script>
 </body>
 </html>
-

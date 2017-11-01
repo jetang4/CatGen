@@ -6,14 +6,14 @@ var cat=
 // when selecting cat, colors of cat will change.
 function changeCatColor()
 {
-    var img = document.getElementById("femaleselectimage");
+    var img = document.getElementById("image");
     img.src = this.value;
     return false;
 }
 document.getElementById("cat1").onchange = changeCatColor;
 function changeCatColor2()
 {
-    var img = document.getElementById("maleselectimage");
+    var img = document.getElementById("image2");
     img.src = this.value;
     return false;
 }

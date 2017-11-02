@@ -2,12 +2,6 @@
 <html lang="en">
 <head>
     <style>
-        /*Create a class of "squares" for the punnett square*/
-        #square
-        {
-            border: 50px;
-            margin: auto;
-        }
     </style>
     <!--HERES THE LINK TO THE EXTERNAL JS FILE-->
     <script src="catgen.js"></script>
@@ -25,46 +19,43 @@
 <h1>CatGen</h1>
 <div class="row">
     <div class="col-sm-6">
+
+        <!--dropdown menu: choose color of female cat-->
+        <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
         <p>Select coat color of female cat</p>
-        <img id="image" src="./cat_white.png"/>
-        <select id="cat1">
+        <img id="colorSelectorLeft" src="./cat_white.png"/>
+        <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+        <select id="femaleDropdownMenu">
+            <!--these are the options within the female dropdown menu-->
             <option value="./cat_white.png">Select Coat Color</option>
-            <!--<option value="black cat male">Black Cat (Male)</option>-->
             <option value="./cat_black.png" id="heteroblackF">Black (heterozygous)</option>
             <option value="./cat_black.png" id="homoblackF">Black (homozygous)</option>
-            <!--<option value="black spotted cat male">Black Spotted Cat (Male)</option>-->
-            <!--<option value="black spotted cat female">Black Spotted Cat (Female)</option>-->
-            <!--<option value="brown cat male">Brown Cat (Male)</option>-->
             <option value="./cat_brown.png" id="brownF">Brown</option>
-            <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
-            <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
-        </select>
 
+        </select>
     </div>
+
+    <!--dropdown menu: choose color of male cat-->
+    <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
     <div class="col-sm-6">
         <p>Select coat color of male cat</p>
-        <img id="image2" src="./cat_white.png"/>
-        <select id="cat2">
+        <img id="colorSelectorRight" src="./cat_white.png"/>
+        <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+        <select id="maleDropdownMenu">
+            <!--these are the options within the male dropdown menu-->
             <option value="./cat_white.png">Select Coat Color</option>
             <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
             <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
-            <!--<option value="black cat female">Black Cat (Female)</option>-->
-            <!--<option value="black spotted cat male">Blac Spotted Cat (Male)</option>-->
-            <!--<option value="black spotted cat female">Blac Spotted Cat (Female)</option>-->
             <option value="./cat_brown.png" id="brownM">Brown</option>
-            <!--<option value="brown cat female">Brown Cat (Female)</option>-->
-            <!--<option value="brown spotted cat male">Brown Spotted Cat (Male)</option>-->
-            <!--<option value="brown spotted cat female">Brown Spotted Cat (Female)</option>-->
         </select>
-
     </div>
 
 
 </div>
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
-    <!--<input type="submit" onclick="changeCatColor()">-->
-    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotypeAllele1(); fillMaleGenotypeAllele1();fillFemaleGenotypeAllele2();fillMaleGenotypeAllele2();getGenotype()">select cats</button>
+    <!--the submit button calls all of the following functions-->
+    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotypeAllele1(); fillMaleGenotypeAllele1();fillFemaleGenotypeAllele2();fillMaleGenotypeAllele2();getGenotype()">Select Cats</button>
 </div>
 
 
@@ -74,35 +65,39 @@
         <table id="square">
             <tr>
                 <td style="border:0px solid black; padding: 0px;"></td>
-                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printfgenotype1"></p></b></td>
-                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printfgenotype2"></p></b></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printF_Allele1"></p></b></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printF_Allele2"></p></b></td>
             </tr>
             <tr>
-                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printmgenotype1"></p></b></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "topleft" src="./cat_white.png"><p id="topleftallele"></p></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "topright" src="./cat_white.png"><p id="toprightallele"></p></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printM_Allele1"></p></b></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topLeftCat" src="./cat_white.png"><p id="topleftallele"></p></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "topRightCat" src="./cat_white.png"><p id="toprightallele"></p></td>
 
 
             </tr>
             <tr>
-                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printmgenotype2"></p></b></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "bottomleft" src="./cat_white.png"><p id="bottomleftallele"></p></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "bottomright" src="./cat_white.png"><p id="bottomrightallele"></p></td>
+                <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="printM_Allele2"></p></b></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomLeftCat" src="./cat_white.png"><p id="bottomleftallele"></p></td>
+                <td style="border:2px solid black; padding: 100px;"><img id= "bottomRightCat" src="./cat_white.png"><p id="bottomrightallele"></p></td>
 
             </tr>
         </table>
     </div>
 </div>
+
 <div>
+    <!--these are the offspring that are shown at the calculations at the bottom-->
     <img id="offspring" onclick="showPossibleData()">
     <img id="offspringtype2"  onclick="showPossibleData()">
 </div>
+
+<!--these are the calculations and percentages-->
 <p id="data"></p>
 
 
 <script>
-    document.getElementById("cat1").onchange = changeCatColor;
-    document.getElementById("cat2").onchange = changeCatColor2;
+    document.getElementById("femaleDropdownMenu").onchange = changeCatColor;
+    document.getElementById("maleDropdownMenu").onchange = changeCatColor2;
 </script>
 </body>
 </html>

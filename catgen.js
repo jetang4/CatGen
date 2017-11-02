@@ -3,21 +3,27 @@ var cat=
         femalegenotype: "",
         malegenotype: ""
     };
-// when selecting cat, colors of cat will change.
+
+// when selecting from dropdown menu, colors of cat will change.
 function changeCatColor()
 {
-    var img = document.getElementById("image");
+    var img = document.getElementById("colorSelectorLeft"); //choose the left cat
     img.src = this.value;
     return false;
 }
-document.getElementById("cat1").onchange = changeCatColor;
+document.getElementById("femaleDropdownMenu").onchange = changeCatColor;
+
 function changeCatColor2()
 {
-    var img = document.getElementById("image2");
+    var img = document.getElementById("colorSelectorRight"); //choose the right cat
     img.src = this.value;
     return false;
 }
-document.getElementById("cat2").onchange = changeCatColor2;
+document.getElementById("maleDropdownMenu").onchange = changeCatColor2;
+
+
+//here is the function that assigns the genotype to the genotype variable
+//there is no forward facing portion of this function= no visual changes
 function assignGenotype()
 {
     if (document.getElementById("brownF").selected)
@@ -45,80 +51,84 @@ function assignGenotype()
         cat.malegenotype="homozygousdominant";
     }
 }
+
+//this function will, based on the genotype, change the template cats in the punnett square's colors
+//topleftCat etc are the template cats in the punnett square
 function fillPunnettSquare()
 {
     //both dominant
     if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
         document.getElementById("bottomright").src= "./cat_black.png";
     }
     //both recessive
     else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
     {
-        document.getElementById("topleft").src= "./cat_brown.png";
-        document.getElementById("topright").src= "./cat_brown.png";
-        document.getElementById("bottomleft").src= "./cat_brown.png";
+        document.getElementById("topLeftCat").src= "./cat_brown.png";
+        document.getElementById("topRightCat").src= "./cat_brown.png";
+        document.getElementById("bottomLeftCat").src= "./cat_brown.png";
         document.getElementById("bottomright").src= "./cat_brown.png";
     }
     //both heterozygous
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
         document.getElementById("bottomright").src= "./cat_brown.png";
     }
     //one dominant, one recessive (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
-        document.getElementById("bottomright").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
+        document.getElementById("bottomRightCat").src= "./cat_black.png";
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
-        document.getElementById("bottomright").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
+        document.getElementById("bottomRightCat").src= "./cat_black.png";
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_brown.png";
-        document.getElementById("bottomright").src= "./cat_brown.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_brown.png";
+        document.getElementById("bbottomRightCat").src= "./cat_brown.png";
     }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
-        document.getElementById("bottomright").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
+        document.getElementById("bottomRightCat").src= "./cat_black.png";
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_black.png";
-        document.getElementById("bottomright").src= "./cat_black.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_black.png";
+        document.getElementById("bottomRightCat").src= "./cat_black.png";
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("topleft").src= "./cat_black.png";
-        document.getElementById("topright").src= "./cat_black.png";
-        document.getElementById("bottomleft").src= "./cat_brown.png";
-        document.getElementById("bottomright").src= "./cat_brown.png";
+        document.getElementById("topLeftCat").src= "./cat_black.png";
+        document.getElementById("topRightCat").src= "./cat_black.png";
+        document.getElementById("bottomLeftCat").src= "./cat_brown.png";
+        document.getElementById("bottomRightCat").src= "./cat_brown.png";
     }
 }
 //prints a summary at very bottom to show possible outcomes from parents
+//"offspring" are the cats at the bottom that show the summary
 function showPossibleData()
 {
     if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
@@ -231,68 +241,70 @@ function showPossibleData()
             "<br>50% homozygous recessive"
     }
 }
-//will print parent female and male genotypes
+//will print parent (female and male) alleles on the sides of the punnett square
+//each parent has two alleles, print_allele1 and print_allele2
 function fillFemaleGenotypeAllele1()
 {
     if(cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("printfgenotype1").innerHTML = "B";
+        document.getElementById("printF_Allele1").innerHTML = "B";
     }
     if(cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("printfgenotype1").innerHTML = "b";
+        document.getElementById("printF_Allele1").innerHTML = "b";
     }
     if(cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("printfgenotype1").innerHTML = "B";
+        document.getElementById("printF_Allele1").innerHTML = "B";
     }
 }
 function fillMaleGenotypeAllele1()
 {
     if(cat.malegenotype == "homozygousdominant")
     {
-        document.getElementById("printmgenotype1").innerHTML = "B";
+        document.getElementById("printM_Allele1").innerHTML = "B";
     }
     if(cat.malegenotype == "homozygousrecessive")
     {
-        document.getElementById("printmgenotype1").innerHTML = "b";
+        document.getElementById("printM_Allele1").innerHTML = "b";
     }
     if(cat.malegenotype == "heterozygous")
     {
-        document.getElementById("printmgenotype1").innerHTML = "B";
+        document.getElementById("printM_Allele1").innerHTML = "B";
     }
 }
 function fillFemaleGenotypeAllele2()
 {
     if(cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("printfgenotype2").innerHTML = "B";
+        document.getElementById("printF_Allele2").innerHTML = "B";
     }
     if(cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("printfgenotype2").innerHTML = "b";
+        document.getElementById("printF_Allele2").innerHTML = "b";
     }
     if(cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("printfgenotype2").innerHTML = "b";
+        document.getElementById("printF_Allele2").innerHTML = "b";
     }
 }
 function fillMaleGenotypeAllele2()
 {
     if(cat.malegenotype == "homozygousdominant")
     {
-        document.getElementById("printmgenotype2").innerHTML = "B";
+        document.getElementById("printM_Allele2").innerHTML = "B";
     }
     if(cat.malegenotype == "homozygousrecessive")
     {
-        document.getElementById("printmgenotype2").innerHTML = "b";
+        document.getElementById("printM_Allele2").innerHTML = "b";
     }
     if(cat.malegenotype == "heterozygous")
     {
-        document.getElementById("printmgenotype2").innerHTML = "b";
+        document.getElementById("printM_Allele2").innerHTML = "b";
     }
 }
-//will print out all individual alleles
+
+//will print out all offspring alleles in the punnett square
 function getGenotype()
 {
     //both dominant

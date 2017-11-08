@@ -101,9 +101,9 @@ function fillPunnettSquare()
     else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
     {
         document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_brown.png";
-        document.getElementById("bpunnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_brown.png";
+        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
+        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
     }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
     {
         document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
@@ -284,9 +284,9 @@ function fillFemaleGenotypeAllele2()
     {
         document.getElementById("female_allele2_punnettsquare").innerHTML = "b";
     }
-    if(cat.femalegenotype == "female_allele2_punnettsquare")
+    if(cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("printF_Allele2").innerHTML = "b";
+        document.getElementById("female_allele2_punnettsquare").innerHTML = "b";
     }
 }
 function fillMaleGenotypeAllele2()

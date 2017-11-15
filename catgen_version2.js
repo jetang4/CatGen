@@ -52,6 +52,37 @@ function assignGenotype()
         cat.malegenotype="homozygousdominant";
     }
 }
+function fillAllBlack(){
+    document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+}
+function fillAllBrown(){
+    document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_brown.png";
+    document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_brown.png";
+    document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_brown.png";
+    document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+}
+function fillTopBlackBottomLeftBlackBottomRightBrown(){
+    document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+}
+function fillLeftColumnBlackRightColumnBrown(){
+    document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_brown.png";
+    document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+}
+function fillTopRowBlackBottomRowBrown(){
+    document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
+    document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_brown.png";
+    document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+}
+
 
 //this function will, based on the genotype, change the template cats in the punnett square's colors
 //punnettSquareTopLeftCatIcon etc are the template cats in the punnett square
@@ -60,72 +91,45 @@ function fillPunnettSquare()
     //both dominant
     if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+        fillAllBlack();
     }
     //both recessive
     else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_brown.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_brown.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_brown.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+        fillAllBrown();
     }
     //both heterozygous
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+        fillTopBlackBottomLeftBlackBottomRightBrown();
     }
     //one dominant, one recessive (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+        fillAllBlack();
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+        fillAllBlack();
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_brown.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+        fillLeftColumnBlackRightColumnBrown();
     }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+        fillAllBlack();
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_black.png";
+        fillAllBlack();
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("punnettSquareTopLeftCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareTopRightCatIcon").src= "./cat_black.png";
-        document.getElementById("punnettSquareBottomLeftCatIcon").src= "./cat_brown.png";
-        document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
+        fillTopRowBlackBottomRowBrown();
     }
 }
 //prints a summary at very bottom to show possible outcomes from parents

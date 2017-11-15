@@ -4,6 +4,16 @@ var cat=
         malegenotype: ""
     };
 
+
+function cat (firstAllele,secondAllele) {
+    this.isHomozygous = false;
+    this.isRecessive = false;
+    this.firstAllele = firstAllele;
+    this.secondAllele = secondAllele;
+    this.isphenotypeDominant = phenotypeDominant;
+    this.isphenotypeRecessive = phenotypeRecessive;
+
+}
 // when selecting from dropdown menu, colors of cat will change.
 function changeCatColor()
 {

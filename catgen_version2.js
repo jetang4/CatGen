@@ -93,7 +93,62 @@ function fillTopRowBlackBottomRowBrown(){
     document.getElementById("punnettSquareBottomRightCatIcon").src= "./cat_brown.png";
 }
 
+//cleaner code to print allele
+function fillAllSquaresAlleleBB(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: BB";
+}
 
+function fillAllSquaresAllelebb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+}
+
+function fillTopLeftSquareAlleleBBTopRightBbBottomLeftBbBottomRightbb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+}
+
+function filAllSquaresAlleleBb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+}
+
+function fillSquareAlleleLeftColumnBBRightColumnBb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+}
+
+function fillSquareAlleleLeftColumnBbRightColumnbb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+}
+
+function fillSquareAlleleTopRowBBBottomRowBb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: BB";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+}
+
+function fillSquareAlleleTopRowBbBottomRowbb(){
+    document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+    document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
+    document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+}
 //this function will, based on the genotype, change the template cats in the punnett square's colors
 //punnettSquareTopLeftCatIcon etc are the template cats in the punnett square
 function fillPunnettSquare()
@@ -325,71 +380,45 @@ function getGenotype()
     //both dominant
     if (cat.malegenotype === "homozygousdominant" && cat.femalegenotype === "homozygousdominant")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: BB";
+        fillAllSquaresAlleleBB();
     }
     //both recessive
     else if (cat.malegenotype === "homozygousrecessive" && cat.femalegenotype ==="homozygousrecessive")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+        fillAllSquaresAllelebb();
     }
     //both heterozygous
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+        fillTopLeftSquareAlleleBBTopRightBbBottomLeftBbBottomRightbb();
     }
     //one dominant, one recessive (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+        filAllSquaresAlleleBb();
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousdominant" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+        fillSquareAlleleLeftColumnBBRightColumnBb();
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "heterozygous")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
-    }else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
+        fillSquareAlleleLeftColumnBbRightColumnbb();
+    }
+    else if (cat.malegenotype == "homozygousrecessive" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+        filAllSquaresAlleleBb();
     }
     //one dominant, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousdominant")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: BB";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
+        fillSquareAlleleTopRowBBBottomRowBb();
     }
     //one recessive, one het (and vice versa pair)
     else if (cat.malegenotype == "heterozygous" && cat.femalegenotype == "homozygousrecessive")
     {
-        document.getElementById("topLeftPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("topRightPunnettSquareProbability").innerHTML = "Alleles: Bb";
-        document.getElementById("bottomLeftPunnettSquareProbability").innerHTML = "Alleles: bb";
-        document.getElementById("bottomRightPunnettSquareProbability").innerHTML = "Alleles: bb";
+        fillSquareAlleleTopRowBbBottomRowbb();
     }
 }

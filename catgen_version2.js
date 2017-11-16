@@ -5,15 +5,28 @@ var cat=
     };
 
 
-function cat (firstAllele,secondAllele) {
+function cat (firstAllele,secondAllele, color) {
+
     this.isHomozygous = false;
-    this.isRecessive = false;
+    this.isHeterozgous = false;
+    this.isphenotypeDominant = false;
+    this.isphenotypeRecessive = false;
     this.firstAllele = firstAllele;
     this.secondAllele = secondAllele;
-    this.isphenotypeDominant = phenotypeDominant;
-    this.isphenotypeRecessive = phenotypeRecessive;
+    this.color=color;
+    this.firstAlleleDominant=false;
+    this.secondAlleleDominant=false;
+
 
 }
+
+
+function color(){
+
+
+
+}
+
 // when selecting from dropdown menu, colors of cat will change.
 function changeCatColor()
 {
@@ -35,6 +48,8 @@ document.getElementById("maleDropdownMenu").onchange = changeCatColor2;
 //here is the function that assigns the genotype to the genotype variable
 //the element that is selected is from the dropdown menu (brownM= male dropdown menu, brown option)
 //there is no forward facing portion of this function= no visual changes
+
+//implement boolean style options discussed in class.
 function assignGenotype()
 {
     if (document.getElementById("brownF").selected)

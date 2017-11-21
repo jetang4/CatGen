@@ -5,9 +5,9 @@ var images = {
     "coat_dominant": "./cat_black.png",
     "coat_recessive": "./cat_brown.png",
     "coat_none": "./cat_white.png",
-    //"ears_dominant": "./cat_ears_dom.png",
-    //"ears_recessive": "./car_ears_rec.png",
-    //"ears_none": "./cat_ears.png"
+    //"spot_dominant": "./cat_spot_dom.png",
+    //"spot_recessive": "./car_spot_rec.png",
+    //"spot_none": "./cat_spot.png"
 };
 
 

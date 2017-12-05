@@ -17,20 +17,26 @@
 
 <body class="container text-center" style="background-color: peachpuff;">
 <h1>CatGen</h1>
+<div style="text-align:left; width:100%; padding:10px;">
+    <h1>Header</h1>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+</div>
+
 <div class="row">
     <div class="col-sm-6">
 
         <!--dropdown menu: choose color of female cat-->
         <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
         <p>Select coat color of female cat</p>
-        <img id="colorSelectorLeft" src="./cat_white.png"/>
+        <img id="female_coat_image" src="./cat_white.png"/>
         <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-        <select id="femaleDropdownMenu">
+        <select id="female_coat_select" onchange="changeCatColor('coat', 'female');">
             <!--these are the options within the female dropdown menu-->
-            <option value="./cat_white.png">Select Coat Color</option>
-            <option value="./cat_black.png" id="heteroblackF">Black (heterozygous)</option>
-            <option value="./cat_black.png" id="homoblackF">Black (homozygous)</option>
-            <option value="./cat_brown.png" id="brownF">Brown</option>
+            <option value="">Select Coat Color</option>
+            <option value="dominant_recessive" id="heteroblackF">Black (heterozygous)</option>
+            <option value="dominant" id="homoblackF">Black (homozygous)</option>
+            <option value="recessive" id="brownF">Brown</option>
 
         </select>
     </div>
@@ -39,23 +45,27 @@
     <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
     <div class="col-sm-6">
         <p>Select coat color of male cat</p>
-        <img id="colorSelectorRight" src="./cat_white.png"/>
+        <img id="male_coat_image" src="./cat_white.png"/>
         <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-        <select id="maleDropdownMenu">
+        <select id="male_coat_select" onchange="changeCatColor('coat', 'male');">
             <!--these are the options within the male dropdown menu-->
-            <option value="./cat_white.png">Select Coat Color</option>
-            <option value="./cat_black.png" id="heteroblackM">Black (heterozygous)</option>
-            <option value="./cat_black.png" id="homoblackM">Black (homozygous)</option>
-            <option value="./cat_brown.png" id="brownM">Brown</option>
+            <option value="">Select Coat Color</option>
+            <option value="dominant_recessive" id="heteroblackM">Black (heterozygous)</option>
+            <option value="dominant" id="homoblackM">Black (homozygous)</option>
+            <option value="recessive" id="brownM">Brown</option>
         </select>
     </div>
-
+<div style="text-align:left; width:100%; padding:10px;">
+    <h1>Header</h1>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+</div>
 
 </div>
 <!--submit button div= centered, and colored orange-->
 <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
     <!--the submit button calls all of the following functions-->
-    <button class="btn-warning" type="submit" onclick= "assignGenotype(); fillPunnettSquare(); showPossibleData(); fillFemaleGenotypeAllele1(); fillMaleGenotypeAllele1();fillFemaleGenotypeAllele2();fillMaleGenotypeAllele2();getGenotype()">Select Cats</button>
+    <button class="btn-warning" type="submit" onclick= "fillPunnetSquare('coat')">Select Cats</button>
 </div>
 
 
@@ -64,33 +74,48 @@
 <!--the id "locationlocationPunnettSquareProbability" is the probability that appears in the square once the form is submitted-->
 <div class="row">
     <div class="col-sm-12">
-        <table id="square">
+        <table id="square" style="margin:0 auto;">
             <tr>
                 <td style="border:0px solid black; padding: 0px;"></td>
                 <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="female_allele1_punnettsquare"></p></b></td>
                 <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="female_allele2_punnettsquare"></p></b></td>
+                <td style="padding:20px;"></td>
             </tr>
             <tr>
                 <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="male_allele1_punnettsquare"></p></b></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "punnettSquareTopLeftCatIcon" src="./cat_white.png"><p id="topLeftPunnettSquareProbability"></p></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "punnettSquareTopRightCatIcon" src="./cat_white.png"><p id="topRightPunnettSquareProbability"></p></td>
-
+                <td id= "0|0_square" style="border:2px solid black; padding: 100px;">
+                    <img src="./cat_white.png" />
+                    <p id="0|0_probability"></p>
+                </td>
+                <td id= "0|1_square" style="border:2px solid black; padding: 100px;">
+                    <img src="./cat_white.png" />
+                    <p id="0|1_probability"></p>
+                </td>
+                <td style="padding:20px;">
+                </td>
 
             </tr>
             <tr>
                 <td style="border:0px solid black; padding: 20px;"><b><p style="font-size:40px" id="male_allele2_punnettsquare"></p></b></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "punnettSquareBottomLeftCatIcon" src="./cat_white.png"><p id="bottomLeftPunnettSquareProbability"></p></td>
-                <td style="border:2px solid black; padding: 100px;"><img id= "punnettSquareBottomRightCatIcon" src="./cat_white.png"><p id="bottomRightPunnettSquareProbability"></p></td>
+                <td id= "1|0_square" style="border:2px solid black; padding: 100px;">
+                    <img src="./cat_white.png"/>
+                    <p id="1|0_probability"></p>
+                </td>
+                <td id= "1|1_square" style="border:2px solid black; padding: 100px;">
+                    <img src="./cat_white.png"/>
+                    <p id="1|1_probability"></p>
+                </td>
+                <td style="padding:20px;"></td>
 
             </tr>
         </table>
     </div>
 </div>
 
-<div>
+<div id="offspring_images">
     <!--these are the offspring that are shown at the calculations at the bottom-->
-    <img id="offspring" onclick="showPossibleData()">
-    <img id="offspringtype2"  onclick="showPossibleData()">
+    <img id="offspring1">
+    <img id="offspring2">
 </div>
 
 <!--these are the calculations and percentages-->
@@ -98,8 +123,8 @@
 
 
 <script>
-    document.getElementById("femaleDropdownMenu").onchange = changeCatColor;
-    document.getElementById("maleDropdownMenu").onchange = changeCatColor2;
+    // document.getElementById("femaleDropdownMenu").onchange = changeCatColor;
+    // document.getElementById("maleDropdownMenu").onchange = changeCatColor2;
 </script>
 </body>
 </html>

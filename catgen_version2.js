@@ -60,11 +60,11 @@ function fillPunnetSquare(trait)
     //gets number format for male's alleles
     var male_selection = getSelection(trait, "male");
 
-    //displays female alleles as left column
+    //displays female alleles as top row
     for(var x = 0; x < female_selection.length; x++)
         document.getElementById("female_allele"+(x+1)+"_punnettsquare").innerHTML = numberToAllele(female_selection[x]);
 
-    //displays male alleles as top row
+    //displays male alleles as left column
     for(var x = 0; x < male_selection.length; x++)
         document.getElementById("male_allele"+(x+1)+"_punnettsquare").innerHTML = numberToAllele(male_selection[x]);
 
@@ -105,7 +105,7 @@ function fillPunnetSquare(trait)
                 //displays dominant cat in punnet square
                 current_img.src = images[trait+'_dominant'];
 
-                //add image to beginning of possible offspring for data display
+                //add image to beginning of possible offspring for data display and iterate through array for other possibles
                 if(!findArray(possible_offspring, images[trait+'_dominant']))
                     possible_offspring.unshift(images[trait+'_dominant']);
 

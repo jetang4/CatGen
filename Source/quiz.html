@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .dominant, .heterozygous, .recessive
+        {
+            width:250px;
+            height:250px;
+            border: 1px solid black;
+        }
+        .draggableImages
+        {
+            border: 1px solid;
+            padding: 50px;
+            margin: 100px;
+        }
+
+    </style>
+    <script>
+        function allowDrop(image)
+        {
+            image.preventDefault();
+        }
+
+        function drag(image)
+        {
+            image.dataTransfer.setData("text", image.target.id);
+        }
+
+        function drop(image)
+        {
+            image.preventDefault();
+            var data = image.dataTransfer.getData("text");
+//            this.appendChild(document.getElementById(data));
+            if(image.target.nodeName !== "IMG")
+            {
+                image.target.appendChild(document.getElementById(data));
+            }
+        }
+    </script>
+</head>
+<body class="container text-center" style="background-color: peachpuff;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">CatGen</a>
+    <div class="collapse navbar-collapse justify-content-between" id="navbar1">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="CATGEN.html">App</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="catgen_geneinfo.html">Cat Genetics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1>Let's test what you've learned in the previous section.</h1>
+    <p>For each set of cats, please drag the cats into the appropriate column: homozygous dominant, heterozygous, and homozygous recessive</p>
+    <h3 style="color:red">Locus: spots</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="dominant" ondrop="drop(event)" ondragover="allowDrop(event)">Dominant</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="heterozygous" ondrop="drop(event)" ondragover="allowDrop(event)">Heterozygous</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="recessive" ondrop="drop(event)" ondragover="allowDrop(event)">Recessive</div>
+        </div>
+    </div>
+    <br>
+    <span class="draggableImages">
+    <img id="spotted_mainlyBlack" class= "catimages" src="https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/mPQAAOSwMmBVzxlC/$_86.JPG" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <img id="spotted_black" class= "catimages" src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/7/30/1406736501397/Black-cats-are-being-over-014.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <img id="spotted_mainlyWhite" class= "catimages"src="http://upload.wikimedia.org/wikipedia/commons/0/01/Black_and_white_cat_sitting_on_a_street-Hisashi-01.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+</span>
+    <br>
+    <h3 style="color:blue">Locus: black/brown color</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="dominant" ondrop="drop(event)" ondragover="allowDrop(event)">Dominant</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="heterozygous" ondrop="drop(event)" ondragover="allowDrop(event)">Heterozygous</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="recessive" ondrop="drop(event)" ondragover="allowDrop(event)">Recessive</div>
+        </div>
+    </div>
+    <br>
+    <span class="draggableImages">
+    <img id="bb_brown" class= "catimages" src="http://stuffpoint.com/cats/image/199025-cats-brown-cat.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <img id="bb_black" class= "catimages" src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/7/30/1406736501397/Black-cats-are-being-over-014.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+        <!--<img id="mainlywhitespotted" class= "catimages"src="http://upload.wikimedia.org/wikipedia/commons/0/01/Black_and_white_cat_sitting_on_a_street-Hisashi-01.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">-->
+</span>
+    <br>
+    <h3 style="color:green">Locus: color density</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="dominant" ondrop="drop(event)" ondragover="allowDrop(event)">Dominant</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="heterozygous" ondrop="drop(event)" ondragover="allowDrop(event)">Heterozygous</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="recessive" ondrop="drop(event)" ondragover="allowDrop(event)">Recessive</div>
+        </div>
+    </div>
+    <br>
+    <span class="draggableImages">
+    <img id="density_full" class= "catimages" src="https://static.pexels.com/photos/162319/cat-pet-furry-face-162319.jpeg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <img id="density_dilute" class= "catimages" src="http://dognkittycity.org/images/com_petlist/full/s271a1838107m3929781.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+</span>
+    <br>
+    <h3 style="color:orange">Locus: color </h3>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="dominant" ondrop="drop(event)" ondragover="allowDrop(event)">Dominant</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="heterozygous" ondrop="drop(event)" ondragover="allowDrop(event)">Heterozygous</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="recessive" ondrop="drop(event)" ondragover="allowDrop(event)">Recessive</div>
+        </div>
+    </div>
+    <br>
+    <span class="draggableImages">
+    <img id="color-white" class= "catimages" src="http://farm5.staticflickr.com/4086/4994609308_158cf9e90e_z.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+    <img id="color-colored" class= "catimages" src="http://stuffpoint.com/cats/image/199025-cats-brown-cat.jpg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+</span>
+</div>
+
+
+</body>
+</html>

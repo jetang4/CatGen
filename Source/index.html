@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <title>CatGen</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,18 +14,34 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this "about us" template -->
-    <link href="css/round-about.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <<link href="css/round-about.css" rel="stylesheet">
+
     <!-- Custom styles for this template w/ carousel -->
-    <link href="css/half-slider.css" rel="stylesheet">
+    <link href="/startbootstrap-half-slider-gh-pages/half-slider.css" rel="stylesheet">
+
+
+    <!--this stylesheet has conflict with bootstrap navigation bar-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phz
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"-->
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
 
+    <link href="./styling.css" rel="stylesheet" />
+
+<!--navigation bar-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Carousel id-->
     <style>
         .carousel-item {
@@ -37,157 +54,242 @@
             background-size: cover;
         }
     </style>
+
 </head>
 
 <body>
-<!--navigation menu code-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="index.html">CatGen</a>
-    <div class="collapse navbar-collapse justify-content-between" id="navbar1">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="CATGEN.html">App</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="catgen_geneinfo.html">Cat Genetics</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contactus.html">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<main>
 
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>First Slide</h3>
-                <p>This is a description for the first slide.</p>
+    <!--NAVIGATION BAR-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
             </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
         </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Second Slide</h3>
-                <p>This is a description for the second slide.</p>
+    </nav>
+
+    <p>Navigation:
+        <span onclick="show('homepage');"> Home </span>||
+        <span onclick="show('aboutUs');"> About Us </span> ||
+        <span onclick="show('contactUs');">Contact Us </span>
+    </p>
+
+    <p>Module 1: Mendelian Genetics
+    <span onclick="show('heredity');"> Heredity </span> ||
+    <span onclick="show('domAndRec');"> Dominance and Recessiveness </span> ||
+    <span onclick="show('probability');"> Probability </span> ||
+    <span onclick="show('punnettSquare');"> Punnett Squares </span>
+    </p>
+
+    <p>Module 2: CatGen
+        <span onclick="show('catGeneticInfo');"> Cat Genetic Information </span> ||
+        <span onclick="show('calculator');"> Calculator </span> ||
+        <span onclick="show('catGeneticsQuiz');"> Quiz </span> ||
+    </p>
+
+
+    <!--HOME PAGE W/ CAROUSEL-->
+    <header>
+        <div id="homepage" class="carousel slide, page" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>First Slide</h3>
+                        <p>This is a description for the first slide.</p>
+                    </div>
+                </div>
+                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Second Slide</h3>
+                        <p>This is a description for the second slide.</p>
+                    </div>
+                </div>
+                <!-- Slide Three - Set the background image for this slide in the line below -->
+                <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Third Slide</h3>
+                        <p>This is a description for the third slide.</p>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Third Slide</h3>
-                <p>This is a description for the third slide.</p>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+    </header>
 
-
-<!-- Page Content -->
-<div class="container">
-    <!-- Page Content -->
-
-    <section class="py-5">
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
         <div class="container">
-            <h1>Welcome to CATGEN</h1>
-            <p>We are a group in the CSC698 class at SFSU and we are recreating an existing program, Virtual Genetics Lab to make learning Genetics more fun and easy. We are targetting students in High School and College to use our tool to help assist their learning. We are aiming to create a tutoring tool, teaching function, and a calculator program to calculate genetic probabilities.</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
         </div>
-    </section>
+        <!-- /.container -->
+    </footer>
 
-    <!-- Introduction Row -->
-    <h1 class="my-4">About Us</h1>
-    <p>This project is a part of the class CSC698. We are all members of the <a href="www.pincsfsu.com"> PINC program </a> at SFSU and we all have
-        different levels of coding experience. This project started out as an idea of recreating a current program known
-        as the Genetics Fly Lab. We wanted to create a student learning tool to teach students about genetics in a
-        visually appealing and easily accessible webpage with cats! </p>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Team Members Row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="my-4">Our Team</h2>
+
+
+    <!-- Page Content -->
+    <div id= "aboutUs" class="page" style="display:none">
+
+        <!-- Introduction Row -->
+        <h1 class="my-4">About Us
+            <small>It's Nice to Meet You!</small>
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="my-4">Our Team</h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Team Photos/Gerardo Aguilar-1.jpg" alt="http://placehold.it/200x200">
+                
+                <h3>Gerardo Aguilar
+                    <small>Job Title</small>
+                </h3>
+                <p> Gerardo comes with a background in Microbiology and Computer Science.
+                    Given his prior and recent experience in genetics he is assisting in
+                    developing the flow of content for our genetics website. Gerardo has
+                    also taken additional programming classes that have benefited the project
+                    by refecatoring the prototype code. Allowing for a more versatile and easier
+                    to read java code.</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Team Photos/kl.png" alt="">
+                <h3>Kristie Desiree Zheng
+                    <small>Job Title</small>
+                </h3>
+                <p>Kristie is a graduate student in Biomedical Sciences and a shameless cat lover.
+                    She enjoys statistics and her programming language of choice is JavaScript.
+                    Her favorite part of the project is creating (and filling in) wireframes and mockups.</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="" alt="">
+                <h3>Jenny Tang
+                    <small>Job Title</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-6 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Team Photos/rbell.jpg" alt="">
+                <h3>Rodrigo Bell
+                    <small>Mentor</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-6 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
+                <h3>Nick Szeto
+                    <small>Mentor</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
         </div>
 
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-            <h3>Kristie
-                <small>Cat 1</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-            <h3>Gerardo
-                <small>Cat 2</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-            <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-            <h3>Jenny
-                <small>Cat 2</small>
-            </h3>
-            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-
-<!-- Mentors Row -->
-        <div class="col-center col-sm-6 text-center mb-4 center-block">
-            <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-            <h3>Nick
-                <small>Mentor Cat</small>
-            </h3>
-            <p class="center">Guides and supports group to stay on track</p>
-        </div>
-
-        <div class=" col-sm-6 text-center mb-4 center-block">
-            <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
-            <h3>Rodrigo
-                <small>Mentor Cat</small>
-            </h3>
-            <p class="center">Guides and supports group to stay on track</p>
-        </div>
-    </div>
-</div>
-<!-- /.container -->
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
     </div>
     <!-- /.container -->
-</footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--HEREDITY MODULE WITHIN MENDELIAN GENETICS-->
+    <div id="heredity" class="page" style="display:none">
+        <h1>Mendelian Genetics</h1>
+        <h2>Heredity</h2>
+        <p>Heredity refers to the passing of genes and traits from parents to offspring</p>
+        <p>[more about heredity here]</p>
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/eEUvRrhmcxM">
+                 
+        </iframe>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
+    </div>
 
+    <!--DOMINANCE AND RECESSION MODULE WITHIN MENDELIAN GENETICS-->
+    <div id="domAndRec" class="page" style="display:none">
+        <h1>Mendelian Genetics</h1>
+        <h2>Dominance and Recessiveness</h2>
+        <p>How is it possible that two black cats have brown kittens?</p>
+        <p>...</p>
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                
+        </iframe>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
+    </div>
+
+    <!--PROBABILITY MODULE WITHIN MENDELIAN GENETICS-->
+    <div id="probability" class="page" style="display:none">
+        <h1>Mendelian Genetics</h1>
+        <h2>Probability</h2>
+        <p>Applying the principles of probability to genetics problems</p>
+        <p>...</p>
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                
+        </iframe>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
+    </div>
+
+    <!--PUNNETT SQUARE MODULE WITHIN MENDELIAN GENETICS-->
+    <div id="punnettSquare" class="page" style="display:none">
+        <h1>Mendelian Genetics</h1>
+        <h2>Punnett Squares</h2>
+        <p>Punnett Squares: Probabilities in Genetics can be better understood by the use of
+            punnett squares. In a Cat, the allele for black fur (A) is dominant to the allele for
+            brown color (a). When a parent has the genotype Aa and a father has the genotype
+            Aa, the offspring produce depend on the inheritance of the alleles from both the
+            mother and the father. An easy way to keep track of the probabilities of each is by
+            the use of punnett squares. Watch this short video on punnett squares to proceed to
+            the lecture quiz.</p>
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/D5ymMYcLtv0">
+                
+        </iframe>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
+    </div>
+
+    <!--CAT GENETIC INFO MODULE WITHIN CATGENETICS-->
+
+    <!--CALCULATOR MODULE WITHIN CATGENETICS-->
+
+    <!--QUIZ MODULE WITHIN CATGENETICS-->
+
+    <script>
+//        JAVASCRIPT CODE TO HIDE/DISPLAY PAGES WHEN NAVIGATION BAR IS CLICKED
+        function show(elementID) {
+            var ele = document.getElementById(elementID);
+            if (!ele) {
+                alert("no such element");
+                return;
+            }
+            var pages = document.getElementsByClassName('page');
+            for(var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            ele.style.display = 'block';
+        }
+    </script>
+</main>
 </body>
-
-</html>

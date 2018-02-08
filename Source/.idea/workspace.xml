@@ -35,8 +35,18 @@
         <entry file="file://$PROJECT_DIR$/allPagesIntoOne.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="118" column="16" lean-forward="false" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-              <folding />
+              <caret line="132" column="16" lean-forward="false" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5115#5121#0" expanded="true" />
+                <marker date="1518055241000" expanded="false" signature="5442:5454" ph="..." />
+                <marker date="1518055241000" expanded="false" signature="8998:9010" ph="..." />
+                <marker date="1518055241000" expanded="false" signature="9551:9563" ph="..." />
+                <marker date="1518055241000" expanded="false" signature="9978:9990" ph="..." />
+                <marker date="1518055241000" expanded="false" signature="10395:10407" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,12 +175,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518049305708</updated>
-      <workItem from="1518049306997" duration="2559000" />
+      <workItem from="1518049306997" duration="2915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2559000" />
+    <option name="totallyTimeSpent" value="2915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1981" y="63" width="1183" height="757" extended-state="0" />
@@ -273,8 +283,18 @@
     <entry file="file://$PROJECT_DIR$/allPagesIntoOne.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="118" column="16" lean-forward="false" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-          <folding />
+          <caret line="132" column="16" lean-forward="false" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#header#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5115#5121#0" expanded="true" />
+            <marker date="1518055241000" expanded="false" signature="5442:5454" ph="..." />
+            <marker date="1518055241000" expanded="false" signature="8998:9010" ph="..." />
+            <marker date="1518055241000" expanded="false" signature="9551:9563" ph="..." />
+            <marker date="1518055241000" expanded="false" signature="9978:9990" ph="..." />
+            <marker date="1518055241000" expanded="false" signature="10395:10407" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

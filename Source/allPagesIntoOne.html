@@ -17,10 +17,16 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link href="css/round-about.css" rel="stylesheet">
+    <<link href="css/round-about.css" rel="stylesheet">
+
     <!-- Custom styles for this template w/ carousel -->
     <link href="/startbootstrap-half-slider-gh-pages/half-slider.css" rel="stylesheet">
+
+
+    <!--this stylesheet has conflict with bootstrap navigation bar-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phz
 
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"-->
@@ -31,6 +37,11 @@
 
     <link href="./styling.css" rel="stylesheet" />
 
+<!--navigation bar-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Carousel id-->
     <style>
         .carousel-item {
@@ -50,13 +61,37 @@
 <main>
 
     <!--NAVIGATION BAR-->
-    <p>Modules:
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <p>Navigation:
         <span onclick="show('homepage');"> Home </span>||
         <span onclick="show('aboutUs');"> About Us </span> ||
-        <span onclick="show('heredity');"> Heredity </span> ||
-        <span onclick="show('domAndRec');"> Dominance and Recessiveness </span> ||
-        <span onclick="show('probability');"> Probability </span> ||
-        <span onclick="show('punnettSquare');"> Punnett Squares </span>
+        <span onclick="show('contactUs');">Contact Us </span>
+    </p>
+
+    <p>Module 1: Mendelian Genetics
+    <span onclick="show('heredity');"> Heredity </span> ||
+    <span onclick="show('domAndRec');"> Dominance and Recessiveness </span> ||
+    <span onclick="show('probability');"> Probability </span> ||
+    <span onclick="show('punnettSquare');"> Punnett Squares </span>
+    </p>
+
+    <p>Module 2: CatGen
+        <span onclick="show('catGeneticInfo');"> Cat Genetic Information </span> ||
+        <span onclick="show('calculator');"> Calculator </span> ||
+        <span onclick="show('catGeneticsQuiz');"> Quiz </span> ||
     </p>
 
 
@@ -139,42 +174,37 @@
                 <p> Gerardo comes with a background in Microbiology and Computer Science.
                     Given his prior and recent experience in genetics he is assisting in
                     developing the flow of content for our genetics website. Gerardo has
-                    also taken additiona  programming classes that have benefited the project
+                    also taken additional programming classes that have benefited the project
                     by refecatoring the prototype code. Allowing for a more versatile and easier
                     to read java code.</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
                 <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Team Photos/kl.png" alt="">
-                <h3>Kristie Desiree Ly
+                <h3>Kristie Desiree Zheng
                     <small>Job Title</small>
                 </h3>
-                <p>Kristie is a graduate student in Biomedical Sciences and a shameless cat lover. She enjoys statistics and her programming language of choice is JavaScript.</p>
+                <p>Kristie is a graduate student in Biomedical Sciences and a shameless cat lover.
+                    She enjoys statistics and her programming language of choice is JavaScript.
+                    Her favorite part of the project is creating (and filling in) wireframes and mockups.</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="" alt="">
+                <h3>Jenny Tang
+                    <small>Job Title</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-6 col-sm-6 text-center mb-4">
                 <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Team Photos/rbell.jpg" alt="">
                 <h3>Rodrigo Bell
-                    <small>Job Title</small>
+                    <small>Mentor</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
-                <h3>Rodrigo Bell
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
+            <div class="col-lg-6 col-sm-6 text-center mb-4">
                 <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
                 <h3>Nick Szeto
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
+                    <small>Mentor</small>
                 </h3>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
@@ -193,7 +223,7 @@
                 src="https://www.youtube.com/embed/eEUvRrhmcxM">
                  
         </iframe>
-        <p>All Khan Academy content is available for free at www.khanacademy.org</p>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
     </div>
 
     <!--DOMINANCE AND RECESSION MODULE WITHIN MENDELIAN GENETICS-->
@@ -206,7 +236,7 @@
                 src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 
         </iframe>
-        <p>All Khan Academy content is available for free at www.khanacademy.org</p>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
     </div>
 
     <!--PROBABILITY MODULE WITHIN MENDELIAN GENETICS-->
@@ -219,7 +249,7 @@
                 src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 
         </iframe>
-        <p>All Khan Academy content is available for free at www.khanacademy.org</p>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
     </div>
 
     <!--PUNNETT SQUARE MODULE WITHIN MENDELIAN GENETICS-->
@@ -237,9 +267,14 @@
                 src="https://www.youtube.com/embed/D5ymMYcLtv0">
                 
         </iframe>
-        <p>All Khan Academy content is available for free at www.khanacademy.org</p>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
     </div>
 
+    <!--CAT GENETIC INFO MODULE WITHIN CATGENETICS-->
+
+    <!--CALCULATOR MODULE WITHIN CATGENETICS-->
+
+    <!--QUIZ MODULE WITHIN CATGENETICS-->
 
     <script>
 //        JAVASCRIPT CODE TO HIDE/DISPLAY PAGES WHEN NAVIGATION BAR IS CLICKED

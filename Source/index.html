@@ -74,26 +74,30 @@
         </div>
     </nav>
 
-    <p>Navigation:
+    <p><strong> Navigation </strong>:
         <span onclick="show('homepage');"> Home </span>||
         <span onclick="show('aboutUs');"> About Us </span> ||
         <span onclick="show('contactUs');">Contact Us </span>
     </p>
 
-    <p>Module 1: Mendelian Genetics
+    <p><strong> Module 1: Mendelian Genetics</strong>
     <span onclick="show('heredity');"> Heredity </span> ||
     <span onclick="show('domAndRec');"> Dominance and Recessiveness </span> ||
     <span onclick="show('probability');"> Probability </span> ||
     <span onclick="show('punnettSquare');"> Punnett Squares </span>
     </p>
 
-    <p>Module 2: CatGen
-        <span onclick="show('catGeneticInfo');"> Cat Genetic Information </span> ||
-        <span onclick="show('calculator');"> Calculator </span> ||
-      <a href="CATGEN.html">
-          <span onclick=""> Cat Punnet square </span>
+    <p><strong> Module 2: CatGen </strong>
+        <a href="catgen_geneinfo.html">
+            <span onclick=""> Cat Genetics Information</span>
+        </a> ||
+        <a href="CATGEN.html">
+          <span onclick=""> Cat Punnett Square Tool</span>
       </a> ||
-        <span onclick="show('catGeneticsQuiz');"> Quiz </span> ||
+        <a href="quiz.html">
+            <span onclick=""> Cat Genetics Quiz</span>
+        </a> ||
+
     </p>
 </header>
     <main>
@@ -145,9 +149,9 @@
 
         <!-- Introduction Row -->
         <h1 class="my-4">About Us
-            <small>It's Nice to Meet You!</small>
+            <small>Meet the CatGen Team!</small>
         </h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+        <p>Hello everyone, we're the CatGen team! We're a team of biologist/computer science hybrids who want to make the world of genetics more accessible to students!</p>
 
         <!-- Team Members Row -->
         <div class="row">
@@ -155,7 +159,7 @@
                 <h2 class="my-4">Our Team</h2>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assests/Gerardo Aguilar-1.jpg" alt="http://placehold.it/200x200">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/Gerardo Aguilar-1.jpg" alt="http://placehold.it/200x200">
                 
                 <h3>Gerardo Aguilar
                     <small>Job Title</small>
@@ -168,7 +172,7 @@
                     to read java code.</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assests/kl.png" alt="">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/kl.png" alt="">
                 <h3>Kristie Desiree Zheng
                     <small>Job Title</small>
                 </h3>
@@ -184,18 +188,18 @@
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
             <div class="col-lg-6 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assests/rbell.jpg" alt="">
+                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/rbell.jpg" alt="">
                 <h3>Rodrigo Bell
                     <small>Mentor</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Rodrigo brings background in Computer Science, with experiences ranging from his undergrad in CS, and personal projects in web development. As the group project’s mentor, he’s helped guide the project and help Kristie and Gerardo with technical challenges.</p>
             </div>
             <div class="col-lg-6 col-sm-6 text-center mb-4">
                 <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
                 <h3>Nick Szeto
                     <small>Mentor</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Nicholas Szeto has a background in the language Java. Nicholas got into programming because he realized that he liked problem solving, but doesn't like math from his Calculus class he took in his high school. Nicholas as a mentor contributed to the team with support, direction, and suggestions with current a new ideas from the group.</p>
             </div>
         </div>
 
@@ -220,7 +224,11 @@
         <h1>Mendelian Genetics</h1>
         <h2>Dominance and Recessiveness</h2>
         <p>How is it possible that two black cats have brown kittens?</p>
-        <p>...</p>
+        <p>In the case of most traits, alleles come in both a <strong> dominant </strong> and a <strong> recessive </strong> form.
+            Having two (or more) forms of each trait allows for the level of variation we see in everything from hair color to taste certain foods.
+            If you've ever wondered how out of two siblings, one has curly hair and the other straight, dominance and recessiveness can explain it.
+        </p>
+        <!--have a little toggle activity-->
         <iframe width="420" height="315"
                 src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 
@@ -233,7 +241,11 @@
         <h1>Mendelian Genetics</h1>
         <h2>Probability</h2>
         <p>Applying the principles of probability to genetics problems</p>
-        <p>...</p>
+        <p>Probability refers to the likelihood of an event occurring. In the simplest case, we can calculate the probability of an event occurring by
+        dividing the chance of your event of interest occurring by total number of possible events.</p>
+        <p>For example, what is the probability that a couple's baby is female? We have two possible events: male and female, and one of the two events is 'female'.
+        Thus, we divide 1 by 2, resulting in the probability of having a female being 1/2 or 50%</p>
+        <p>As you learned in an earlier lesson, traits can be either dominant or recessive, which is how offspring are able to look different than their parents and each other. </p>
         <iframe width="420" height="315"
                 src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 

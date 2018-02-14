@@ -63,31 +63,16 @@
 <body>
 <header>
     <!--NAVIGATION BAR-->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <p><strong> Navigation </strong>:
-        <span onclick="show('homepage');"> Home </span>||
-        <span onclick="show('aboutUs');"> About Us </span> ||
-        <span onclick="show('contactUs');">Contact Us </span>
+        <a href="index.html"> Home</a> ||
+        <a href="aboutUs.html"> About Us</a>
     </p>
 
     <p><strong> Module 1: Mendelian Genetics</strong>
-    <span onclick="show('heredity');"> Heredity </span> ||
-    <span onclick="show('domAndRec');"> Dominance and Recessiveness </span> ||
-    <span onclick="show('probability');"> Probability </span> ||
-    <span onclick="show('punnettSquare');"> Punnett Squares </span>
+        <a href="mendeliangenetics_heredity.html"> Heredity </a> ||
+        <a href="mendeliangenetics_dominanceAndRecessiveness.html"> Dominance and Recessiveness </a> ||
+        <a href="mendeliangenetics_probability.html"> Probability </a> ||
+        <a href="mendeliangenetics_punnettSquares.html"> Punnett Squares </a>
     </p>
 
     <p><strong> Module 2: CatGen </strong>
@@ -148,154 +133,5 @@
 
 
         </div>
-
-
-    <!-- Page Content -->
-    <div id= "aboutUs" class="page" style="display:none">
-
-        <!-- Introduction Row -->
-        <h1 class="my-4">About Us
-            <small>Meet the CatGen Team!</small>
-        </h1>
-        <p>Hello everyone, we're the CatGen team! We're a team of biologist/computer science hybrids who want to make the world of genetics more accessible to students!</p>
-
-        <!-- Team Members Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="my-4">Our Team</h2>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/Gerardo Aguilar-1.jpg" alt="http://placehold.it/200x200">
-                
-                <h3>Gerardo Aguilar
-                    <small>Job Title</small>
-                </h3>
-                <p> Gerardo comes with a background in Microbiology and Computer Science.
-                    Given his prior and recent experience in genetics he is assisting in
-                    developing the flow of content for our genetics website. Gerardo has
-                    also taken additional programming classes that have benefited the project
-                    by refecatoring the prototype code. Allowing for a more versatile and easier
-                    to read java code.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/kl.png" alt="">
-                <h3>Kristie Desiree Zheng
-                    <small>Job Title</small>
-                </h3>
-                <p>Kristie is a graduate student in Biomedical Sciences and a shameless cat lover.
-                    She enjoys statistics and her programming language of choice is JavaScript.
-                    Her favorite part of the project is creating (and filling in) wireframes and mockups.</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="" alt="">
-                <h3>Jenny Tang
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="../Assets/rbell.jpg" alt="">
-                <h3>Rodrigo Bell
-                    <small>Mentor</small>
-                </h3>
-                <p>Rodrigo brings background in Computer Science, with experiences ranging from his undergrad in CS, and personal projects in web development. As the group project’s mentor, he’s helped guide the project and help Kristie and Gerardo with technical challenges.</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="http://placehold.it/200x200" alt="">
-                <h3>Nick Szeto
-                    <small>Mentor</small>
-                </h3>
-                <p>Nicholas Szeto has a background in the language Java. Nicholas got into programming because he realized that he liked problem solving, but doesn't like math from his Calculus class he took in his high school. Nicholas as a mentor contributed to the team with support, direction, and suggestions with current a new ideas from the group.</p>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-<!--HEREDITY MODULE WITHIN MENDELIAN GENETICS-->
-    <div id="heredity" class="page" style="display:none">
-        <h1>Mendelian Genetics</h1>
-        <h2>Heredity</h2>
-        <p>Heredity refers to the passing of genes and traits from parents to offspring</p>
-        <p>[more about heredity here]</p>
-        <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/eEUvRrhmcxM">
-                 
-        </iframe>
-        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-    </div>
-
-    <!--DOMINANCE AND RECESSION MODULE WITHIN MENDELIAN GENETICS-->
-    <div id="domAndRec" class="page" style="display:none">
-        <h1>Mendelian Genetics</h1>
-        <h2>Dominance and Recessiveness</h2>
-        <p>How is it possible that two black cats have brown kittens?</p>
-        <p>In the case of most traits, alleles come in both a <strong> dominant </strong> and a <strong> recessive </strong> form.
-            Having two (or more) forms of each trait (alleles) allows for the level of variation we see in everything from hair color to taste certain foods.
-            If you've ever wondered how out of two siblings, one has curly hair and the other straight, dominance and recessiveness can explain it.
-        </p>
-        <p>Dominant forms of an allele are represented by the CAPITAL form of a letter, and recessive forms are represented by the lowercase form.
-        At each trait locus, you can have two forms of the alleles: both dominant, both recessive, or one of each. By convention, the dominant allele (if any) is written first</p>
-
-
-
-        <p>Quiz time! Given that you are at the F locus, what would be the alleles for a recessive genotype?:</p>
-
-        <input id="domrec">
-
-        <button type="button" onclick="quizValidator()">Submit</button>
-
-        <p id="result">Are you correct?</p>
-
-
-
-        <iframe width="420" height="315"
-                src="https://youtu.be/G-_fwABa2BU">
-                
-        </iframe>
-        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-    </div>
-
-    <!--PROBABILITY MODULE WITHIN MENDELIAN GENETICS-->
-    <div id="probability" class="page" style="display:none">
-        <h1>Mendelian Genetics</h1>
-        <h2>Probability</h2>
-        <p>Applying the principles of probability to genetics problems</p>
-        <p>Probability refers to the likelihood of an event occurring. In the simplest case, we can calculate the probability of an event occurring by
-        dividing the chance of your event of interest occurring by total number of possible events.</p>
-        <p>For example, what is the probability that a couple's baby is female? We have two possible events: male and female, and one of the two events is 'female'.
-        Thus, we divide 1 by 2, resulting in the probability of having a female being 1/2 or 50%</p>
-        <p>As you learned in an earlier lesson, traits can be either dominant or recessive, which is how offspring are able to look different than their parents and each other. </p>
-        <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                
-        </iframe>
-        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-    </div>
-
-    <!--PUNNETT SQUARE MODULE WITHIN MENDELIAN GENETICS-->
-    <div id="punnettSquare" class="page" style="display:none">
-        <h1>Mendelian Genetics</h1>
-        <h2>Punnett Squares</h2>
-        <p>Punnett Squares: Probabilities in Genetics can be better understood by the use of
-            punnett squares. In a Cat, the allele for black fur (A) is dominant to the allele for
-            brown color (a). When a parent has the genotype Aa and a father has the genotype
-            Aa, the offspring produce depend on the inheritance of the alleles from both the
-            mother and the father. An easy way to keep track of the probabilities of each is by
-            the use of punnett squares. Watch this short video on punnett squares to proceed to
-            the lecture quiz.</p>
-        <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/D5ymMYcLtv0">
-                
-        </iframe>
-        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-    </div>
-
-    <!--CAT GENETIC INFO MODULE WITHIN CATGENETICS-->
-
-    <!--CALCULATOR MODULE WITHIN CATGENETICS-->
-
-    <!--QUIZ MODULE WITHIN CATGENETICS-->
-
 </main>
 </body>

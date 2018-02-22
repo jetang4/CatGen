@@ -1,15 +1,15 @@
 //if want to add more images for different traits, just list in the formnat "[TRAIT]_dominant"...
 var images = {
-    "coatColor_dominant": "../Assets/cat_black.png",
-    "coatColor_recessive": "../Assets/cat_brown.png",
-    "coatColor_none": "../Assets/cat_white.png",
+    "coatColor_dominant": "cat_black.png",
+    "coatColor_recessive": "cat_brown.png",
+    "coatColor_none": "cat_white.png",
     //"spot_dominant": "./cat_spot_dom.png",
     //"spot_recessive": "./car_spot_rec.png",
     //"spot_none": "./cat_spot.png"
 
-    "coatColorDensity_dominant": "../Assets/cat_black.png",
-    "coatColorDensity_recessive": "../Assets/cat_brown.png",
-    "coatColorDensity_none": "../Assets/cat_white.png",
+    "coatColorDensity_dominant": "cat_black.png",
+    "coatColorDensity_recessive": "cat_brown.png",
+    "coatColorDensity_none": "cat_white.png",
 };
 
 //lists possible traits
@@ -247,7 +247,7 @@ function createTable(num_traits){
         var columns = "<td class='square_title'><p id='male_allele1_punnettsquare' class='square_title_text'></p></td>";
         for(var y = 0; y < num_traits*2; y++)
         {
-            columns+= "<td id='"+x+"|"+y+"_square' class='punnettsquare_square'><img src='../Assets/cat_white.png' /><p id='"+x+"|"+y+"_probability'></p></td>"
+            columns+= "<td id='"+x+"|"+y+"_square' class='punnettsquare_square'><img src='cat_white.png' /><p id='"+x+"|"+y+"_probability'></p></td>"
         }
         columns += "<td style='padding:20px;''></td>"
 

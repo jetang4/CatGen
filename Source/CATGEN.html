@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        </style>
+        <!--HERES THE LINK TO THE EXTERNAL JS FILE-->
+        <script src="../Source/catgen_version2.js"></script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+              integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./styling.css" />
+    </head>
+
+
+    <body class="container text-center" style="background-color: peachpuff;">
+
+        <header>
+            <!--NAVIGATION BAR-->
+            <p><strong> Navigation </strong>:
+                <a href="/"> Home</a> ||
+                <a href="about"> About Us</a>
+            </p>
+
+            <p><strong> Module 1: Mendelian Genetics</strong>
+                <a href="mendeliangenetics_heredity"> Heredity </a> ||
+                <a href="mendeliangenetics_dominanceAndRecessiveness"> Dominance and Recessiveness </a> ||
+                <a href="mendeliangenetics_probability"> Probability </a> ||
+                <a href="mendeliangenetics_punnettSquares"> Punnett Squares </a>
+            </p>
+
+            <p><strong> Module 2: CatGen </strong>
+                <a href="catgen_geneinfo">
+                    <span onclick=""> Cat Genetics Information</span>
+                </a> ||
+                <a href="CATGEN">
+                    <span onclick=""> Cat Punnett Square Tool</span>
+                </a> ||
+                <a href="quiz">
+                    <span onclick=""> Cat Genetics Quiz</span>
+                </a> ||
+                <a href="homepage">
+                    <span onclick=""> homepage</span>
+                </a> ||
+            </p>
+        </header>
+
+        <h1>CatGen</h1>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+
+                <!--dropdown menu: choose color of female cat-->
+                <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
+                <p>Select coat color of female cat</p>
+                <img id="female_coatColor_image" src="../Assets/cat_white.png"/>
+                <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+                <select id="female_coatColor_select" onchange="changeTrait('coatColor', 'female');">
+                    <!--these are the options within the female dropdown menu-->
+                    <option value="">Select Coat Color</option>
+                    <option value="dominant_recessive" id="heteroblackF">Black (heterozygous)</option>
+                    <option value="dominant" id="homoblackF">Black (homozygous)</option>
+                    <option value="recessive" id="brownF">Brown</option>
+
+                </select>
+            </div>
+
+            <!--dropdown menu: choose color of male cat-->
+            <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+            <div class="col-sm-6">
+                <p>Select coat color of male cat</p>
+                <img id="male_coatColor_image" src="../Assets/cat_white.png"/>
+                <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+                <select id="male_coatColor_select" onchange="changeTrait('coatColor', 'male');">
+                    <!--these are the options within the male dropdown menu-->
+                    <option value="">Select Coat Color</option>
+                    <option value="dominant_recessive" id="heteroblackM">Black (heterozygous)</option>
+                    <option value="dominant" id="homoblackM">Black (homozygous)</option>
+                    <option value="recessive" id="brownM">Brown</option>
+                </select>
+            </div>
+            
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+
+                <!--dropdown menu: choose color of female cat-->
+                <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
+                <p>Select coat color density of female cat</p>
+                <img id="female_coatColorDensity_image" src="../Assets/cat_white.png"/>
+                <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+                <select id="female_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'female');">
+                    <!--these are the options within the female dropdown menu-->
+                    <option value="">Select Coat Color Density</option>
+                    <option value="dominant_recessive" id="heteroblackF">Black (heterozygous)</option>
+                    <option value="dominant" id="homoblackF">Black (homozygous)</option>
+                    <option value="recessive" id="brownF">Brown</option>
+
+                </select>
+            </div>
+
+            <!--dropdown menu: choose color of male cat-->
+            <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+            <div class="col-sm-6">
+                <p>Select coat color density of male cat</p>
+                <img id="male_coatColorDensity_image" src="../Assets/cat_white.png"/>
+                <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+                <select id="male_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'male');">
+                    <!--these are the options within the male dropdown menu-->
+                    <option value="">Select Coat Color</option>
+                    <option value="dominant_recessive" id="heteroblackM">Black (heterozygous)</option>
+                    <option value="dominant" id="homoblackM">Black (homozygous)</option>
+                    <option value="recessive" id="brownM">Brown</option>
+                </select>
+            </div>
+            
+
+        </div>
+
+        <div style="text-align:left; width:100%; padding:10px;">
+            <h1>Header</h1>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </div>
+
+
+        <!--submit button div= centered, and colored orange-->
+        <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
+            <!--the submit button calls all of the following functions-->
+            <button class="btn-warning" type="submit" onclick= "fillPunnetSquare(['coatColor', 'coatColorDensity'])">Select Cats</button>
+        </div>
+
+
+        <!--creates the punnett square and the cat icon (white) within it-->
+        <!--the id "gender_alleleX_punnettsquare" is the allele printed on the side of the punnett square-->
+        <!--the id "locationlocationPunnettSquareProbability" is the probability that appears in the square once the form is submitted-->
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="punnettsquare">
+                    <tr>
+                        <td style="border:0px solid black; padding: 0px;"></td>
+                        <td class="square_title">
+                            <p id="female_allele1_punnettsquare" class="square_title_text"></p>
+                        </td>
+                        <td class="square_title">
+                            <p id="female_allele2_punnettsquare" class="square_title_text"></p>
+                        </td>
+                        <td style="padding:20px;"></td>
+                    </tr>
+                    <tr>
+                        <td class="square_title"><b><p id="male_allele1_punnettsquare" class="punnetsquare_square_title"></p></b></td>
+                        <td id= "0|0_square" class="punnettsquare_square">
+                            <img src="../Assets/cat_white.png" />
+                            <p id="0|0_probability"></p>
+                        </td>
+                        <td id= "0|1_square"  class="punnettsquare_square">
+                            <img src="../Assets/cat_white.png" />
+                            <p id="0|1_probability"></p>
+                        </td>
+                        <td style="padding:20px;">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="square_title"><b><p id="male_allele2_punnettsquare" class="punnetsquare_square_title"></p></b></td>
+                        <td id= "1|0_square"  class="punnettsquare_square">
+                            <img src="../Assets/cat_white.png"/>
+                            <p id="1|0_probability"></p>
+                        </td>
+                        <td id= "1|1_square"  class="punnettsquare_square">
+                            <img src="../Assets/cat_white.png"/>
+                            <p id="1|1_probability"></p>
+                        </td>
+                        <td style="padding:20px;"></td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="offspring_images">
+            <!--these are the offspring that are shown at the calculations at the bottom-->
+            <img id="offspring1">
+            <img id="offspring2">
+        </div>
+
+        <!--these are the calculations and percentages-->
+        <p id="data"></p>
+
+
+    </body>
+</html>

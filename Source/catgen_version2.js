@@ -1,20 +1,28 @@
-
-
 //if want to add more images for different traits, just list in the formnat "[TRAIT]_dominant"...
 var images = {
-    "coat_dominant": "../Assets/cat_black.png",
-    "coat_recessive": "../Assets/cat_brown.png",
-    "coat_none": "../Assets/cat_white.png",
+    "coatColor_dominant": "../Assets/cat_black.png",
+    "coatColor_recessive": "../Assets/cat_brown.png",
+    "coatColor_none": "../Assets/cat_white.png",
     //"spot_dominant": "./cat_spot_dom.png",
     //"spot_recessive": "./car_spot_rec.png",
     //"spot_none": "./cat_spot.png"
+
+    "coatColorDensity_dominant": "../Assets/cat_black.png",
+    "coatColorDensity_recessive": "../Assets/cat_brown.png",
+    "coatColorDensity_none": "../Assets/cat_white.png",
 };
+
+//lists possible traits
+var traits=[
+    'coatColor',
+    'coatColorDensity',
+];
 
 
 //provided the trait and sex, will change the image for the cat when
 //selectbox is changed
 //can be applied to any textbox with the id naming format "colorSelect_"
-function changeCatColor(trait, sex)
+function changeTrait(trait, sex)
 {
     //gets the image associated with the select box
     var img = document.getElementById(sex+"_"+trait+"_image");
@@ -48,17 +56,48 @@ function getSelection(trait, sex)
         return [0,1];
     else if(selection=="recessive")
         return [1,1];
+    //user didn't select anything
+    else
+        return [-1,-1];
 }
 
 
-//fills punnet square for specified trait
+//fills punnet square for specified traits
 //modifications will have to be made to support multiple traits
-function fillPunnetSquare(trait)
+function fillPunnetSquare()
 {
-    //gets number format for female's alleles
-    var female_selection = getSelection(trait, "female");
-    //gets number format for male's alleles
-    var male_selection = getSelection(trait, "male");
+    var female_selections=[];
+    var male_selections=[];
+    var num_traits_selected=0;
+
+    //gets possible traits
+    for(var i = 0; i < traits.length; i++)
+    {
+        var trait = traits[i];
+
+        //gets number format for female's alleles
+        var female_selection = getSelection(trait, "female");
+        female_selections.push(female_selection);
+        //gets number format for male's alleles
+        var male_selection = getSelection(trait, "male");
+        male_selections.push(male_selection);
+
+        //if user properly specified this trait to tests
+        if(female_selection[0]!==-1 && male_selection[0]!==-1)
+            num_traits_selected++;
+    }
+
+    console.log("Female selections: "+female_selections.toString()+" | Male selections: "+male_selections.toString());
+    console.log("Num traits selected: "+num_traits_selected);
+
+    //populates table based on number of traits user selects to test
+    createTable(num_traits_selected);
+
+    return;
+
+
+
+
 
     //displays female alleles as top row
     for(var x = 0; x < female_selection.length; x++)
@@ -131,9 +170,9 @@ function fillPunnetSquare(trait)
 
 
 
-            /* displays allelle text */ 
+            /* displays allelle text */
 
-            
+
             var combine_allele;
             //displays dominant allele first by checking if left is dominant, or if right is recessive
             if(left_allele==left_allele.toUpperCase() || right_allele==right_allele.toLowerCase())
@@ -168,10 +207,10 @@ function fillPunnetSquare(trait)
     }
 
     var total = num_dominant + num_dominant_recessive + num_recessive;
-     
-    //displays stats   
+
+    //displays stats
     document.getElementById("data").innerHTML = "Possible offsprings " +
-         "<br>GENOTYPE: "+possible_alleles + 
+        "<br>GENOTYPE: "+possible_alleles +
         "<br>Black: "+( (num_dominant+num_dominant_recessive)/total*100 )+"%" +
         "<br>Brown: "+( (num_recessive)/total*100 )+"%" +
         "<br>"+( (num_dominant)/total*100 )+"% homozygous dominant" +
@@ -179,6 +218,49 @@ function fillPunnetSquare(trait)
         "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive"
 
 }
+
+
+//creates html table for population
+function createTable(num_traits){
+
+    var table = document.getElementById('punnettsquare');
+    table.innerHTML = "";
+
+    var new_table="";
+
+    //sets first row, which is the allele text
+    var columns = "";
+    for(var i = 0; i < num_traits; i++)
+    {
+        columns += "<td class='square_title'><p id='female_allele"+(i*2+1)+"_punnettsquare' class='square_title_text'></p></td>";
+        columns += "<td class='square_title'><p id='female_allele"+(i*2+2)+"_punnettsquare' class='square_title_text'></p></td>";
+    }
+    var allele_row = "<tr><td style='border:0px solid black; padding: 0px;''></td>"+columns+"<td style='padding:20px;''></td></tr>";
+
+    new_table += allele_row;
+
+
+    //sets second row, which is the first row of the punnett square
+    for(var x = 0; x < num_traits*2; x++)
+    {
+        //start off columns with the male allele text
+        var columns = "<td class='square_title'><p id='male_allele1_punnettsquare' class='square_title_text'></p></td>";
+        for(var y = 0; y < num_traits*2; y++)
+        {
+            columns+= "<td id='"+x+"|"+y+"_square' class='punnettsquare_square'><img src='../Assets/cat_white.png' /><p id='"+x+"|"+y+"_probability'></p></td>"
+        }
+        columns += "<td style='padding:20px;''></td>"
+
+        var row = "<tr>"+columns+"</tr>";
+        new_table += row;
+    }
+
+
+    table.innerHTML = new_table;
+}
+
+
+
 
 //converts B to 0 and b to 1
 function alleleToNumber(allele){
@@ -202,7 +284,7 @@ function numberToAllele(number){
 function findArray(array, to_find)
 {
     for(var x = 0; x < array.length; x++)
-    {   
+    {
         if(array[x]===to_find)
             return true;
     }

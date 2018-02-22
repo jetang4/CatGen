@@ -1,4 +1,27 @@
 .team_photo{
 	height:200px;
 }
-	</label>
+
+#punnettsquare{
+	height:1100px;
+	width:1100px;
+}
+
+.punnettsquare_square{
+	border:2px solid black;
+	padding: 100px;
+}
+
+.square_title{
+	border:0px solid black;
+	padding: 20px;
+}
+
+.square_title_text{
+	font-size:40px;
+	font-weight:bold;
+}
+
+#punnettsquare{
+	margin:0 auto;
+}

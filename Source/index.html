@@ -17,7 +17,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <<link href="css/round-about.css" rel="stylesheet">
+    <link href="css/round-about.css" rel="stylesheet">
 
     <!-- Custom styles for this template w/ carousel -->
     <link href="/startbootstrap-half-slider-gh-pages/half-slider.css" rel="stylesheet">
@@ -56,6 +56,34 @@
             -o-background-size: cover;
             background-size: cover;
         }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: deepskyblue;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: lightskyblue;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
     </style>
 
 </head>
@@ -64,11 +92,13 @@
 <header>
     <!--NAVIGATION BAR-->
     <p>
-        <a href="/"> Home </a> ||
-        <a href="about"> About Us </a> ||
-        <a href="catgen_geneinfo"> Cat Genetics Information </a> ||
-        <a href="CATGEN"> Cat Punnett Square Tool </a> ||
-        <a href="quiz"> Cat Genetics Quiz </a>
+        <ul>
+        <li> <a href="/"> Home </a> </li>
+        <li> <a href="about"> About Us </a> </li>
+        <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
+        <li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>
+    <li> <a href="quiz"> Cat Genetics Quiz </a></li>
+</ul>
     </p>
 </header>
     <main>

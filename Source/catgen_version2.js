@@ -18,6 +18,12 @@ var traits=[
     'coatColorDensity',
 ];
 
+//allele symbol text
+var allele_symbols=[
+    'B',
+    'D',
+]
+
 
 //provided the trait and sex, will change the image for the cat when
 //selectbox is changed
@@ -68,6 +74,8 @@ function fillPunnetSquare()
 {
     var female_selections=[];
     var male_selections=[];
+    //stores allele symbol for selected traits
+    var allele_selections=[];
     var num_traits_selected=0;
 
     //gets possible traits
@@ -84,7 +92,10 @@ function fillPunnetSquare()
 
         //if user properly specified this trait to tests
         if(female_selection[0]!==-1 && male_selection[0]!==-1)
+        {
             num_traits_selected++;
+            allele_selections.push(allele_symbols[i]);
+        }
     }
 
     console.log("Female selections: "+female_selections.toString()+" | Male selections: "+male_selections.toString());
@@ -93,19 +104,51 @@ function fillPunnetSquare()
     //populates table based on number of traits user selects to test
     createTable(num_traits_selected);
 
-    return;
-
 
 
 
 
     //displays female alleles as top row
-    for(var x = 0; x < female_selection.length; x++)
-        document.getElementById("female_allele"+(x+1)+"_punnettsquare").innerHTML = numberToAllele(female_selection[x]);
+    for(var i = 0; i < allele_selections.length; i++)
+    {
+        var left_symbol = document.getElementById("female_allele"+(i*2+1)+"_punnettsquare");
+        var right_symbol = document.getElementById("female_allele"+(i*2+2)+"_punnettsquare");
 
-    //displays male alleles as left column
-    for(var x = 0; x < male_selection.length; x++)
-        document.getElementById("male_allele"+(x+1)+"_punnettsquare").innerHTML = numberToAllele(male_selection[x]);
+        var uppercase = allele_selections[i];
+        var lowercase = allele_selections[i].toLowerCase();
+
+        //if dominant, display uppercase allele symbol
+        if(female_selections[i][0]==0)
+            left_symbol.innerHTML += uppercase
+        else
+            left_symbol.innerHTML += lowercase
+
+        if(female_selections[i][1]==0)
+            right_symbol.innerHTML += uppercase;
+        else
+            right_symbol.innerHTML += lowercase;
+    }
+
+    //displays male alleles as top row
+    for(var i = 0; i < allele_selections.length; i++)
+    {
+        var left_symbol = document.getElementById("male_allele"+(i*2+1)+"_punnettsquare");
+        var right_symbol = document.getElementById("male_allele"+(i*2+2)+"_punnettsquare");
+
+        var uppercase = allele_selections[i];
+        var lowercase = allele_selections[i].toLowerCase();
+
+        //if dominant, display uppercase allele symbol
+        if(male_selections[i][0]==0)
+            left_symbol.innerHTML = uppercase
+        else
+            left_symbol.innerHTML = lowercase
+
+        if(male_selections[i][1]==0)
+            right_symbol.innerHTML = uppercase;
+        else
+            right_symbol.innerHTML = lowercase;
+    }
 
 
 
@@ -244,10 +287,10 @@ function createTable(num_traits){
     for(var x = 0; x < num_traits*2; x++)
     {
         //start off columns with the male allele text
-        var columns = "<td class='square_title'><p id='male_allele1_punnettsquare' class='square_title_text'></p></td>";
+        var columns = "<td class='square_title'><p id='male_allele"+(x+1)+"_punnettsquare' class='square_title_text'></p></td>";
         for(var y = 0; y < num_traits*2; y++)
         {
-            columns+= "<td id='"+x+"|"+y+"_square' class='punnettsquare_square'><img src='cat_white.png' /><p id='"+x+"|"+y+"_probability'></p></td>"
+            columns+= "<td id='"+x+"|"+y+"_square' class='punnettsquare_square'><img src='../Assets/cat_white.png' /><p id='"+x+"|"+y+"_probability'></p></td>"
         }
         columns += "<td style='padding:20px;''></td>"
 

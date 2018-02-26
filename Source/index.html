@@ -14,8 +14,10 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap for two-column layout -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -40,7 +42,7 @@
 <header>
     <!--NAVIGATION BAR-->
     <p>
-        <ul>
+        <ul class="navBar">
         <li> <a href="/"> Home </a> </li>
         <li> <a href="about"> About Us </a> </li>
         <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
@@ -51,21 +53,26 @@
 </header>
 
     <main>
-
+<h1> Welcome to CatGen!</h1>
+        <div class="row">
+            <div class= "col-sm-1"></div>
+       <div class= "col-sm-10">
+        <p style "text-align: center">
+            CatGen is a genetics simulator tool using cats to demonstrate the patterns of genetics and inheritance.
+            Please click below for lessons on various genetics topics.
+        </p>
+       </div>
+            <div class= "col-sm-1"></div>
+        </div>
         <div class="row">
             <div class="col-sm-6">
 
 
                 <table id= "mendelianGenetics" class="linkBox">
                     <tr>
-                        <th>
-                           Module 1:
-
-                        </th>
-                        <th>
-                            Mendelian Genetics
-                        </th>
+                        <th colspan="2">Module 1: Mendelian Genetics</th>
                     </tr>
+
 
                     <tr>
 
@@ -114,7 +121,7 @@
                         <td id= "bottomrightBox" class="individualBoxes">
                             <div class="container">
                                 <a href = "mendeliangenetics_punnettSquares">
-                                    <img id= "punnettSquareThumbnail" class= "thumbnail" src="probabilityThumbnail.jpg">
+                                    <img id= "punnettSquareThumbnail" class= "thumbnail" src="punnettSquareThumbnail.jpg">
                                 </a>
                                 <div class="overlay">
                                     <div class="caption">
@@ -128,19 +135,13 @@
 
                 </table>
             </div>
-            
+
             <div class="col-sm-6">
 
 
                 <table id= "mendelianGenetics" class="linkBox">
                     <tr>
-                        <th>
-                            Module 1:
-
-                        </th>
-                        <th>
-                            Mendelian Genetics
-                        </th>
+                        <th colspan="2">Module 2: TBA</th>
                     </tr>
 
                     <tr>

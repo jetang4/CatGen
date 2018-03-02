@@ -106,49 +106,160 @@ function fillPunnetSquare()
 
 
 
+    //first female's left allele
+    //creates matrix where the left half is represented (1s make up the left side, and 0s on the right)
+    //EX: [1,1,0,0],
+    //    [1,1,0,0],
+    //    [1,1,0,0],
+    //    [1,1,0,0]
 
-
-    //displays female alleles as top row
-    for(var i = 0; i < allele_selections.length; i++)
+    var female_matrices=[];
+    for(var trait_num = 1; trait_num <= num_traits_selected; trait_num++)
     {
-        var left_symbol = document.getElementById("female_allele"+(i*2+1)+"_punnettsquare");
-        var right_symbol = document.getElementById("female_allele"+(i*2+2)+"_punnettsquare");
+        var matrix_row = [];
 
-        var uppercase = allele_selections[i];
-        var lowercase = allele_selections[i].toLowerCase();
+        //left allele
+        var matrix = [];
+        for(var x = 0; x < num_traits_selected*2; x++)
+        {
+            //creates array of size num_traits_selected*2 filled with 0s
+            var array=[];
+            for(var y = 0; y < num_traits_selected*2; y++)
+                array.push(0);
 
-        //if dominant, display uppercase allele symbol
-        if(female_selections[i][0]==0)
-            left_symbol.innerHTML += uppercase
-        else
-            left_symbol.innerHTML += lowercase
+            for(var y = 0; y < num_traits_selected; y++)
+                array[y*trait_num] = 1;
 
-        if(female_selections[i][1]==0)
-            right_symbol.innerHTML += uppercase;
-        else
-            right_symbol.innerHTML += lowercase;
+            matrix.push(array);
+        }
+        matrix_row.push(matrix);
+
+        //right allele
+        matrix_row.push(mirror_matrix(matrix));
+
+        female_matrices.push(matrix_row);
     }
 
-    //displays male alleles as top row
-    for(var i = 0; i < allele_selections.length; i++)
+    console.log(female_matrices);
+
+
+    var male_matrices=[];
+    for(var trait_num = 0; trait_num < num_traits_selected; trait_num++)
     {
-        var left_symbol = document.getElementById("male_allele"+(i*2+1)+"_punnettsquare");
-        var right_symbol = document.getElementById("male_allele"+(i*2+2)+"_punnettsquare");
+        var matrix_row = [];
+        //left allele
+        matrix_row.push(rotate_matrix(female_matrices[trait_num][0]));
+        //right allele
+        matrix_row.push(rotate_matrix(female_matrices[trait_num][1]));
 
-        var uppercase = allele_selections[i];
-        var lowercase = allele_selections[i].toLowerCase();
-
-        //if dominant, display uppercase allele symbol
-        if(male_selections[i][0]==0)
-            left_symbol.innerHTML = uppercase
-        else
-            left_symbol.innerHTML = lowercase
-
-        if(male_selections[i][1]==0)
-            right_symbol.innerHTML = uppercase;
-        else
-            right_symbol.innerHTML = lowercase;
+        male_matrices.push(matrix_row);
     }
+
+    console.log(male_matrices);
+
+
+    //matrix of represented alleles with each node being an array of female and male alleles
+    var matrix = [];
+    for(var x = 0; x < num_traits_selected*2; x++)
+    {
+        var row=[];
+        for(var y = 0; y < num_traits_selected*2; y++)
+            row.push([]);
+        matrix.push(row);
+    }
+
+    console.log(matrix);
+
+
+
+    //displays allele text
+    for(var trait_num = 0; trait_num < num_traits_selected; trait_num++)
+    {
+        for(var x = 0; x < num_traits_selected*2; x++)
+        {
+            var female_text = document.getElementById("female_allele"+(x+1)+"_punnettsquare");
+            var male_text = document.getElementById("male_allele"+(x+1)+"_punnettsquare");
+
+            var uppercase = allele_selections[trait_num];
+            var lowercase = allele_selections[trait_num].toLowerCase();
+
+            for(var y = 0; y < 2; y++)
+            {
+                if(female_matrices[trait_num][y][0][x]==1)
+                {
+                    if(female_selections[trait_num][y]==0)
+                        female_text.innerHTML += uppercase
+                    else
+                        female_text.innerHTML += lowercase
+                }
+            }
+
+            for(var y = 0; y < 2; y++)
+            {
+                if(male_matrices[trait_num][y][x][0]==1)
+                {
+                    if(male_selections[trait_num][y]==0)
+                        male_text.innerHTML += uppercase
+                    else
+                        male_text.innerHTML += lowercase
+                }
+            }
+
+            // //if this female left allele is represented in this column
+            // if(female_matrices[trait_num][0][x]==1)
+            // {
+            //     if(female_selections[trait_num][0]==0)
+            //         female_text.innerHTML += uppercase
+            //     else
+            //         female_text.innerHTML += lowercase
+            // }
+            // else
+            // {
+            //     //if this female left allele is represented in this column
+            //     var right_matrix = mirror_matrix(female_matrices[trait_num]);
+            //     if(right_matrix[0][x]==1)
+            //     {
+            //         if(female_selections[trait_num][1]==0)
+            //             female_text.innerHTML += uppercase
+            //         else
+            //             female_text.innerHTML += lowercase
+            //     }
+            // }
+
+
+            // //if this male left allele is represented in this column
+            // if(male_matrices[trait_num][x][0]==1)
+            // {
+            //     if(male_selections[trait_num][0]==0)
+            //         male_text.innerHTML += uppercase
+            //     else
+            //         male_text.innerHTML += lowercase
+            // }
+            // else
+            // {
+            //     //if this male left allele is represented in this column
+            //     var right_matrix = mirror_matrix(male_matrices[trait_num]);
+            //     if(right_matrix[x][0]==1)
+            //     {
+            //         if(male_selections[trait_num][1]==0)
+            //             male_text.innerHTML += uppercase
+            //         else
+            //             male_text.innerHTML += lowercase
+            //     }
+            // }
+
+        }
+    }
+
+
+
+
+    //highlight important parts of the code, new changes since the beginning of the semester
+    //expanded punnet square
+    //table stuff
+
+
+
 
 
 
@@ -161,17 +272,68 @@ function fillPunnetSquare()
     var possible_offspring = [];
     var possible_alleles = [];
 
-    //multiplies traits for female and male
-    for(var x = 0; x < male_selection.length; x++)
-    {
-        for(var y = 0; y < female_selection.length; y++)
-        {
-            //if 0, then dominant shows, if 1, then recessive shows
-            var trait_show = male_selection[x] * female_selection[y];
+    // var female_rows = [];
+    // for(var x = 0; x < num_traits_selected; x++)
+    // {
+    //     //creates array of size num_traits_selected*2 filled with 0s
+    //     var row=[];
+    //     for(var y = 0; y < num_traits_selected*2; y++)
+    //         row.push(1);
 
-            //converts 0 to B and 1 to b
-            var left_allele = numberToAllele(male_selection[x]);
-            var right_allele = numberToAllele(female_selection[y]);
+    //     //modified depending on dominant or recessive
+    //     for(var y = 0; y < num_traits_selected; y++)
+    //     {
+    //         if(female_selections[x][0])
+    //         row[y*trait_num] = ;
+    //     }
+
+    // }
+
+
+    // for(var trait = 0; trait < num_traits_selected; trait++)
+    // {
+    //     var trait_shows = [];
+    //     for(var x = 0; x < male_selections[trait].length; x++)
+    //     {
+    //         for(var y = 0; y < female_selections[trait].length; y++)
+    //         {
+    //             //if 0, then dominant shows, if 1, then recessive shows
+    //             var trait_show = male_selections[trait][x] * female_selections[trait][y];
+
+    //         }
+    //     }
+    // }
+
+
+    //multiplies traits for female and male
+    for(var x = 0; x < male_selections[0].length; x++)
+    {
+        for(var y = 0; y < female_selections[0].length; y++)
+        {
+            for(var trait = 0; trait < num_traits_selected; trait++)
+            {
+                console.log(male_selections[trait])
+                console.log(female_selections[trait])
+                //if 0, then dominant shows, if 1, then recessive shows
+                var trait_show = male_selections[trait][x] * female_selections[trait][y];
+
+                //converts 0 to B and 1 to b
+                var left_allele = numberToAllele(male_selections[trait][x], trait);
+                var right_allele = numberToAllele(female_selections[trait][y], trait);
+
+                console.log(left_allele+right_allele);
+            }
+
+            // return;
+
+
+
+            // //if 0, then dominant shows, if 1, then recessive shows
+            // var trait_show = male_selection[x] * female_selection[y];
+
+            // //converts 0 to B and 1 to b
+            // var left_allele = numberToAllele(male_selection[x]);
+            // var right_allele = numberToAllele(female_selection[y]);
 
 
 
@@ -180,6 +342,8 @@ function fillPunnetSquare()
             //retrieves image from relevant square
             var current_square = document.getElementById(x+'|'+y+'_square');
             var current_img = current_square.getElementsByTagName('img')[0];
+
+            var trait = traits[0]
 
             //if dominant trait is shown
             if(trait_show==0)
@@ -238,6 +402,86 @@ function fillPunnetSquare()
 
         }
     }
+
+
+
+    // //multiplies traits for female and male
+    // for(var x = 0; x < male_selection.length; x++)
+    // {
+    //     for(var y = 0; y < female_selection.length; y++)
+    //     {
+    //         //if 0, then dominant shows, if 1, then recessive shows
+    //         var trait_show = male_selection[x] * female_selection[y];
+
+    //         //converts 0 to B and 1 to b
+    //         var left_allele = numberToAllele(male_selection[x]);
+    //         var right_allele = numberToAllele(female_selection[y]);
+
+
+
+    //         /* Displays appropriate image */
+
+    //         //retrieves image from relevant square
+    //         var current_square = document.getElementById(x+'|'+y+'_square');
+    //         var current_img = current_square.getElementsByTagName('img')[0];
+
+    //         //if dominant trait is shown
+    //         if(trait_show==0)
+    //         {
+    //             //displays dominant cat in punnet square
+    //             current_img.src = images[trait+'_dominant'];
+
+    //             //add image to beginning of possible offspring for data display and iterate through array for other possibles
+    //             if(!findArray(possible_offspring, images[trait+'_dominant']))
+    //                 possible_offspring.unshift(images[trait+'_dominant']);
+
+    //             //if one was recessive, count as dominant_recessive
+    //             if(female_selection[x]==1 || male_selection[y]==1)
+    //                 num_dominant_recessive++;
+    //             else
+    //                 num_dominant++;
+    //         }
+    //         //if recessive trait is shown
+    //         else
+    //         {
+    //             //displays recessive cat in punnet square
+    //             current_img.src = images[trait+'_recessive'];
+
+    //             //add image to end of possible offspring for data display
+    //             if(!findArray(possible_offspring, images[trait+'_recessive']))
+    //                 possible_offspring.push(images[trait+'_recessive']);
+
+    //             num_recessive++;
+    //         }
+
+
+
+
+    //         /* displays allelle text */
+
+
+    //         var combine_allele;
+    //         //displays dominant allele first by checking if left is dominant, or if right is recessive
+    //         if(left_allele==left_allele.toUpperCase() || right_allele==right_allele.toLowerCase())
+    //         {
+    //             combine_allele = left_allele+right_allele;
+    //             document.getElementById(x+'|'+y+'_probability').innerHTML = "Alleles: "+combine_allele;
+    //         }
+    //         else
+    //         {
+    //             combine_allele = right_allele+left_allele;
+    //             document.getElementById(x+'|'+y+'_probability').innerHTML = "Alleles: "+combine_allele;
+    //         }
+
+
+
+    //         /* Add allele to possible alleles for stats display */
+    //         //adds to possible alleles
+    //         if(!findArray(possible_alleles, combine_allele ))
+    //             possible_alleles.push( combine_allele );
+
+    //     }
+    // }
 
 
     /* displays bottom data */
@@ -303,6 +547,37 @@ function createTable(num_traits){
 }
 
 
+//returns a mirror version of matrix
+function mirror_matrix(matrix)
+{
+    var new_matrix = [];
+
+    for(var x = matrix.length-1; x > -1; x--)
+    {
+        var new_row=[]
+        for(var y = matrix[x].length-1; y > -1; y--)
+            new_row.push(matrix[x][y]);
+        new_matrix.push(new_row);
+    }
+
+    return new_matrix;
+}
+
+//rotates mirror
+function rotate_matrix(matrix)
+{
+    var new_matrix = [];
+
+    for(var x = 0; x < matrix.length; x++)
+    {
+        var new_row=[]
+        for(var y = matrix[x].length-1; y > -1; y--)
+            new_row.push(matrix[y][x]);
+        new_matrix.push(new_row);
+    }
+
+    return new_matrix;
+}
 
 
 //converts B to 0 and b to 1
@@ -315,12 +590,12 @@ function alleleToNumber(allele){
 }
 
 //converts 0 to B and 1 to b
-function numberToAllele(number){
+function numberToAllele(number, trait_num){
     //if dominant
     if(number==0)
-        return 'B';
+        return allele_symbols[trait_num];
     else if(number==1)
-        return 'b';
+        return allele_symbols[trait_num].toLowerCase();
 }
 
 //returns if to_find is found in array

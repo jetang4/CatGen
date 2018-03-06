@@ -10,6 +10,6 @@ function quizValidator(correctAnswer) {
     } else {
         text = "Correct";
     }
-    document.getElementById("result").innerHTML = text;
+    document.getElementById("domrec_result").innerHTML = text;
 }
 

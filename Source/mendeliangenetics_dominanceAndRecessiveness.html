@@ -21,33 +21,16 @@
 
 <header>
     <!--NAVIGATION BAR-->
-    <!--<p>-->
-    <!--<ul>-->
-        <!--<li> <a href="/"> Home </a> </li>-->
-        <!--<li> <a href="about"> About Us </a> </li>-->
-        <!--<li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>-->
-        <!--<li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>-->
-        <!--<li> <a href="quiz"> Cat Genetics Quiz </a></li>-->
-    <!--</ul>-->
-    <!--</p>-->
+    <p>
+    <ul>
+        <li> <a href="/"> Home </a> </li>
+        <li> <a href="about"> About Us </a> </li>
+        <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
+        <li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>
+        <li> <a href="quiz"> Cat Genetics Quiz </a></li>
+    </ul>
+    </p>
 
-
-
-
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">Dropdown
-                <!--<i class="fa fa-caret-down"></i>-->
-            </button>
-            <div class="dropdown-content" id="myDropdown">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-    </div>
 
 </header>
 
@@ -63,8 +46,8 @@
 
 
     <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/G-_fwABa2BU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>">
-    </iframe>
+            src="https://www.youtube.com/embed/G-_fwABa2BU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
     <!--<p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>-->
 
     <p>An organism's genotype for a certain trait is the pair of two alleles they have at that trait's locus (location on a gene).
@@ -78,9 +61,8 @@
 
     <input id="domrec">
 
-    <button type="button" onclick="quizValidator('ff')">Submit</button>
+    <button type="button" onclick="quizValidator('ff', 'domrec')">Submit</button>
 
-    <p id="domrec_result">Are you correct?</p>
 
     <p>An organism gets one copy of each allele from their mother, and one copy from their father.
     The allele that is transmitted from the parent to the offspring is completely random.
@@ -93,30 +75,13 @@
     <p>True or false: the puppies will all be solid</p>
     <input id="puppy">
 
-    <button type="button" onclick="quizValidator('false')">Submit</button>
+    <button type="button" onclick="quizValidator('false', 'puppy')">Submit</button>
 
     <p id="puppy-result">Are you correct?</p>
 
 </div>
 
 
-<script>
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(e) {
-        if (!e.target.matches('.dropbtn')) {
-            var myDropdown = document.getElementById("myDropdown");
-            if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
-            }
-        }
-    }
-</script>
 
 </body>
 </html>

@@ -94,9 +94,11 @@
         A solid colored dog and a spotted dog produce a litter of puppies.</p>
 
     <p>True or false: the puppies will all be solid</p>
-    <input id="puppy">
-
-    <button type="button" onclick="quizValidator('false', 'puppy')">Submit</button>
+    <form id="puppy">
+        <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
+        <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
+    </form>
+    <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
 
     <p id="puppy-result">Are you correct?</p>
 

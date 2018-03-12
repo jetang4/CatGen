@@ -15,3 +15,19 @@ function quizValidator(correctAnswer, inputBox) {
     console.log(document.getElementById(inputResult));
 }
 
+function trueFalseValidator(formName)
+{
+    var text;
+    var trueValue = formName + '-true';
+
+    if(document.getElementById(trueValue).checked === true)
+    {
+        text = "Sorry, the answer is False. Think about why.";
+    }
+    else
+    {
+        text = "Correct!"
+    }
+    var inputResult = formName + '-result';
+    document.getElementById(inputResult).innerHTML = text;
+}

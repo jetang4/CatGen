@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cat Gene Info</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -30,15 +30,36 @@
 
 <header>
     <!--NAVIGATION BAR-->
-    <p>
-    <ul>
-        <li> <a href="/"> Home </a> </li>
-        <li> <a href="about"> About Us </a> </li>
-        <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
-        <li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>
-        <li> <a href="quiz"> Cat Genetics Quiz </a></li>
-    </ul>
-    </p>
+    <nav class="navbar navbar-light" style="background-color: deepskyblue">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CatGen</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="about">About Us</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mendeliangenetics_heredity">Heredity</a></li>
+                        <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
+                        <li><a href="mendeliangenetics_probability">Probability</a></li>
+                        <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
+                        <li><a href="CATGEN">Cat Punnett Square </a></li>
+                        <li><a href="practice">Quiz</a></li>
+                        <li><a href="quiz">Punnett Squares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
 

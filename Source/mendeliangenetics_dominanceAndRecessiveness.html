@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--jquery color animation package-->
+    <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 </head>
 <body class="container">
 
@@ -89,6 +93,8 @@
     The allele that is transmitted from the parent to the offspring is completely random.
     This is how it is possible that the offspring resemble one parent more than the other, or neither parent!</p>
 
+    <p>Say that an organism has a genotype BB. It received one B from its mother, and another B from its father.</p>
+
     <p>Checkpoint! In dogs, having a solid colored coat is dominant to spotting
         A single dominant allele for coat density is sufficient for producing a solid coat.
         A solid colored dog and a spotted dog produce a litter of puppies.</p>
@@ -102,9 +108,55 @@
 
     <p id="puppy-result">Are you correct?</p>
 
+    <p>So far, we've looked at the inheritance of single traits, but what if we want to see how two traits are passed down?
+    For each trait, we apply the same principle: one allele is passed from the mother, one allele is passed from the father.
+        One allele per parent * two parents * two traits = 4 alleles total to keep track of.
+    </p>
+
+    <p>Example: we have a plant with genotype <span style="color:red">P</span><span style="color:blue">P</span><span style="color:red">S</span><span style="color:blue">s</span> <br>
+    Let <span style="color:red"> red </span> indicate that the allele came from the mother <br>
+    and let <span style="color:blue"> blue </span> indicate that the allele came from the father <br>
+    As illustrated above, for each locus, the organism gets one allele from each parent.</p>
+
+    <p> When two traits are taken into consideration, it is called a <strong> dihybrid cross.</strong> <br>
+    </p>
+    <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDD <br>
+        <span id="A1">B</span><span id="A2">B</span> <span id="A3">d</span> <span id="A4">d</span>x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">b</span> <br>
+        <button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>
+    </p>
+
+    <button id="hello">HELLO</button>
+    <button id="jello">JELLO</button>
+
 </div>
 
+<script>
+    $(document).ready(function(){
+        $("#hello").click(function(){
+            var a1 = $("#A1");
+            $('#A1').animate({backgroundColor: 'pink'});
+            $('#B1').animate({backgroundColor: 'pink'});
+            $('#A3').animate({backgroundColor: 'pink'});
+            $('#B3').animate({backgroundColor: 'pink'});
+//            a1.animate({height: '300px', opacity: '0.4'}, "slow");
+//            a1.animate({width: '300px', opacity: '0.8'}, "slow");
+//            a1.animate({height: '100px', opacity: '0.4'}, "slow");
+//            a1.animate({width: '100px', opacity: '0.8'}, "slow");
+        });
 
+        $("#jello").click(function(){
+            var a1 = $("#A1");
+            $('#A2').animate({backgroundColor: 'blue'});
+            $('#B2').animate({backgroundColor: 'blue'});
+            $('#A4').animate({backgroundColor: 'blue'});
+            $('#B4').animate({backgroundColor: 'blue'});
+//            a1.animate({height: '300px', opacity: '0.4'}, "slow");
+//            a1.animate({width: '300px', opacity: '0.8'}, "slow");
+//            a1.animate({height: '100px', opacity: '0.4'}, "slow");
+//            a1.animate({width: '100px', opacity: '0.8'}, "slow");
+        });
+    });
+</script>
 
 </body>
 </html>

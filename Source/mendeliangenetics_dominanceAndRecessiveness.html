@@ -127,36 +127,49 @@
 
     <button id="hello">HELLO</button>
     <button id="jello">JELLO</button>
+    <button id="example3">example 3</button>
+    <button id="example4">example 4</button>
 
 </div>
 
 <script>
     $(document).ready(function(){
         $("#hello").click(function(){
-            var a1 = $("#A1");
+
             $("span").animate({backgroundColor: 'white'});
             $('#A1').animate({backgroundColor: 'pink'});
             $('#B1').animate({backgroundColor: 'pink'});
             $('#A3').animate({backgroundColor: 'pink'});
             $('#B3').animate({backgroundColor: 'pink'});
-//            a1.animate({height: '300px', opacity: '0.4'}, "slow");
-//            a1.animate({width: '300px', opacity: '0.8'}, "slow");
-//            a1.animate({height: '100px', opacity: '0.4'}, "slow");
-//            a1.animate({width: '100px', opacity: '0.8'}, "slow");
         });
 
         $("#jello").click(function(){
-            var a1 = $("#A1");
+
             $("span").animate({backgroundColor: 'white'});
             $('#A2').animate({backgroundColor: 'blue'});
             $('#B2').animate({backgroundColor: 'blue'});
             $('#A4').animate({backgroundColor: 'blue'});
             $('#B4').animate({backgroundColor: 'blue'});
-//            a1.animate({height: '300px', opacity: '0.4'}, "slow");
-//            a1.animate({width: '300px', opacity: '0.8'}, "slow");
-//            a1.animate({height: '100px', opacity: '0.4'}, "slow");
-//            a1.animate({width: '100px', opacity: '0.8'}, "slow");
         });
+
+
+    $("#example3").click(function() {
+
+        $("span").animate({backgroundColor: 'white'});
+        $('#A1').animate({backgroundColor: 'blue'});
+        $('#B1').animate({backgroundColor: 'blue'});
+        $('#A4').animate({backgroundColor: 'blue'});
+        $('#B4').animate({backgroundColor: 'blue'});
+    });
+
+        $("#example4").click(function(){
+            $("span").animate({backgroundColor: 'white'});
+            $('#A2').animate({backgroundColor: 'blue'});
+            $('#B2').animate({backgroundColor: 'blue'});
+            $('#A3').animate({backgroundColor: 'blue'});
+            $('#B3').animate({backgroundColor: 'blue'});
+
+    });
     });
 </script>
 

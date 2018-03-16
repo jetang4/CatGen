@@ -33,3 +33,28 @@
 
 /*.navbar li ul li a:hover	{background-color: lightskyblue;}*/
 
+a:hover
+{
+    background-color: lightskyblue !important;
+}
+
+.navbar .container-fluid
+{
+    margin: 0px 15% 0px 15%;
+}
+
+header
+{
+    width: 100%;
+}
+
+.container
+{
+    padding: 0px !important;
+    width: 100% !important;
+}
+
+main
+{
+    margin: 0px 15% 0px 15%;
+}

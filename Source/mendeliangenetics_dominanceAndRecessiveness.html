@@ -119,55 +119,63 @@
     As illustrated above, for each locus, the organism gets one allele from each parent.</p>
 
     <p> When two traits are taken into consideration, it is called a <strong> dihybrid cross.</strong> <br>
+        In total, there are <strong> sixteen </strong> different genotype combinations (click on the Probability tab to learn more) in a dihybrid cross.
     </p>
-    <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDD <br>
-        <span id="A1">B</span><span id="A2">B</span> <span id="A3">d</span> <span id="A4">d</span>x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">b</span> <br>
-        <button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>
+    <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDd <br>
+        There are sixteen possible allele combinations the offspring can have <br>
+        Click the buttons below to highlight the different possible combinations <br>
+        Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
+        <span id="allele16ComboExample" style="font-size: 10em"><span id="A1">B</span><span id="A2">B</span><span id="A3">d</span><span id="A4">d</span> x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">d</span></span> <br>
+        <span id="allele16ComboExampleOffspring">Offspring: ____</span> </p><br>
+        Tip: remember that the dominant allele is always written first for each locus.
+
+        <!--<button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>-->
     </p>
 
-    <button id="hello">HELLO</button>
-    <button id="jello">JELLO</button>
-    <button id="example3">example 3</button>
-    <button id="example4">example 4</button>
+    <button id="combo1">Combination 1</button>
+    <button id="combo2">Combination 2</button>
+    <button id="combo3">Combination 3</button>
+    <button id="combo4">Combination 4</button>
 
 </div>
 
 <script>
     $(document).ready(function(){
-        $("#hello").click(function(){
+        $("#combo1").click(function(){
 
             $("span").animate({backgroundColor: 'white'});
-            $('#A1').animate({backgroundColor: 'pink'});
-            $('#B1').animate({backgroundColor: 'pink'});
-            $('#A3').animate({backgroundColor: 'pink'});
-            $('#B3').animate({backgroundColor: 'pink'});
+            $('#A1').animate({backgroundColor: 'lightpink'});
+            $('#B1').animate({backgroundColor: 'lightblue'});
+            $('#A3').animate({backgroundColor: 'lightpink'});
+            $('#B3').animate({backgroundColor: 'lightblue'});
+            document.getElementById('allele16ComboExampleOffspring').innerHTML = 'BbDd';
         });
 
-        $("#jello").click(function(){
+        $("#combo2").click(function(){
 
             $("span").animate({backgroundColor: 'white'});
-            $('#A2').animate({backgroundColor: 'blue'});
-            $('#B2').animate({backgroundColor: 'blue'});
-            $('#A4').animate({backgroundColor: 'blue'});
-            $('#B4').animate({backgroundColor: 'blue'});
+            $('#A2').animate({backgroundColor: 'lightpink'});
+            $('#B2').animate({backgroundColor: 'lightpink'});
+            $('#A4').animate({backgroundColor: 'lightblue'});
+            $('#B4').animate({backgroundColor: 'lightblue'});
         });
 
 
-    $("#example3").click(function() {
+    $("#combo3").click(function() {
 
         $("span").animate({backgroundColor: 'white'});
-        $('#A1').animate({backgroundColor: 'blue'});
-        $('#B1').animate({backgroundColor: 'blue'});
-        $('#A4').animate({backgroundColor: 'blue'});
-        $('#B4').animate({backgroundColor: 'blue'});
+        $('#A1').animate({backgroundColor: 'lightpink'});
+        $('#B1').animate({backgroundColor: 'lightpink'});
+        $('#A4').animate({backgroundColor: 'lightblue'});
+        $('#B4').animate({backgroundColor: 'lightblue'});
     });
 
-        $("#example4").click(function(){
+        $("#combo4").click(function(){
             $("span").animate({backgroundColor: 'white'});
-            $('#A2').animate({backgroundColor: 'blue'});
-            $('#B2').animate({backgroundColor: 'blue'});
-            $('#A3').animate({backgroundColor: 'blue'});
-            $('#B3').animate({backgroundColor: 'blue'});
+            $('#A2').animate({backgroundColor: 'lightpink'});
+            $('#B2').animate({backgroundColor: 'lightpink'});
+            $('#A3').animate({backgroundColor: 'lightblue'});
+            $('#B3').animate({backgroundColor: 'lightblue'});
 
     });
     });

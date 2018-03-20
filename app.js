@@ -52,4 +52,6 @@ app.get('/homepage', function(req, res) {
     res.sendFile(__dirname + '/Source/homepage.html');
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+var port = process.env.PORT || 3000;
+
+app.listen(port, "0.0.0.0", () => console.log('Example app listening on port 3000!'))

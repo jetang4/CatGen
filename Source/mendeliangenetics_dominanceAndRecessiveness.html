@@ -127,7 +127,7 @@
         Click the buttons below to highlight the different possible combinations <br>
         Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
         <span id="allele16ComboExample" style="font-size: 10em"><span id="A1">B</span><span id="A2">B</span><span id="A3">d</span><span id="A4">d</span> x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">d</span></span> <br>
-        <span id="allele16ComboExampleOffspring">Offspring: ____</span> </p><br>
+        <span id="allele16ComboExampleOffspring" style="font-size: 10em">Offspring: ____</span> </p><br>
         Tip: remember that the dominant allele is always written first for each locus.
 
         <!--<button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>-->
@@ -137,6 +137,14 @@
     <button id="combo2">Combination 2</button>
     <button id="combo3">Combination 3</button>
     <button id="combo4">Combination 4</button>
+
+    <h2>Codominance </h2>
+    <p>Codominance occurs when organisms show characteristics of both the dominant allele and the recessive allele concurrently.
+        One major example of codominance is blood type.<br>
+        Blood type is determined by the presence or absence of protein markers on the surface of a blood cell. <br>
+        Type A blood has A markers, type B blood has B markers, type O blood lacks markers, and type AB blood has both A and B markers.
+
+
 
 </div>
 
@@ -160,6 +168,7 @@
             $('#B2').animate({backgroundColor: 'lightpink'});
             $('#A4').animate({backgroundColor: 'lightblue'});
             $('#B4').animate({backgroundColor: 'lightblue'});
+            document.getElementById('allele16ComboExampleOffspring').innerHTML = 'Bbdd';
         });
 
 
@@ -170,6 +179,7 @@
         $('#B1').animate({backgroundColor: 'lightpink'});
         $('#A4').animate({backgroundColor: 'lightblue'});
         $('#B4').animate({backgroundColor: 'lightblue'});
+        document.getElementById('allele16ComboExampleOffspring').innerHTML = 'Bbdd';
     });
 
         $("#combo4").click(function(){
@@ -178,6 +188,7 @@
             $('#B2').animate({backgroundColor: 'lightpink'});
             $('#A3').animate({backgroundColor: 'lightblue'});
             $('#B3').animate({backgroundColor: 'lightblue'});
+            document.getElementById('allele16ComboExampleOffspring').innerHTML = 'BbDd';
 
     });
     });

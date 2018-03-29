@@ -1,33 +1,60 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: deepskyblue;
-}
+/*ul {*/
+    /*list-style-type: none;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*overflow: hidden;*/
+    /*background-color: deepskyblue;*/
+/*}*/
 
-li {
-    float: left;
-}
+/*li {*/
+    /*float: left;*/
+/*}*/
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+/*li a {*/
+    /*display: block;*/
+    /*color: white;*/
+    /*text-align: center;*/
+    /*padding: 14px 16px;*/
+    /*text-decoration: none;*/
+/*}*/
 
-li a:hover:not(.active) {
-    background-color: lightskyblue;
-}
+/*li a:hover:not(.active) {*/
+    /*background-color: lightskyblue;*/
+/*}*/
 
-.active {
-    background-color: #4CAF50;
-}
+/*.active {*/
+    /*background-color: #4CAF50;*/
+/*}*/
 
 *
 {
     font-family: "Avenir", "Helvetica", "Verdana";
 }
 
+/*.navbar li ul li a:hover	{background-color: lightskyblue;}*/
+
+a:hover
+{
+    background-color: lightskyblue !important;
+}
+
+.navbar .container-fluid
+{
+    margin: 0px 15% 0px 15%;
+}
+
+header
+{
+    width: 100%;
+}
+
+.container
+{
+    padding: 0px !important;
+    width: 100% !important;
+}
+
+main
+{
+    margin: 0px 15% 0px 15%;
+}

@@ -9,32 +9,57 @@
 
     <!--link to stylesheet-->
     <link rel="stylesheet" type="text/css" href="lessonStylesheet.css">
-    <link rel="stylesheet" href="generalPageStructure.css" />
+    <link rel="stylesheet" type="text/css" href="generalPageStructure.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"-->
+          <!--integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--jquery color animation package-->
+    <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 </head>
 <body class="container">
 
 <header>
     <!--NAVIGATION BAR-->
-    <p>
-    <ul>
-        <li> <a href="/"> Home </a> </li>
-        <li> <a href="about"> About Us </a> </li>
-        <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
-        <li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>
-        <li> <a href="quiz"> Cat Genetics Quiz </a></li>
-    </ul>
-    </p>
-
-
+<nav class="navbar navbar-light" style="background-color: deepskyblue">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">CatGen</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="about">About Us</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="mendeliangenetics_heredity">Heredity</a></li>
+                    <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
+                    <li><a href="mendeliangenetics_probability">Probability</a></li>
+                    <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
+                    <li><a href="CATGEN">Cat Punnett Square </a></li>
+                    <li><a href="practice">Quiz</a></li>
+                    <li><a href="quiz">Punnett Squares</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
 </header>
 
 <!--the 'container' class allows the bootstrap template to be applied -->
+<main>
 <div id="domAndRec" class="container">
     <h1>Mendelian Genetics</h1>
     <h2>Dominance and Recessiveness</h2>
@@ -63,25 +88,100 @@
 
     <button type="button" onclick="quizValidator('ff', 'domrec')">Submit</button>
 
+    <p id = "domrec-result">Are you correct?</p>
 
     <p>An organism gets one copy of each allele from their mother, and one copy from their father.
     The allele that is transmitted from the parent to the offspring is completely random.
     This is how it is possible that the offspring resemble one parent more than the other, or neither parent!</p>
+
+    <p>Say that an organism has a genotype BB. It received one B from its mother, and another B from its father.</p>
 
     <p>Checkpoint! In dogs, having a solid colored coat is dominant to spotting
         A single dominant allele for coat density is sufficient for producing a solid coat.
         A solid colored dog and a spotted dog produce a litter of puppies.</p>
 
     <p>True or false: the puppies will all be solid</p>
-    <input id="puppy">
-
-    <button type="button" onclick="quizValidator('false', 'puppy')">Submit</button>
+    <form id="puppy">
+        <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
+        <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
+    </form>
+    <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
 
     <p id="puppy-result">Are you correct?</p>
 
+    <p>So far, we've looked at the inheritance of single traits, but what if we want to see how two traits are passed down?
+    For each trait, we apply the same principle: one allele is passed from the mother, one allele is passed from the father.
+        One allele per parent * two parents * two traits = 4 alleles total to keep track of.
+    </p>
+
+    <p>Example: we have a plant with genotype <span style="color:red">P</span><span style="color:blue">P</span><span style="color:red">S</span><span style="color:blue">s</span> <br>
+    Let <span style="color:red"> red </span> indicate that the allele came from the mother <br>
+    and let <span style="color:blue"> blue </span> indicate that the allele came from the father <br>
+    As illustrated above, for each locus, the organism gets one allele from each parent.</p>
+
+    <p> When two traits are taken into consideration, it is called a <strong> dihybrid cross.</strong> <br>
+        In total, there are <strong> sixteen </strong> different genotype combinations (click on the Probability tab to learn more) in a dihybrid cross.
+    </p>
+    <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDd <br>
+        There are sixteen possible allele combinations the offspring can have <br>
+        Click the buttons below to highlight the different possible combinations <br>
+        Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
+        <span id="allele16ComboExample" style="font-size: 10em"><span id="A1">B</span><span id="A2">B</span><span id="A3">d</span><span id="A4">d</span> x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">d</span></span> <br>
+        <span id="allele16ComboExampleOffspring">Offspring: ____</span> </p><br>
+        Tip: remember that the dominant allele is always written first for each locus.
+
+        <!--<button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>-->
+    </p>
+
+    <button id="combo1">Combination 1</button>
+    <button id="combo2">Combination 2</button>
+    <button id="combo3">Combination 3</button>
+    <button id="combo4">Combination 4</button>
+
 </div>
 
+</main>
+<script>
+    $(document).ready(function(){
+        $("#combo1").click(function(){
 
+            $("span").animate({backgroundColor: 'white'});
+            $('#A1').animate({backgroundColor: 'lightpink'});
+            $('#B1').animate({backgroundColor: 'lightblue'});
+            $('#A3').animate({backgroundColor: 'lightpink'});
+            $('#B3').animate({backgroundColor: 'lightblue'});
+            document.getElementById('allele16ComboExampleOffspring').innerHTML = 'BbDd';
+        });
+
+        $("#combo2").click(function(){
+
+            $("span").animate({backgroundColor: 'white'});
+            $('#A2').animate({backgroundColor: 'lightpink'});
+            $('#B2').animate({backgroundColor: 'lightpink'});
+            $('#A4').animate({backgroundColor: 'lightblue'});
+            $('#B4').animate({backgroundColor: 'lightblue'});
+        });
+
+
+    $("#combo3").click(function() {
+
+        $("span").animate({backgroundColor: 'white'});
+        $('#A1').animate({backgroundColor: 'lightpink'});
+        $('#B1').animate({backgroundColor: 'lightpink'});
+        $('#A4').animate({backgroundColor: 'lightblue'});
+        $('#B4').animate({backgroundColor: 'lightblue'});
+    });
+
+        $("#combo4").click(function(){
+            $("span").animate({backgroundColor: 'white'});
+            $('#A2').animate({backgroundColor: 'lightpink'});
+            $('#B2').animate({backgroundColor: 'lightpink'});
+            $('#A3').animate({backgroundColor: 'lightblue'});
+            $('#B3').animate({backgroundColor: 'lightblue'});
+
+    });
+    });
+</script>
 
 </body>
 </html>

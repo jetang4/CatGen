@@ -4,32 +4,60 @@
     <meta charset="UTF-8">
     <title>Mendelian Genetics: Punnett Squares</title>
 
+    <!--link to js sheet-->
+    <script src="script.js"></script>
+
     <!--link to stylesheet-->
     <link rel="stylesheet" type="text/css" href="lessonStylesheet.css">
-    <link rel="stylesheet" href="generalPageStructure.css" />
+    <link rel="stylesheet" type="text/css" href="generalPageStructure.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--jquery color animation package-->
+    <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 </head>
 <body class="container">
 <header>
     <!--NAVIGATION BAR-->
-    <p>
-    <ul>
-        <li> <a href="/"> Home </a> </li>
-        <li> <a href="about"> About Us </a> </li>
-        <li> <a href="catgen_geneinfo"> Cat Genetics Information </a> </li>
-        <li> <a href="CATGEN"> Cat Punnett Square Tool </a> </li>
-        <li> <a href="quiz"> Cat Genetics Quiz </a></li>
-    </ul>
-    </p>
+    <nav class="navbar navbar-light" style="background-color: deepskyblue">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CatGen</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="about">About Us</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mendeliangenetics_heredity">Heredity</a></li>
+                        <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
+                        <li><a href="mendeliangenetics_probability">Probability</a></li>
+                        <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
+                        <li><a href="CATGEN">Cat Punnett Square </a></li>
+                        <li><a href="practice">Quiz</a></li>
+                        <li><a href="quiz">Punnett Squares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
-<!--the 'container' class allows the bootstrap template to be applied -->
-<div id="punnettSquare" class="container">
+<main>
+    <!--the 'container' class allows the bootstrap template to be applied -->
+
     <h1>Mendelian Genetics</h1>
     <h2>Punnett Squares</h2>
     <p>Punnett Squares: Probabilities in Genetics can be better understood by the use of
@@ -45,5 +73,7 @@
     </iframe>
     <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
 </div>
+</main>
+
 </body>
 </html>

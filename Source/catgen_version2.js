@@ -4,9 +4,10 @@ var images = {
     "coatColor_recessive": "coatColor_recessive.png",
     "coatColor_none": "cat_white.png",
 
-    "coatColorDensity_dominant": "cat_black_dominantSpotted.png",
-    "coatColorDensity_recessive": "cat_black_heteroSpotted.png",
+    "coatColorDensity_dominant": "cat_black.png",
+    "coatColorDensity_recessive": "cat_black.png",
     "coatColorDensity_none": "cat_white.png",
+    "coatColorDensity_dilute": "cat_gary.png",
 };
 
 var images2=[

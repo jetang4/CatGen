@@ -61,16 +61,16 @@
         <div class="col-sm-6">
             <!--dropdown menu: choose color of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-            <img id="female_coatColor_image" src="cat_white.png"/>
+            <img id="female_image" src="cat_white.png"/>
             <p> Select characteristics of female cat </p>
             <p>Coat Color</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_coatColor_select" onchange="changeTrait('coatColor', 'female');">
+            <select id="female_coatColor_select" onchange="changeCatIcon();">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
-                <option value="dominant_recessive" id="heteroblackF">Black (heterozygous)</option>
-                <option value="dominant" id="homoblackF">Black (homozygous)</option>
-                <option value="recessive" id="brownF">Brown</option>
+                <option value="black" id="heteroblackF">Black (heterozygous)</option>
+                <option value="black" id="homoblackF">Black (homozygous)</option>
+                <option value="brown" id="brownF">Brown</option>
             </select>
 
 
@@ -79,7 +79,7 @@
         <!--dropdown menu: choose color of male cat-->
         <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6">
-            <img id="male_coatColor_image" src="cat_white.png"/>
+            <img id="male_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
             <p>Coat Color</p>
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
@@ -102,12 +102,12 @@
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
             <p>Color Density</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'female');">
+            <select id="female_coatColorDensity_select" onchange="changeCatIcon();">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
-                <option value="dominant_recessive" id="heteroblackF">Intense (homozygous)</option>
-                <option value="dominant" id="homoblackF">Intense (heterozygous)</option>
-                <option value="recessive" id="brownF">Dilute</option>
+                <option value="intense" id="heteroblackF">Intense (homozygous)</option>
+                <option value="intense" id="homoblackF">Intense (heterozygous)</option>
+                <option value="dilute" id="brownF">Dilute</option>
 
             </select>
         </div>
@@ -194,7 +194,28 @@
     <!--these are the calculations and percentages-->
     <p id="data"></p>
 </main>
-
+<script>
+    function changeCatIcon() {
+    var female_color = document.getElementById("female_coatColor_select").value;
+    var female_dilution = document.getElementById("female_coatColorDensity_select").value;
+    document.getElementById('female_image').src= 'cat_' + female_color+ '_' + female_dilution + '.png';
+    }
+</script>
 </body>
 </html>
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+    <option value="Audi">Audi
+    <option value="BMW">BMW
+    <option value="Mercedes">Mercedes
+    <option value="Volvo">Volvo
+</select>
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+
 

@@ -74,8 +74,6 @@
                 <option value="colored" id="homoblackF">Colored (homozygous)</option>
                 <option value="albino" id="brownF">Albino</option>
             </select>
-
-
         </div>
 
         <!--dropdown menu: choose color of male cat-->
@@ -83,7 +81,7 @@
         <div class="col-sm-6">
             <img id="male_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
-            <p>Coat Pigmentation</p>
+            <p>Coat Pigmentation</p>g
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
             <select id="male_coatPigmentation_select" onchange="changeCatIcon();">
                 <!--these are the options within the male dropdown menu-->
@@ -242,14 +240,14 @@
     var male_dilution = document.getElementById("male_coatColorDensity_select").value;
     document.getElementById('male_image').src= 'cat_' + male_color+ '_' + male_dilution + '.png';
     //albino = white always
-    if (document.getElementById("female_coatPigmentation_select").value === 'albino')
-    {
-        document.getElementById('female_image').src='cat_white.png';
-    }
-    if (document.getElementById("male_coatPigmentation_select").value === 'albino')
-    {
-        document.getElementById('male_image').src='cat_white.png';
-    }
+//    if (document.getElementById("female_coatPigmentation_select").value === 'albino')
+//    {
+//        document.getElementById('female_image').src='cat_white.png';
+//    }
+//    if (document.getElementById("male_coatPigmentation_select").value === 'albino')
+//    {
+//        document.getElementById('male_image').src='cat_white.png';
+//    }
     }
 </script>
 </body>

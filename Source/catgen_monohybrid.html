@@ -68,35 +68,33 @@
 
 
     <!--PIGMENTATION-->
-    <div class = 'page' id= 'pigmentation' style='display:none'>
+    <div class ='page' id='pigmentation' style='display:none'>
     <div class="row" >
     <div class="col-sm-6">
     <!--dropdown menu: choose color of female cat-->
     <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-    <img id="female_image" src="cat_white.png"/>
+    <img id="female_pigmentation_image" src="cat_white.png"/>
     <p> Select characteristics of female cat </p>
-    <p>Coat Pigmentation</p>
     <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-    <select id="female_coatPigmentation_select" onchange="changeCatIcon();">
+    <select id="female_pigmentation" onchange="changeCatIcon('pigmentation', 'female');">
     <!--these are the options within the female dropdown menu-->
-    <option value="" selected>Select Coat Color</option>
-    <option value="colored" id="heteroblackF">Colored (heterozygous)</option>
-    <option value="colored" id="homoblackF">Colored (homozygous)</option>
-    <option value="albino" id="brownF">Albino</option>
+    <option value="" selected>Select Coat Pigmentation</option>
+    <option value="dominant" id="heteroblackF">Colored (heterozygous)</option>
+    <option value="dominant_recessive" id="homoblackF">Colored (homozygous)</option>
+    <option value="recessive" id="brownF">Albino</option>
     </select>
     </div>
 
     <div class="col-sm-6" >
-        <img id="male_image" src="cat_white.png"/>
+        <img id="male_pigmentation_image" src="cat_white.png"/>
         <p>Select characteristics of male cat</p>
-        <p>Coat Pigmentation</p>g
         <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-        <select id="male_coatPigmentation_select" onchange="changeCatIcon();">
+        <select id="male_pigmentation" onchange="changeCatIcon('pigmentation', 'male');">
             <!--these are the options within the male dropdown menu-->
-            <option value="" selected>Select Coat Color</option>
-            <option value="colored" id="heteroblackM">Colored (heterozygous)</option>
-            <option value="colored" id="homoblackM">Colored (homozygous)</option>
-            <option value="albino" id="brownM">Albino</option>
+            <option value="" selected>Select Coat Pigmentation</option>
+            <option value="dominant" id="heteroblackM">Colored (heterozygous)</option>
+            <option value="dominant_recessive" id="homoblackM">Colored (homozygous)</option>
+            <option value="recessive" id="brownM">Albino</option>
         </select>
     </div>
     </div>
@@ -109,14 +107,17 @@
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
             <!--<img id="female_image" src="cat_white.png"/>-->
             <!--<p> Select characteristics of female cat </p>-->
-            <p>Coat Color</p>
+
+
+            <img id="female_image" src="cat_white.png"/>
+            <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_coatColor_select" onchange="changeCatIcon();">
+            <select id="female_color" onchange="changeCatIcon(color, female);">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
-                <option value="black" id="heteroblackF">Black (heterozygous)</option>
-                <option value="black" id="homoblackF">Black (homozygous)</option>
-                <option value="brown" id="brownF">Brown</option>
+                <option value="dominant" id="heteroblackF">Black (heterozygous)</option>
+                <option value="dominant_recessive" id="homoblackF">Black (homozygous)</option>
+                <option value="recessive" id="brownF">Brown</option>
             </select>
         </div>
 
@@ -126,14 +127,16 @@
         <div class="col-sm-6">
             <!--<img id="male_image" src="cat_white.png"/>-->
             <!--<p>Select characteristics of male cat</p>-->
-            <p>Coat Color</p>
+
+            <img id="male_image" src="cat_white.png"/>
+            <p>Select characteristics of male cat</p>
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-            <select id="male_coatColor_select" onchange="changeCatIcon();">
+            <select id="male_color" onchange="changeCatIcon(color, male);">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
-                <option value="black" id="heteroblackM" >Black (heterozygous)</option>
-                <option value="black" id="homoblackM">Black (homozygous)</option>
-                <option value="brown" id="brownM">Brown</option>
+                <option value="dominant" id="heteroblackM" >Black (heterozygous)</option>
+                <option value="dominant_recessive" id="homoblackM">Black (homozygous)</option>
+                <option value="recessive" id="brownM">Brown</option>
             </select>
 
         </div>
@@ -146,14 +149,15 @@
 
             <!--dropdown menu: choose dilution of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-            <p>Color Density</p>
+            <img id="female_image" src="cat_white.png"/>
+            <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_coatColorDensity_select" onchange="changeCatIcon();">
+            <select id="female_density" onchange="changeCatIcon(density, female);">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
-                <option value="intense" id="homoIntenseF">Intense (homozygous)</option>
-                <option value="intense" id="heteroIntenseF">Intense (heterozygous)</option>
-                <option value="dilute" id="diluteF">Dilute</option>
+                <option value="dominant" id="homoIntenseF">Intense (homozygous)</option>
+                <option value="dominant_recessive" id="heteroIntenseF">Intense (heterozygous)</option>
+                <option value="recessive" id="diluteF">Dilute</option>
 
             </select>
         </div>
@@ -161,15 +165,17 @@
         <!--dropdown menu: choose color of male cat-->
         <!--the male cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6" >
-            <p>Color Density</p>
+
+            <img id="male_image" src="cat_white.png"/>
+            <p>Select characteristics of male cat</p>
             <!--<img id="male_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-            <select id="male_coatColorDensity_select" onchange="changeCatIcon();">
+            <select id="male_density" onchange="changeCatIcon(density, male);">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
-                <option value="intense" id="homoIntenseM" >Intense (homozygous)</option>
-                <option value="intense" id="heteroIntenseM">Intense (heterozygous)</option>
-                <option value="dilute" id="diluteM">Dilute (homozygous)</option>
+                <option value="dominant" id="homoIntenseM" >Intense (homozygous)</option>
+                <option value="dominant_recessive" id="heteroIntenseM">Intense (heterozygous)</option>
+                <option value="recessive" id="diluteM">Dilute (homozygous)</option>
             </select>
         </div>
     </div>
@@ -240,22 +246,47 @@
     <p id="data"></p>
 </main>
 <script>
-    function changeCatIcon() {
-        var female_color = document.getElementById("female_coatColor_select").value;
-        var female_dilution = document.getElementById("female_coatColorDensity_select").value;
-        document.getElementById('female_image').src= 'cat_' + female_color+ '_' + female_dilution + '.png';
-        var male_color = document.getElementById("male_coatColor_select").value;
-        var male_dilution = document.getElementById("male_coatColorDensity_select").value;
-        document.getElementById('male_image').src= 'cat_' + male_color+ '_' + male_dilution + '.png';
-        //albino = white always
-//    if (document.getElementById("female_coatPigmentation_select").value === 'albino')
-//    {
-//        document.getElementById('female_image').src='cat_white.png';
-//    }
-//    if (document.getElementById("male_coatPigmentation_select").value === 'albino')
-//    {
-//        document.getElementById('male_image').src='cat_white.png';
-//    }
+
+    var images = {
+        "coatColor_dominant": "cat_black.png",
+        "coatColor_recessive": "cat_brown.png",
+        "coatColor_none": "cat_white.png",
+
+        "density_dominant": "cat_black.png",
+        "density_recessive": "cat_gray.png",
+        "density_none": "cat_white.png",
+
+        "pigmentation_dominant": "cat_black.png",
+        "pigmentation_recessive": "cat_white.png",
+        "pigmentation_none": "cat_white.png"
+    };
+
+    function changeCatIcon(trait, sex) {
+//
+        //gets the image associated with the select box
+        var img = document.getElementById(sex+"_"+trait+"_image");
+//
+//      //gets the select box and the user's selection
+        var select_box = document.getElementById(sex+"_"+trait);
+        console.log(select_box);
+        var selection = select_box.value;
+        //displays appropriate image depending on selection
+        if(selection==="dominant" || selection==="dominant_recessive")
+
+        {
+            img.src = images[trait+'_dominant'];
+        }
+        else if(selection==="recessive")
+
+        {
+            img.src = images[trait+'_recessive'];
+        }
+        else
+
+        {
+            img.src = images[trait+'_none'];
+        }
+        //return false;
     }
 
     //JAVASCRIPT CODE TO HIDE/DISPLAY PAGES WHEN NAVIGATION BAR IS CLICKED
@@ -275,18 +306,6 @@
 </body>
 </html>
 
-<p>Select a new car from the list.</p>
-
-<select id="mySelect" onchange="myFunction()">
-    <option value="Audi">Audi
-    <option value="BMW">BMW
-    <option value="Mercedes">Mercedes
-    <option value="Volvo">Volvo
-</select>
-
-<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
-
-<p id="demo"></p>
 
 
 

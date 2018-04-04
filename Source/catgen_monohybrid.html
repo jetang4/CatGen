@@ -75,7 +75,7 @@
     <img id="female_pigmentation_image" src="cat_white.png"/>
     <p> Select characteristics of female cat </p>
 
-    <select id="female_pigmentation" onchange="changeCatIcon('pigmentation', 'female');">
+    <select id="female_pigmentation" onchange="changeTrait('pigmentation', 'female');">
     <!--these are the options within the female dropdown menu-->
     <option value="" selected>Select Coat Pigmentation</option>
     <option value="dominant" id="heteroblackF">Colored (heterozygous)</option>
@@ -88,7 +88,7 @@
         <img id="male_pigmentation_image" src="cat_white.png"/>
         <p>Select characteristics of male cat</p>
         <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-        <select id="male_pigmentation" onchange="changeCatIcon('pigmentation', 'male');">
+        <select id="male_pigmentation" onchange="changeTrait('pigmentation', 'male');">
             <!--these are the options within the male dropdown menu-->
             <option value="" selected>Select Coat Pigmentation</option>
             <option value="dominant" id="heteroblackM">Colored (heterozygous)</option>
@@ -107,7 +107,7 @@
             <img id="female_color_image" src="cat_white.png"/>
             <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "female_color"-->
-            <select id="female_color" onchange="changeCatIcon('color', 'female');">
+            <select id="female_color" onchange="changeTrait('color', 'female');">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
                 <option value="dominant" id="heteroblackF">Black (heterozygous)</option>
@@ -122,7 +122,7 @@
             <img id="male_color_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
             <!--the dropdown menu (entire menu) for the male is called "male_color"-->
-            <select id="male_color" onchange="changeCatIcon('color', 'male');">
+            <select id="male_color" onchange="changeTrait('color', 'male');">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
                 <option value="dominant" id="heteroblackM" >Black (heterozygous)</option>
@@ -142,7 +142,7 @@
             <img id="female_density_image" src="cat_white.png"/>
             <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "female_density"-->
-            <select id="female_density" onchange="changeCatIcon('density', 'female');">
+            <select id="female_density" onchange="changeTrait('density', 'female');">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
                 <option value="dominant" id="homoIntenseF">Intense (homozygous)</option>
@@ -158,7 +158,7 @@
             <img id="male_density_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
             <!--the dropdown menu (entire menu) for the male is called "male_density"-->
-            <select id="male_density" onchange="changeCatIcon('density', 'male');">
+            <select id="male_density" onchange="changeTrait('density', 'male');">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
                 <option value="dominant" id="homoIntenseM" >Intense (homozygous)</option>
@@ -249,33 +249,33 @@
         "pigmentation_none": "cat_white.png"
     };
 
-    function changeCatIcon(trait, sex) {
+//    function changeCatIcon(trait, sex) {
+////
+//        //gets the image associated with the select box
+//        var img = document.getElementById(sex+"_"+trait+"_image");
+////
+////      //gets the select box and the user's selection
+//        var select_box = document.getElementById(sex+"_"+trait);
+//        console.log(select_box);
+//        var selection = select_box.value;
+//        //displays appropriate image depending on selection
+//        if(selection==="dominant" || selection==="dominant_recessive")
 //
-        //gets the image associated with the select box
-        var img = document.getElementById(sex+"_"+trait+"_image");
+//        {
+//            img.src = images[trait+'_dominant'];
+//        }
+//        else if(selection==="recessive")
 //
-//      //gets the select box and the user's selection
-        var select_box = document.getElementById(sex+"_"+trait);
-        console.log(select_box);
-        var selection = select_box.value;
-        //displays appropriate image depending on selection
-        if(selection==="dominant" || selection==="dominant_recessive")
-
-        {
-            img.src = images[trait+'_dominant'];
-        }
-        else if(selection==="recessive")
-
-        {
-            img.src = images[trait+'_recessive'];
-        }
-        else
-
-        {
-            img.src = images[trait+'_none'];
-        }
-        //return false;
-    }
+//        {
+//            img.src = images[trait+'_recessive'];
+//        }
+//        else
+//
+//        {
+//            img.src = images[trait+'_none'];
+//        }
+//        //return false;
+//    }
 
     //JAVASCRIPT CODE TO HIDE/DISPLAY PAGES WHEN NAVIGATION BAR IS CLICKED
     function show(elementID) {

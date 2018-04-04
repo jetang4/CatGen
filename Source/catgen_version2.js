@@ -1,12 +1,16 @@
 //if want to add more images for different traits, just list in the formnat "[TRAIT]_dominant"...
 var images = {
-    "coatColor_dominant": "coatColor_dominant.png",
-    "coatColor_recessive": "coatColor_recessive.png",
-    "coatColor_none": "cat_white.png",
+    "color_dominant": "cat_black.png",
+    "color_recessive": "cat_brown.png",
+    "color_none": "cat_white.png",
 
-    "coatColorDensity_dominant": "cat_gray_dominantSpotted.png",
-    "coatColorDensity_recessive": "cat_gray_heteroSpotted.png",
-    "coatColorDensity_none": "cat_gray.png",
+    "density_dominant": "cat_black.png",
+    "density_recessive": "cat_gray.png",
+    "density_none": "cat_white.png",
+
+    "pigmentation_dominant": "cat_black.png",
+    "pigmentation_recessive": "cat_white.png",
+    "pigmentation_none": "cat_white.png"
 };
 
 var images2=[
@@ -35,8 +39,9 @@ function changeTrait(trait, sex)
     //gets the image associated with the select box
     var img = document.getElementById(sex+"_"+trait+"_image");
 
-    //gets the select box and the user's selection
-    var select_box = document.getElementById(sex+"_"+trait+"_select");
+    //gets the select box and the user's selection --> gerardo's initial version
+    //var select_box = document.getElementById(sex+"_"+trait+"_select");
+    var select_box = document.getElementById(sex+"_"+trait);
     var selection = select_box.value;
 
     console.log(images[trait+"_none"]);

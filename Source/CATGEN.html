@@ -62,8 +62,9 @@
 
             <!--dropdown menu: choose color of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-            <p>Select coat color of female cat</p>
             <img id="female_coatColor_image" src="cat_white.png"/>
+            <p> Select characteristics of female cat </p>
+            <p>Coat Color</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
             <select id="female_coatColor_select" onchange="changeTrait('coatColor', 'female');">
                 <!--these are the options within the female dropdown menu-->
@@ -71,15 +72,17 @@
                 <option value="dominant_recessive" id="heteroblackF" selected>Black (heterozygous)</option>
                 <option value="dominant" id="homoblackF">Black (homozygous)</option>
                 <option value="recessive" id="brownF">Brown</option>
-
             </select>
+
+
         </div>
 
         <!--dropdown menu: choose color of male cat-->
         <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6">
-            <p>Select coat color of male cat</p>
             <img id="male_coatColor_image" src="cat_white.png"/>
+            <p>Select characteristics of male cat</p>
+            <p>Coat Color</p>
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
             <select id="male_coatColor_select" onchange="changeTrait('coatColor', 'male');">
                 <!--these are the options within the male dropdown menu-->
@@ -97,8 +100,8 @@
 
             <!--dropdown menu: choose color of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-            <p>Select coat color density of female cat</p>
-            <img id="female_coatColorDensity_image" src="cat_gray.png"/>
+            <p>Color Density</p>
+            <!--<img id="female_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
             <select id="female_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'female');">
                 <!--these are the options within the female dropdown menu-->
@@ -113,8 +116,8 @@
         <!--dropdown menu: choose color of male cat-->
         <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6">
-            <p>Select coat color density of male cat</p>
-            <img id="male_coatColorDensity_image" src="cat_gray.png"/>
+            <p>Color Density</p>
+            <!--<img id="male_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
             <select id="male_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'male');">
                 <!--these are the options within the male dropdown menu-->
@@ -128,12 +131,7 @@
 
     </div>
 
-    <div style="text-align:left; width:100%; padding:10px;">
-        <h1>Header</h1>
-        <p>First paragraph</p>
-        <p>Second paragraph</p>
-    </div>
-
+   
 
     <!--submit button div= centered, and colored orange-->
     <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">

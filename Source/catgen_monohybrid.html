@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <!--HERES THE LINK TO THE EXTERNAL JS FILE-->
+    <script src="catgen_version2.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href ="styling.css" />
+    <link rel="stylesheet" href="generalPageStructure.css" />
+
+</head>
+
+
+<body class="container text-center">
+<!--<body class="container text-center" style="background-color: peachpuff;">-->
+<header>
+    <!--NAVIGATION BAR-->
+    <nav class="navbar navbar-light" style="background-color: deepskyblue">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CatGen</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="about">About Us</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mendeliangenetics_heredity">Heredity</a></li>
+                        <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
+                        <li><a href="mendeliangenetics_probability">Probability</a></li>
+                        <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
+                        <li><a href="CATGEN">Cat Punnett Square </a></li>
+                        <li><a href="practice">Quiz</a></li>
+                        <li><a href="quiz">Punnett Squares</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h1>CatGen</h1>
+
+
+    <!--dropdown menu: choose color of male cat-->
+    <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+    <p>Choose your trait</p>
+    <span onclick="show('pigmentation');"> Pigmentation </span> ||
+    <span onclick="show('blackbrown');"> BB </span> ||
+    <span onclick="show('density');"> Density </span> ||
+
+
+    <!--PIGMENTATION-->
+    <div class = 'page' id= 'pigmentation' style='display:none'>
+    <div class="row" >
+    <div class="col-sm-6">
+    <!--dropdown menu: choose color of female cat-->
+    <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
+    <img id="female_image" src="cat_white.png"/>
+    <p> Select characteristics of female cat </p>
+    <p>Coat Pigmentation</p>
+    <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+    <select id="female_coatPigmentation_select" onchange="changeCatIcon();">
+    <!--these are the options within the female dropdown menu-->
+    <option value="" selected>Select Coat Color</option>
+    <option value="colored" id="heteroblackF">Colored (heterozygous)</option>
+    <option value="colored" id="homoblackF">Colored (homozygous)</option>
+    <option value="albino" id="brownF">Albino</option>
+    </select>
+    </div>
+
+    <div class="col-sm-6" >
+        <img id="male_image" src="cat_white.png"/>
+        <p>Select characteristics of male cat</p>
+        <p>Coat Pigmentation</p>g
+        <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+        <select id="male_coatPigmentation_select" onchange="changeCatIcon();">
+            <!--these are the options within the male dropdown menu-->
+            <option value="" selected>Select Coat Color</option>
+            <option value="colored" id="heteroblackM">Colored (heterozygous)</option>
+            <option value="colored" id="homoblackM">Colored (homozygous)</option>
+            <option value="albino" id="brownM">Albino</option>
+        </select>
+    </div>
+    </div>
+    </div>
+    <!--COAT COLOR-->
+    <div class = 'page' id ='blackbrown' style="display:none">
+    <div class="row">
+        <div class="col-sm-6">
+            <!--dropdown menu: choose color of female cat-->
+            <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
+            <!--<img id="female_image" src="cat_white.png"/>-->
+            <!--<p> Select characteristics of female cat </p>-->
+            <p>Coat Color</p>
+            <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+            <select id="female_coatColor_select" onchange="changeCatIcon();">
+                <!--these are the options within the female dropdown menu-->
+                <option value="" selected>Select Coat Color</option>
+                <option value="black" id="heteroblackF">Black (heterozygous)</option>
+                <option value="black" id="homoblackF">Black (homozygous)</option>
+                <option value="brown" id="brownF">Brown</option>
+            </select>
+        </div>
+
+        <!--dropdown menu: choose color of male cat-->
+        <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+
+        <div class="col-sm-6">
+            <!--<img id="male_image" src="cat_white.png"/>-->
+            <!--<p>Select characteristics of male cat</p>-->
+            <p>Coat Color</p>
+            <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+            <select id="male_coatColor_select" onchange="changeCatIcon();">
+                <!--these are the options within the male dropdown menu-->
+                <option value="" selected>Select Coat Color</option>
+                <option value="black" id="heteroblackM" >Black (heterozygous)</option>
+                <option value="black" id="homoblackM">Black (homozygous)</option>
+                <option value="brown" id="brownM">Brown</option>
+            </select>
+
+        </div>
+    </div>
+    </div>
+
+    <div class='page' id="density" style="display:none">
+    <div class="row">
+        <div class="col-sm-6">
+
+            <!--dropdown menu: choose dilution of female cat-->
+            <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
+            <p>Color Density</p>
+            <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
+            <select id="female_coatColorDensity_select" onchange="changeCatIcon();">
+                <!--these are the options within the female dropdown menu-->
+                <option value="" selected>Select Coat Density</option>
+                <option value="intense" id="homoIntenseF">Intense (homozygous)</option>
+                <option value="intense" id="heteroIntenseF">Intense (heterozygous)</option>
+                <option value="dilute" id="diluteF">Dilute</option>
+
+            </select>
+        </div>
+
+        <!--dropdown menu: choose color of male cat-->
+        <!--the male cat icon has an id of "colorSelectorRight" and is white by default-->
+        <div class="col-sm-6" >
+            <p>Color Density</p>
+            <!--<img id="male_coatColorDensity_image" src="cat_gray.png"/>-->
+            <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
+            <select id="male_coatColorDensity_select" onchange="changeCatIcon();">
+                <!--these are the options within the male dropdown menu-->
+                <option value="" selected>Select Coat Density</option>
+                <option value="intense" id="homoIntenseM" >Intense (homozygous)</option>
+                <option value="intense" id="heteroIntenseM">Intense (heterozygous)</option>
+                <option value="dilute" id="diluteM">Dilute (homozygous)</option>
+            </select>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!--submit button div= centered, and colored orange-->
+    <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
+        <!--the submit button calls all of the following functions-->
+        <button class="btn-warning" type="submit" onclick= "fillPunnetSquare(['coatColor', 'coatColorDensity'])">Select Cats</button>
+    </div>
+
+    <!--creates the punnett square and the cat icon (white) within it-->
+    <!--the id "gender_alleleX_punnettsquare" is the allele printed on the side of the punnett square-->
+    <!--the id "locationlocationPunnettSquareProbability" is the probability that appears in the square once the form is submitted-->
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="punnettsquare">
+                <tr>
+                    <td style="border:0px solid black; padding: 0px;"></td>
+                    <td class="square_title">
+                        <p id="female_allele1_punnettsquare" class="square_title_text"></p>
+                    </td>
+                    <td class="square_title">
+                        <p id="female_allele2_punnettsquare" class="square_title_text"></p>
+                    </td>
+                    <td style="padding:20px;"></td>
+                </tr>
+                <tr>
+                    <td class="square_title"><b><p id="male_allele1_punnettsquare" class="punnetsquare_square_title"></p></b></td>
+                    <td id= "0|0_square" class="punnettsquare_square">
+                        <img src="cat_white.png" />
+                        <p id="0|0_probability"></p>
+                    </td>
+                    <td id= "0|1_square"  class="punnettsquare_square">
+                        <img src="cat_white.png" />
+                        <p id="0|1_probability"></p>
+                    </td>
+                    <td style="padding:20px;">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="square_title"><b><p id="male_allele2_punnettsquare" class="punnetsquare_square_title"></p></b></td>
+                    <td id= "1|0_square"  class="punnettsquare_square">
+                        <img src="cat_white.png"/>
+                        <p id="1|0_probability"></p>
+                    </td>
+                    <td id= "1|1_square"  class="punnettsquare_square">
+                        <img src="cat_white.png"/>
+                        <p id="1|1_probability"></p>
+                    </td>
+                    <td style="padding:20px;"></td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="offspring_images">
+        <!--these are the offspring that are shown at the calculations at the bottom-->
+        <img id="offspring1">
+        <img id="offspring2">
+    </div>
+
+    <!--these are the calculations and percentages-->
+    <p id="data"></p>
+</main>
+<script>
+    function changeCatIcon() {
+        var female_color = document.getElementById("female_coatColor_select").value;
+        var female_dilution = document.getElementById("female_coatColorDensity_select").value;
+        document.getElementById('female_image').src= 'cat_' + female_color+ '_' + female_dilution + '.png';
+        var male_color = document.getElementById("male_coatColor_select").value;
+        var male_dilution = document.getElementById("male_coatColorDensity_select").value;
+        document.getElementById('male_image').src= 'cat_' + male_color+ '_' + male_dilution + '.png';
+        //albino = white always
+//    if (document.getElementById("female_coatPigmentation_select").value === 'albino')
+//    {
+//        document.getElementById('female_image').src='cat_white.png';
+//    }
+//    if (document.getElementById("male_coatPigmentation_select").value === 'albino')
+//    {
+//        document.getElementById('male_image').src='cat_white.png';
+//    }
+    }
+
+    //JAVASCRIPT CODE TO HIDE/DISPLAY PAGES WHEN NAVIGATION BAR IS CLICKED
+    function show(elementID) {
+        var ele = document.getElementById(elementID);
+        if (!ele) {
+            alert("no such element");
+            return;
+        }
+        var pages = document.getElementsByClassName('page');
+        for(var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
+        ele.style.display = 'block';
+    }
+</script>
+</body>
+</html>
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+    <option value="Audi">Audi
+    <option value="BMW">BMW
+    <option value="Mercedes">Mercedes
+    <option value="Volvo">Volvo
+</select>
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+
+

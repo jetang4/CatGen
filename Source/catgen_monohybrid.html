@@ -109,10 +109,10 @@
             <!--<p> Select characteristics of female cat </p>-->
 
 
-            <img id="female_image" src="cat_white.png"/>
+            <img id="female_color_image" src="cat_white.png"/>
             <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_color" onchange="changeCatIcon(color, female);">
+            <select id="female_color" onchange="changeCatIcon('color', 'female');">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
                 <option value="dominant" id="heteroblackF">Black (heterozygous)</option>
@@ -128,10 +128,10 @@
             <!--<img id="male_image" src="cat_white.png"/>-->
             <!--<p>Select characteristics of male cat</p>-->
 
-            <img id="male_image" src="cat_white.png"/>
+            <img id="male_color_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-            <select id="male_color" onchange="changeCatIcon(color, male);">
+            <select id="male_color" onchange="changeCatIcon('color', 'male');">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Color</option>
                 <option value="dominant" id="heteroblackM" >Black (heterozygous)</option>
@@ -149,10 +149,10 @@
 
             <!--dropdown menu: choose dilution of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
-            <img id="female_image" src="cat_white.png"/>
+            <img id="female_density_image" src="cat_white.png"/>
             <p>Select characteristics of female cat</p>
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
-            <select id="female_density" onchange="changeCatIcon(density, female);">
+            <select id="female_density" onchange="changeCatIcon('density', 'female');">
                 <!--these are the options within the female dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
                 <option value="dominant" id="homoIntenseF">Intense (homozygous)</option>
@@ -166,11 +166,11 @@
         <!--the male cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6" >
 
-            <img id="male_image" src="cat_white.png"/>
+            <img id="male_density_image" src="cat_white.png"/>
             <p>Select characteristics of male cat</p>
             <!--<img id="male_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
-            <select id="male_density" onchange="changeCatIcon(density, male);">
+            <select id="male_density" onchange="changeCatIcon('density', 'male');">
                 <!--these are the options within the male dropdown menu-->
                 <option value="" selected>Select Coat Density</option>
                 <option value="dominant" id="homoIntenseM" >Intense (homozygous)</option>
@@ -248,9 +248,9 @@
 <script>
 
     var images = {
-        "coatColor_dominant": "cat_black.png",
-        "coatColor_recessive": "cat_brown.png",
-        "coatColor_none": "cat_white.png",
+        "color_dominant": "cat_black.png",
+        "color_recessive": "cat_brown.png",
+        "color_none": "cat_white.png",
 
         "density_dominant": "cat_black.png",
         "density_recessive": "cat_gray.png",

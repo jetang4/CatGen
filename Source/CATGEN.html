@@ -56,10 +56,9 @@
 <main>
     <h1>CatGen</h1>
 
-
+<!--COAT COLOR-->
     <div class="row">
         <div class="col-sm-6">
-
             <!--dropdown menu: choose color of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
             <img id="female_coatColor_image" src="cat_white.png"/>
@@ -68,8 +67,8 @@
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
             <select id="female_coatColor_select" onchange="changeTrait('coatColor', 'female');">
                 <!--these are the options within the female dropdown menu-->
-                <option value="">Select Coat Color</option>
-                <option value="dominant_recessive" id="heteroblackF" selected>Black (heterozygous)</option>
+                <option value="" selected>Select Coat Color</option>
+                <option value="dominant_recessive" id="heteroblackF">Black (heterozygous)</option>
                 <option value="dominant" id="homoblackF">Black (homozygous)</option>
                 <option value="recessive" id="brownF">Brown</option>
             </select>
@@ -86,52 +85,52 @@
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
             <select id="male_coatColor_select" onchange="changeTrait('coatColor', 'male');">
                 <!--these are the options within the male dropdown menu-->
-                <option value="">Select Coat Color</option>
-                <option value="dominant_recessive" id="heteroblackM" selected>Black (heterozygous)</option>
+                <option value="" selected>Select Coat Color</option>
+                <option value="dominant_recessive" id="heteroblackM" >Black (heterozygous)</option>
                 <option value="dominant" id="homoblackM">Black (homozygous)</option>
                 <option value="recessive" id="brownM">Brown</option>
             </select>
+
         </div>
 
-
+<!--COAT INTENSITY-->
     </div>
     <div class="row">
         <div class="col-sm-6">
 
-            <!--dropdown menu: choose color of female cat-->
+            <!--dropdown menu: choose dilution of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
             <p>Color Density</p>
-            <!--<img id="female_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the female is called "femaleDropdownMenu"-->
             <select id="female_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'female');">
                 <!--these are the options within the female dropdown menu-->
-                <option value="">Select Coat Color Density</option>
-                <option value="dominant_recessive" id="heteroblackF" selected>Undilute (heterozygous)</option>
-                <option value="dominant" id="homoblackF">Undilute (homozygous)</option>
+                <option value="" selected>Select Coat Density</option>
+                <option value="dominant_recessive" id="heteroblackF">Intense (homozygous)</option>
+                <option value="dominant" id="homoblackF">Intense (heterozygous)</option>
                 <option value="recessive" id="brownF">Dilute</option>
 
             </select>
         </div>
 
         <!--dropdown menu: choose color of male cat-->
-        <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+        <!--the male cat icon has an id of "colorSelectorRight" and is white by default-->
         <div class="col-sm-6">
             <p>Color Density</p>
             <!--<img id="male_coatColorDensity_image" src="cat_gray.png"/>-->
             <!--the dropdown menu (entire menu) for the male is called "maleDropdownMenu"-->
             <select id="male_coatColorDensity_select" onchange="changeTrait('coatColorDensity', 'male');">
                 <!--these are the options within the male dropdown menu-->
-                <option value="">Select Coat Color</option>
-                <option value="dominant_recessive" id="heteroblackM" selected>Undilute (heterozygous)</option>
-                <option value="dominant" id="homoblackM">Undilute (homozygous)</option>
-                <option value="recessive" id="brownM">Dilute</option>
+                <option value="" selected>Select Coat Density</option>
+                <option value="dominant_recessive" id="heteroblackM" >Intense (homozygous)</option>
+                <option value="dominant" id="homoblackM">Undilute (heterozygous)</option>
+                <option value="recessive" id="brownM">Dilute (homozygous)</option>
             </select>
         </div>
 
 
     </div>
 
-   
+
 
     <!--submit button div= centered, and colored orange-->
     <div id="submitButton" class="col-xl-12 text-center" style="padding-top:25px; padding-bottom:25px;">
@@ -198,3 +197,4 @@
 
 </body>
 </html>
+

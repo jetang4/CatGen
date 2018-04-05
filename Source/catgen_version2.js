@@ -42,9 +42,10 @@ function changeTrait(trait, sex)
     //gets the select box and the user's selection --> gerardo's initial version
     //var select_box = document.getElementById(sex+"_"+trait+"_select");
     var select_box = document.getElementById(sex+"_"+trait);
-    var selection = select_box.value;
+    console.log(select_box);
+    var selection = select_box.value; //dominant, dominant_recessive, or recessive
+    console.log(selection);
 
-    console.log(images[trait+"_none"]);
 
     //displays appropriate image depending on selection
     if(selection=="dominant" || selection=="dominant_recessive")
@@ -61,7 +62,7 @@ function changeTrait(trait, sex)
 function getSelection(trait, sex)
 {
     //gets the user's selection for the provided trait and sex
-    var select_box = document.getElementById(sex+"_"+trait+"_select");
+    var select_box = document.getElementById(sex+"_"+trait);
     var selection = select_box.value;
 
     //returns alleles in number format for multiplication

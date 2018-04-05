@@ -56,7 +56,16 @@
 <main>
     <h1>CatGen</h1>
 
-<!--COAT COLOR-->
+    <!--dropdown menu: choose color of male cat-->
+    <!--the female cat icon has an id of "colorSelectorRight" and is white by default-->
+    <p>Choose your trait</p>
+    <p> <span onclick="show('pigmentation');"> Pigmentation </span> ||
+        <span onclick="show('blackbrown');"> BB </span> ||
+        <span onclick="show('density');"> Density </span> ||</p>
+
+
+    <!--COAT COLOR-->
+    <div class ='page' id='blackbrown' style='display:none'>
     <div class="row">
         <div class="col-sm-6">
             <!--dropdown menu: choose color of female cat-->
@@ -92,9 +101,11 @@
             </select>
 
         </div>
-
+    </div>
 <!--COAT INTENSITY-->
     </div>
+
+    <div class='page' id="density" style="display:none">
     <div class="row">
         <div class="col-sm-6">
 
@@ -127,7 +138,7 @@
             </select>
         </div>
 
-
+    </div>
     </div>
 
 

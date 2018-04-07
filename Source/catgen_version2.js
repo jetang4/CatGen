@@ -33,7 +33,7 @@ var allele_symbols=[
 function changeTrait(trait, sex)
 {
     //gets the image associated with the select box
-    var img = document.getElementById(sex+"_"+trait+"_image");
+    var img = document.getElementById(sex+"_image");
 
     //gets the select box and the user's selection
     var select_box = document.getElementById(sex+"_"+trait+"_select");
@@ -50,6 +50,7 @@ function changeTrait(trait, sex)
         img.src = images[trait+'_none'];
 
     return false;
+
 }
 
 //returns user selection for the trait and sex of the cat in a 0 or 1 format
@@ -60,11 +61,11 @@ function getSelection(trait, sex)
     var selection = select_box.value;
 
     //returns alleles in number format for multiplication
-    if(selection=="dominant")
+    if(selection==="dominant")
         return [0,0];
-    else if(selection=="dominant_recessive")
+    else if(selection==="dominant_recessive")
         return [0,1];
-    else if(selection=="recessive")
+    else if(selection==="recessive")
         return [1,1];
     //user didn't select anything
     else

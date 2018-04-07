@@ -1,12 +1,13 @@
 //if want to add more images for different traits, just list in the formnat "[TRAIT]_dominant"...
 var images = {
-    "coatColor_dominant": "coatColor_dominant.png",
-    "coatColor_recessive": "coatColor_recessive.png",
+    "coatColor_dominant": "cat_black.png",
+    "coatColor_recessive": "cat_brown.png",
     "coatColor_none": "cat_white.png",
 
-    "coatColorDensity_dominant": "cat_gray_dominantSpotted.png",
-    "coatColorDensity_recessive": "cat_gray_heteroSpotted.png",
-    "coatColorDensity_none": "cat_gray.png",
+    "coatColor_dominant_coatColorDensity_dominant": "cat_black.png",
+    "coatColor_dominant_coatColorDensity_recessive": "cat_gray.png",
+    "coatColor_recessive_coatColorDensity_dominant": "cat_brown.png",
+    "coatColor_recessive_coatColorDensity_recessive": "cat_lightBrown.png"
 };
 
 var images2=[
@@ -36,18 +37,46 @@ function changeTrait(trait, sex)
     var img = document.getElementById(sex+"_image");
 
     //gets the select box and the user's selection
-    var select_box = document.getElementById(sex+"_"+trait+"_select");
-    var selection = select_box.value;
+    var select_box_color = document.getElementById(sex+"_"+"coatColor" + "_select");
+    var color_selection = select_box_color.value;
+    console.log(color_selection);
+    var select_box_density = document.getElementById(sex+"_"+"coatColorDensity" + "_select");
+    var density_selection = select_box_density.value;
+    console.log(density_selection);
 
-    console.log(images[trait+"_none"]);
+    //console.log(images[trait+"_none"]);
 
     //displays appropriate image depending on selection
-    if(selection=="dominant" || selection=="dominant_recessive")
-        img.src = images[trait+'_dominant'];
-    else if(selection=="recessive")
-        img.src = images[trait+'_recessive'];
-    else
-        img.src = images[trait+'_none'];
+    // if(color_selection=="dominant" || color_selection=="dominant_recessive")
+    //     img.src = images[trait+'_dominant'];
+    // else if(color_selection==="recessive")
+    //     img.src = images[trait+'_recessive'];
+    // else
+    //     img.src = images[trait+'_none'];
+    if (color_selection  === 'dominant' || color_selection  === 'dominant_recessive'  && density_selection === "")
+    {
+        img.src = images['coatColor_dominant'];
+    }
+    else if (color_selection  === 'recessive' && density_selection ===  "")
+    {
+        img.src = images['coatColor_recessive'];
+    }
+    else if (color_selection  === 'dominant' || color_selection  === 'dominant_recessive' && density_selection === 'dominant' || density_selection === 'dominant_recessive')
+    {
+        img.src = images['coatColor_dominant_coatColorDensity_dominant'];
+    }
+    else if ((color_selection  === 'dominant' || color_selection  === 'dominant_recessive') && (density_selection === 'recessive'))
+    {
+        img.src = images['coatColor_dominant_coatColorDensity_recessive'];
+    }
+    else if (color_selection  === 'recessive' && density_selection === 'dominant' || density_selection === 'dominant_recessive')
+    {
+        img.src = images['coatColor_recessive_coatColorDensity_dominant'];
+    }
+    else if (color_selection  === 'recessive' && density_selection === 'recessive')
+    {
+        img.src = images['coatColor_recessive_coatColorDensity_recessive'];
+    }
 
     return false;
 

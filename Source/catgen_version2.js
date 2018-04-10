@@ -10,9 +10,14 @@ var images = {
     "coatColor_recessive_coatColorDensity_recessive": "cat_lightBrown.png"
 };
 
+//the onyly images that *SHOULD* be here are
+//black= color DOM, density DOM
+///gray = color DOM, density REC
+//brown= color REC, density DOM
+//lightBrown = color rec, density rec
 var images2=[
-    ["cat_black_dominantSpotted.png","cat_black_heteroSpotted.png"],
-    ["cat_lightBrown_dominantSpotted.png","cat_lightBrown_heteroSpotted.png"],
+    ["cat_black.png","cat_gray.png"],
+    ["cat_brown.png","cat_lightBrown.png"],
 ]
 
 //lists possible traits
@@ -48,6 +53,7 @@ function changeTrait(trait, sex)
 
 
     //THIS CODE NEEDS TO BE REFACTORED TO HANDLE BOTH ONE OR TWO TRAITS
+    //CURRENTLY IT DOES NOT DISPLAY THE APPROPRIATE ICONS
     //displays appropriate image depending on selection
     // if(color_selection=="dominant" || color_selection=="dominant_recessive")
     //     img.src = images[trait+'_dominant'];

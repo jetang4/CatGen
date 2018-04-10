@@ -46,6 +46,8 @@ function changeTrait(trait, sex)
 
     //console.log(images[trait+"_none"]);
 
+
+    //THIS CODE NEEDS TO BE REFACTORED TO HANDLE BOTH ONE OR TWO TRAITS
     //displays appropriate image depending on selection
     // if(color_selection=="dominant" || color_selection=="dominant_recessive")
     //     img.src = images[trait+'_dominant'];
@@ -53,33 +55,39 @@ function changeTrait(trait, sex)
     //     img.src = images[trait+'_recessive'];
     // else
     //     img.src = images[trait+'_none'];
-    if (color_selection  === 'dominant' || color_selection  === 'dominant_recessive'  && density_selection === "")
+
+    //INFLEXIBLE CODE, BUT APPROPRIATELY DISPLAYS ICONS FOR COLOR-ONLY AND COLOR+DENSITY CROSSES
+    if ((color_selection  === 'dominant' || color_selection  === 'dominant_recessive')  && density_selection === "")
     {
         img.src = images['coatColor_dominant'];
     }
+
     else if (color_selection  === 'recessive' && density_selection ===  "")
     {
         img.src = images['coatColor_recessive'];
     }
-    else if (color_selection  === 'dominant' || color_selection  === 'dominant_recessive' && density_selection === 'dominant' || density_selection === 'dominant_recessive')
+
+    else if ((color_selection  === 'dominant' || color_selection  === 'dominant_recessive') && (density_selection === 'dominant' || density_selection === 'dominant_recessive'))
     {
         img.src = images['coatColor_dominant_coatColorDensity_dominant'];
     }
+
     else if ((color_selection  === 'dominant' || color_selection  === 'dominant_recessive') && (density_selection === 'recessive'))
     {
         img.src = images['coatColor_dominant_coatColorDensity_recessive'];
     }
+
     else if (color_selection  === 'recessive' && density_selection === 'dominant' || density_selection === 'dominant_recessive')
     {
         img.src = images['coatColor_recessive_coatColorDensity_dominant'];
     }
+
     else if (color_selection  === 'recessive' && density_selection === 'recessive')
     {
         img.src = images['coatColor_recessive_coatColorDensity_recessive'];
     }
 
     return false;
-
 }
 
 //returns user selection for the trait and sex of the cat in a 0 or 1 format

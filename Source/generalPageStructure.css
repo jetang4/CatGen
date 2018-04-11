@@ -33,6 +33,15 @@
 
 /*.navbar li ul li a:hover	{background-color: lightskyblue;}*/
 
+a
+{
+    font-size: 1.5em;
+}
+
+a.navbar-brand{
+    font-size: 1.9em;
+    font-weight: bold;
+}
 a:hover
 {
     background-color: lightskyblue !important;

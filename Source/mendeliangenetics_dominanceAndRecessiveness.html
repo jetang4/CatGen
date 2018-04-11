@@ -81,14 +81,15 @@
         By convention, the dominant allele (if any) is written first</p>
 
 
+    <div class="checkpoint">
+        <p>Checkpoint! Given that you are at the F locus, what would be the alleles for a recessive genotype?:</p>
 
-    <p>Checkpoint! Given that you are at the F locus, what would be the alleles for a recessive genotype?:</p>
+        <input id="domrec">
 
-    <input id="domrec">
+        <button type="button" onclick="quizValidator('ff', 'domrec')">Submit</button>
 
-    <button type="button" onclick="quizValidator('ff', 'domrec')">Submit</button>
-
-    <p id = "domrec-result">Are you correct?</p>
+        <p id = "domrec-result">Are you correct?</p>
+    </div>
 
     <p>An organism gets one copy of each allele from their mother, and one copy from their father.
     The allele that is transmitted from the parent to the offspring is completely random.
@@ -96,50 +97,58 @@
 
     <p>Say that an organism has a genotype BB. It received one B from its mother, and another B from its father.</p>
 
-    <p>Checkpoint! In dogs, having a solid colored coat is dominant to spotting
-        A single dominant allele for coat density is sufficient for producing a solid coat.
-        A solid colored dog and a spotted dog produce a litter of puppies.</p>
+    <div class="checkpoint">
+        <p>Checkpoint! In dogs, having a solid colored coat is dominant to spotting
+            A single dominant allele for coat density is sufficient for producing a solid coat.
+            A solid colored dog and a spotted dog produce a litter of puppies.</p>
 
-    <p>True or false: the puppies will all be solid</p>
-    <form id="puppy">
-        <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
-        <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
-    </form>
-    <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
+        <p>True or false: the puppies will all be solid</p>
+        <form id="puppy">
+            <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
+            <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
+        </form>
+        <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
 
-    <p id="puppy-result">Are you correct?</p>
+        <p id="puppy-result">Are you correct?</p>
+    </div>
 
     <p>So far, we've looked at the inheritance of single traits, but what if we want to see how two traits are passed down?
     For each trait, we apply the same principle: one allele is passed from the mother, one allele is passed from the father.
         One allele per parent * two parents * two traits = 4 alleles total to keep track of.
     </p>
-
+<div class="example">
     <p>Example: we have a plant with genotype <span style="color:red">P</span><span style="color:blue">P</span><span style="color:red">S</span><span style="color:blue">s</span> <br>
     Let <span style="color:red"> red </span> indicate that the allele came from the mother <br>
     and let <span style="color:blue"> blue </span> indicate that the allele came from the father <br>
     As illustrated above, for each locus, the organism gets one allele from each parent.</p>
+</div>
 
     <p> When two traits are taken into consideration, it is called a <strong> dihybrid cross.</strong> <br>
         In total, there are <strong> sixteen </strong> different genotype combinations (click on the Probability tab to learn more) in a dihybrid cross.
     </p>
-    <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDd <br>
-        There are sixteen possible allele combinations the offspring can have <br>
-        Click the buttons below to highlight the different possible combinations <br>
-        Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
-        <span id="allele16ComboExample" style="font-size: 10em"><span id="A1">B</span><span id="A2">B</span><span id="A3">d</span><span id="A4">d</span> x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">d</span></span> <br>
-        <span id="allele16ComboExampleOffspring" style="font-size: 6em">Offspring: ____</span> </p><br>
-        Tip: remember that the dominant allele is always written first for each locus.
 
-        <!--<button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>-->
-    </p>
+    <div class="example">
+        <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDd <br>
+            There are sixteen possible allele combinations the offspring can have <br>
+            Click the buttons below to highlight the different possible combinations <br>
+            Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
+        </p>
+        </div>
+    <p>
+            <span id="allele16ComboExample" style="font-size: 10em"><span id="A1">B</span><span id="A2">B</span><span id="A3">d</span><span id="A4">d</span> x <span id="B1">b</span><span id="B2">b</span><span id="B3">D</span><span id="B4">d</span></span> <br>
+            <span id="allele16ComboExampleOffspring" style="font-size: 6em">Offspring: ____</span> </p><br>
+            Tip: remember that the dominant allele is always written first for each locus.
+            <!--<button onclick="document.getElementById('A1').style.color = 'orange'">Clickem</button>-->
+        </p>
+
 
     <button id="combo1">Combination 1</button>
     <button id="combo2">Combination 2</button>
     <button id="combo3">Combination 3</button>
     <button id="combo4">Combination 4</button>
 
-</div>
 
+</div>
 </main>
 <script>
     $(document).ready(function(){

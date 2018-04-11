@@ -2,3 +2,15 @@ h1
 {
     text-align:center;
 }
+
+/*for each checkpoint class, make the background a light sky blue*/
+.checkpoint
+{
+    background-color: #e6f5ff;
+}
+
+/*for each example class, make the background a  light cornflower blue*/
+.example
+{
+    background-color: #e6f0ff
+}

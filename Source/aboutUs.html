@@ -6,13 +6,16 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this "about us" template -->
-    <link href="css/round-about.css" rel="stylesheet">
+    <!--<link href="css/round-about.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="generalPageStructure.css" />
     <!-- Bootstrap core JavaScript -->
     <!--<script src="vendor/jquery/jquery.min.js"></script>-->
-    <!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
     <!--link to CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="styling.css">
     <link rel="stylesheet" href="generalPageStructure.css" />
@@ -54,7 +57,9 @@
     </nav>
 
 </header>
-<div id= "aboutUs" class="page">
+
+<main>
+<div id= "aboutUs" class="container">
 
     <!-- Introduction Row -->
     <h1 class="my-4">About Us
@@ -67,6 +72,7 @@
         <div class="col-lg-12">
             <h2 class="my-4">Our Team</h2>
         </div>
+
         <div class="col-lg-4 col-sm-6 text-center mb-4">
             <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="Gerardo Aguilar-1.jpg" alt="http://placehold.it/200x200">
 
@@ -80,6 +86,7 @@
                 by refecatoring the prototype code. Allowing for a more versatile and easier
                 to read java code.</p>
         </div>
+
         <div class="col-lg-4 col-sm-6 text-center mb-4">
             <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="kl.png" alt="">
             <h3>Kristie Desiree Zheng
@@ -87,8 +94,10 @@
             </h3>
             <p>Kristie is a graduate student in Biomedical Sciences and a shameless cat lover.
                 She enjoys statistics and her programming language of choice is JavaScript.
-                Her favorite part of the project is creating (and filling in) wireframes and mockups.</p>
+                Her favorite part of the project is creating wireframes and mockups as well as the cat
+                icons in the Punnett Square applet.</p>
         </div>
+
         <div class="col-lg-4 col-sm-6 text-center mb-4">
             <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="jenny.jpg" alt="">
             <h3>Jenny Tang
@@ -96,6 +105,8 @@
             </h3>
             <p>Jenny is a cell and molecular biology student who likes technology and animals. Her knowledge of genetics is helpful in building the app</p>
         </div>
+    </div>
+    <div class="row">
         <div class="col-lg-6 col-sm-6 text-center mb-4">
             <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="rbell.jpg" alt="">
             <h3>Rodrigo Bell
@@ -103,6 +114,7 @@
             </h3>
             <p>Rodrigo brings background in Computer Science, with experiences ranging from his undergrad in CS, and personal projects in web development. As the group project’s mentor, he’s helped guide the project and help Kristie and Gerardo with technical challenges.</p>
         </div>
+
         <div class="col-lg-6 col-sm-6 text-center mb-4">
             <img class="rounded-circle img-fluid d-block mx-auto team_photo" src="szeto.jpg" alt="">
             <h3>Nick Szeto
@@ -113,10 +125,12 @@
     </div>
 
 
+
     <h1 class="my-4">Contact Us
         <small>We'd love to hear from you!</small>
     </h1>
     <p>Do you have any questions, comments, or concerns about CatGen? Email us at: </p>
 </div>
+</main>
 </body>
 </html>

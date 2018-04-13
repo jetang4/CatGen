@@ -1,37 +1,10 @@
-/*ul {*/
-    /*list-style-type: none;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*overflow: hidden;*/
-    /*background-color: deepskyblue;*/
-/*}*/
-
-/*li {*/
-    /*float: left;*/
-/*}*/
-
-/*li a {*/
-    /*display: block;*/
-    /*color: white;*/
-    /*text-align: center;*/
-    /*padding: 14px 16px;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*li a:hover:not(.active) {*/
-    /*background-color: lightskyblue;*/
-/*}*/
-
-/*.active {*/
-    /*background-color: #4CAF50;*/
-/*}*/
-
+/*each page links to this stylesheet for fonts, navbar, and margins*/
+/*these all pertain to the navigation bar*/
 *
 {
     font-family: "Avenir", "Helvetica", "Verdana";
 }
 
-/*.navbar li ul li a:hover	{background-color: lightskyblue;}*/
 
 a
 {
@@ -57,6 +30,7 @@ header
     width: 100%;
 }
 
+/*these pertain to the page margins*/
 .container
 {
     padding: 0px !important;

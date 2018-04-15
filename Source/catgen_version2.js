@@ -564,154 +564,6 @@ function fillPunnetSquare()
     }
 
 
-
-
-
-
-
-    // //keeps track of punnet square results for later data
-    // var num_dominant = 0;
-    // var num_dominant_recessive = 0;
-    // var num_recessive = 0;
-    // var possible_offspring = [];
-    // var possible_alleles = [];
-
-    // for(var trait_num = 0; trait_num < num_traits_selected; trait_num++)
-    // {
-    //     for(var x = 0; x < num_traits_selected*2; x++)
-    //     {
-    //         for(var y = 0; y < num_traits_selected*2; y++)
-    //         {
-
-    //             // var female_text = document.getElementById("female_allele"+(x+1)+"_punnettsquare");
-    //             // var male_text = document.getElementById("male_allele"+(x+1)+"_punnettsquare");
-
-    //             // var uppercase = allele_selections[trait_num];
-    //             // var lowercase = allele_selections[trait_num].toLowerCase();
-
-    //             if(trait_num==0)
-    //             {
-    //                 var x_index = x%num_traits_selected;
-    //                 var y_index = y%num_traits_selected;
-
-    //                 if(x<num_traits_selected)
-    //                     x_index=0;
-    //                 else
-    //                     x_index=1;
-
-
-    //                 if(y<num_traits_selected)
-    //                     y_index=0;
-    //                 else
-    //                     y_index=1;
-    //             }
-    //             else
-    //             {
-    //                 var x_index = x%num_traits_selected;
-    //                 var y_index = y%num_traits_selected;
-    //             }
-
-
-    //             //if 0, then dominant shows, if 1, then recessive shows
-    //             var trait_show = male_selections[trait_num][x_index] * female_selections[trait_num][y_index];
-
-    //             //converts 0 to B and 1 to b
-    //             if(trait_num==0)
-    //             {
-
-    //                 var left_allele = numberToAllele(male_selections[trait_num][x_index], trait_num);
-    //                 var right_allele = numberToAllele(female_selections[trait_num][y_index], trait_num);
-    //             }
-    //             else
-    //             {
-    //                 var left_allele = numberToAllele(male_selections[trait_num][x_index], trait_num);
-    //                 var right_allele = numberToAllele(female_selections[trait_num][y_index], trait_num);
-    //             }
-
-
-    //             //retrieves image from relevant square
-    //             var current_square = document.getElementById(x+'|'+y+'_square');
-    //             var current_img = current_square.getElementsByTagName('img')[0];
-
-    //             console.log("Current image at ("+x+","+y+"): "+current_img);
-
-    //             var trait = traits[trait_num]
-
-    //             //if dominant trait is shown
-    //             if(trait_show==0)
-    //             {
-    //                 //displays dominant cat in punnet square
-    //                 if(trait_num==0)
-    //                     current_img.src = images[trait+'_dominant'];
-    //                 else
-    //                 {
-    //                     if(current_img.src.includes("dominant"))
-    //                         current_img.src = images2[0][0];
-    //                     else
-    //                         current_img.src = images2[1][1];
-    //                 }
-
-    //                 //add image to beginning of possible offspring for data display and iterate through array for other possibles
-    //                 if(!findArray(possible_offspring, images[trait+'_dominant']))
-    //                     possible_offspring.unshift(images[trait+'_dominant']);
-
-    //                 //if one was recessive, count as dominant_recessive
-    //                 if(female_selection[x]==1 || male_selection[y]==1)
-    //                     num_dominant_recessive++;
-    //                 else
-    //                     num_dominant++;
-    //             }
-    //             //if recessive trait is shown
-    //             else
-    //             {
-    //                 //displays recessive cat in punnet square
-    //                 if(trait_num==0)
-    //                     current_img.src = images[trait+'_recessive'];
-    //                 else
-    //                 {
-    //                     if(current_img.src.includes("dominant"))
-    //                         current_img.src = images2[0][0];
-    //                     else
-    //                         current_img.src = images2[1][1];
-    //                 }
-
-
-    //                 //add image to end of possible offspring for data display
-    //                 if(!findArray(possible_offspring, images[trait+'_recessive']))
-    //                     possible_offspring.push(images[trait+'_recessive']);
-
-    //                 num_recessive++;
-    //             }
-
-
-
-
-    //             /* displays allelle text */
-
-
-    //             var combine_allele;
-    //             //displays dominant allele first by checking if left is dominant, or if right is recessive
-    //             if(left_allele==left_allele.toUpperCase() || right_allele==right_allele.toLowerCase())
-    //             {
-    //                 combine_allele = left_allele+right_allele;
-    //                 document.getElementById(x+'|'+y+'_probability').innerHTML += combine_allele;
-    //             }
-    //             else
-    //             {
-    //                 combine_allele = right_allele+left_allele;
-    //                 document.getElementById(x+'|'+y+'_probability').innerHTML += combine_allele;
-    //             }
-
-
-
-    //             /* Add allele to possible alleles for stats display */
-    //             //adds to possible alleles
-    //             if(!findArray(possible_alleles, combine_allele ))
-    //                 possible_alleles.push( combine_allele );
-    //         }
-    //     }
-    // }
-
     /* displays bottom data */
 
     //displays possible offspring
@@ -734,24 +586,26 @@ function fillPunnetSquare()
     var keys = Object.keys(image_array)
     for(var x = 0; x < keys.length; x++)
     {
-        // if(keys[x]!=undefined && keys[x]!="undefined")
         document.getElementById("offspring_images").innerHTML += "<span>"+image_array[keys[x]]+"</span><img src='"+keys[x]+"'>";
     }
 
     var total = num_dominant + num_dominant_recessive + num_recessive;
 
     //displays stats
-
     document.getElementById("data").innerHTML = "Possible offsprings " +
         "<br>GENOTYPE: "+possible_alleles;
 
-    document.getElementById("data").innerHTML +=
-        "<br>Black: "+( (num_dominant+num_dominant_recessive)/total*100 )+"%" +
-        "<br>Brown: "+( (num_recessive)/total*100 )+"%" +
-        "<br>"+( (num_dominant)/total*100 )+"% homozygous dominant" +
-        "<br>"+( (num_dominant_recessive)/total*100 )+"% heterozygous" +
-        "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive";
-
+    //only display stats if user selected 1 trait to calculate since it doesn't work with 2
+    if(num_traits_selected==1)
+    {
+        document.getElementById("data").innerHTML += 
+            "<br>Black: "+( (num_dominant+num_dominant_recessive)/total*100 )+"%" +
+            "<br>Brown: "+( (num_recessive)/total*100 )+"%" +
+            "<br>"+( (num_dominant)/total*100 )+"% homozygous dominant" +
+            "<br>"+( (num_dominant_recessive)/total*100 )+"% heterozygous" +
+            "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive";
+    }
+    
 
 }
 

@@ -1,13 +1,13 @@
 //if want to add more images for different traits, just list in the formnat "[TRAIT]_dominant"...
 var images = {
-    "coatColor_dominant": "cat_black.png",
-    "coatColor_recessive": "cat_brown.png",
+    "coatColor_dominant": "cat_dominant_black.png",
+    "coatColor_recessive": "cat_recessive_brown.png",
     "coatColor_none": "cat_white.png",
 
-    "coatColor_dominant_coatColorDensity_dominant": "cat_black.png",
-    "coatColor_dominant_coatColorDensity_recessive": "cat_gray.png",
-    "coatColor_recessive_coatColorDensity_dominant": "cat_brown.png",
-    "coatColor_recessive_coatColorDensity_recessive": "cat_lightBrown.png"
+    "coatColor_dominant_coatColorDensity_dominant": "cat_dominant_black.png",
+    "coatColor_dominant_coatColorDensity_recessive": "cat_recessive_gray.png",
+    "coatColor_recessive_coatColorDensity_dominant": "cat_dominant_brown.png",
+    "coatColor_recessive_coatColorDensity_recessive": "cat_recessive_lightBrown.png"
 };
 
 //the onyly images that *SHOULD* be here are
@@ -16,8 +16,8 @@ var images = {
 //brown= color REC, density DOM
 //lightBrown = color rec, density rec
 var images2=[
-    ["cat_black.png","cat_gray.png"],
-    ["cat_brown.png","cat_lightBrown.png"],
+    ["cat_dominant_black.png","cat_recessive_gray.png"],
+    ["cat_dominant_brown.png","cat_recessive_lightBrown.png"],
 ]
 
 //lists possible traits
@@ -192,18 +192,27 @@ function fillPunnetSquare()
         {
             //displays dominant cat in punnet square
             if(trait_num==0)
+            {
                 current_img.src = images[trait+'_dominant'];
+                possible_offspring.push(images[trait+'_dominant']);
+            }
             else
             {
                 if(current_img.src.includes("dominant"))
+                {
                     current_img.src = images2[0][0];
+                    possible_offspring.push(images2[0][0]);
+                }
                 else
+                {
                     current_img.src = images2[1][0];
+                    possible_offspring.push(images2[1][0]);
+                }
             }
 
             //add image to beginning of possible offspring for data display and iterate through array for other possibles
-            if(!findArray(possible_offspring, images[trait+'_dominant']))
-                possible_offspring.unshift(images[trait+'_dominant']);
+            // if(!findArray(possible_offspring, images[trait+'_dominant']))
+            // possible_offspring.push(images[trait+'_dominant']);
 
             //if one was recessive, count as dominant_recessive
             if(female_selection[x]==1 || male_selection[y]==1)
@@ -216,19 +225,29 @@ function fillPunnetSquare()
         {
             //displays recessive cat in punnet square
             if(trait_num==0)
+            {
                 current_img.src = images[trait+'_recessive'];
+                possible_offspring.push(images[trait+'_recessive']);
+            }
             else
             {
                 if(current_img.src.includes("dominant"))
+                {
                     current_img.src = images2[0][1];
+                    console.log("0|1: "+images2[0][1]);
+                    possible_offspring.push(images2[0][1]);
+                }
                 else
+                {
                     current_img.src = images2[1][1];
+                    possible_offspring.push(images2[1][1]);
+                }
             }
 
 
             //add image to end of possible offspring for data display
-            if(!findArray(possible_offspring, images[trait+'_recessive']))
-                possible_offspring.push(images[trait+'_recessive']);
+            // if(!findArray(possible_offspring, images[trait+'_recessive']))
+            // possible_offspring.push(images[trait+'_recessive']);
 
             num_recessive++;
         }
@@ -365,6 +384,7 @@ function fillPunnetSquare()
         var row = 0;
         var female_num = 0;
         var male_num = 0;
+        possible_offspring=[];
 
         //(0,0)
         female_num = 0;
@@ -696,21 +716,42 @@ function fillPunnetSquare()
 
     //displays possible offspring
     document.getElementById("offspring_images").innerHTML = "";
+
+    var image_array = {};
     for(var x = 0; x < possible_offspring.length; x++)
     {
-        document.getElementById("offspring_images").innerHTML += "<img src='"+possible_offspring[x]+"'>";
+        if(possible_offspring[x]!=undefined)
+        {
+            if(possible_offspring[x] in image_array)
+                image_array[possible_offspring[x]]++;
+            else
+                image_array[possible_offspring[x]] = 1;
+        }
+    }
+
+    console.log(image_array);
+
+    var keys = Object.keys(image_array)
+    for(var x = 0; x < keys.length; x++)
+    {
+        // if(keys[x]!=undefined && keys[x]!="undefined")
+        document.getElementById("offspring_images").innerHTML += "<span>"+image_array[keys[x]]+"</span><img src='"+keys[x]+"'>";
     }
 
     var total = num_dominant + num_dominant_recessive + num_recessive;
 
     //displays stats
+
     document.getElementById("data").innerHTML = "Possible offsprings " +
-        "<br>GENOTYPE: "+possible_alleles +
+        "<br>GENOTYPE: "+possible_alleles;
+
+    document.getElementById("data").innerHTML +=
         "<br>Black: "+( (num_dominant+num_dominant_recessive)/total*100 )+"%" +
         "<br>Brown: "+( (num_recessive)/total*100 )+"%" +
         "<br>"+( (num_dominant)/total*100 )+"% homozygous dominant" +
         "<br>"+( (num_dominant_recessive)/total*100 )+"% heterozygous" +
-        "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive"
+        "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive";
+
 
 }
 

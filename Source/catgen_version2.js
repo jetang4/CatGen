@@ -598,14 +598,14 @@ function fillPunnetSquare()
     //only display stats if user selected 1 trait to calculate since it doesn't work with 2
     if(num_traits_selected==1)
     {
-        document.getElementById("data").innerHTML += 
+        document.getElementById("data").innerHTML +=
             "<br>Black: "+( (num_dominant+num_dominant_recessive)/total*100 )+"%" +
             "<br>Brown: "+( (num_recessive)/total*100 )+"%" +
             "<br>"+( (num_dominant)/total*100 )+"% homozygous dominant" +
             "<br>"+( (num_dominant_recessive)/total*100 )+"% heterozygous" +
             "<br>"+( (num_recessive)/total*100 )+"% homozygous recessive";
     }
-    
+
 
 }
 

@@ -7,10 +7,23 @@ h1
 .checkpoint
 {
     background-color: #e6f5ff;
+    padding:5px;
+    margin-top:5px;
 }
 
 /*for each example class, make the background a  light cornflower blue*/
 .example
 {
     background-color: #e6f0ff
+}
+
+
+.right
+{
+    color:green;
+}
+
+.wrong
+{
+    color:orange;
 }

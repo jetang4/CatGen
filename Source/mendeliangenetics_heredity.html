@@ -13,6 +13,53 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" >
+
+        function inputValidator(id)
+        {
+            var is_correct = false;
+
+            var value = $('#'+id).find(":selected").text();
+            value = value.toLowerCase();
+
+
+            if(id==="alleleTF")
+            {
+                //correct answer is true
+                if(value==="true")
+                    is_correct = true;
+            }
+            else if(id==="gene_copies")
+            {
+                //correct answer is one
+                if(value==="1")
+                    is_correct = true;
+            }
+            else if(id==="genderID")
+            {
+                if(value==="male")
+                    is_correct = true;
+            }
+
+            //if user got answer correct for id
+            if(is_correct)
+            {
+                console.log("is correct");
+                $('#'+id+"_result").text("You are correct!");
+                $('#'+id+"_result").attr('class', 'right');
+            }
+            else
+            {
+                $('#'+id+"_result").text("You are incorrect");
+                $('#'+id+"_result").attr('class', 'wrong');
+            }
+        }
+
+
+    </script>
+
+
 </head>
 <body class="container">
 
@@ -53,75 +100,90 @@
 
 <!--the 'container' class allows the bootstrap template to be applied -->
 <main>
-<div id="heredity" class="container">
-    <h1>Mendelian Genetics</h1>
-    <h2>Heredity</h2>
-    <p>Heredity refers to the genetic transmission from a
-        parent organism to an offspring. Heredity helps explain
-        why offspring resemble their parents, as well as how
-        genetic diseases are passed down families. Some genetic
-        diseases for example are caused by mutations in genes. These
-        conditions are usually inherited in one of several ways,
-        including autosomal dominant, autosomal recessive, X-linked
-        dominant, X-linked recessive, codominant, and in mitochondrial
-        inherit patters. While diseases can be inherited, they can also
-        be caused by environmental factors. </p>
+    <div id="heredity" class="container">
+        <h1>Mendelian Genetics</h1>
+        <h2>Heredity</h2>
+        <p>Heredity refers to the genetic transmission from a
+            parent organism to an offspring. Heredity helps explain
+            why offspring resemble their parents, as well as how
+            genetic diseases are passed down families. Some genetic
+            diseases for example are caused by mutations in genes. These
+            conditions are usually inherited in one of several ways,
+            including autosomal dominant, autosomal recessive, X-linked
+            dominant, X-linked recessive, codominant, and in mitochondrial
+            inherit patters. While diseases can be inherited, they can also
+            be caused by environmental factors. </p>
 
-<p>
+        <p>
+            Gene duplication, mutation, or other processes can produce new genes
+            and alleles and increase genetic variation. New genetic variation can
+            be created within generations in a population, so a population with rapid
+            reproduction rates will probably have high genetic variation. However,
+            existing genes can be arranged in new ways from chromosomal crossing over
+            and recombination in sexual reproduction. Overall, the main sources of
+            genetic variation are the formation of new alleles, the altering of gene
+            number or position, rapid reproduction, and sexual reproduction. To learn more about
+            inheritance, please refer to the video below and test what
+            you’ve learned in our short quiz.
 
-
-    Genetic Variation
-
-    Gene duplication, mutation, or other processes can produce new genes
-    and alleles and increase genetic variation. New genetic variation can
-    be created within generations in a population, so a population with rapid
-    reproduction rates will probably have high genetic variation. However,
-    existing genes can be arranged in new ways from chromosomal crossing over
-    and recombination in sexual reproduction. Overall, the main sources of
-    genetic variation are the formation of new alleles, the altering of gene
-    number or position, rapid reproduction, and sexual reproduction. To learn more about
-    inheritance, please refer to the video below and test what
-    you’ve learned in our short quiz.
-
-</p>
+        </p>
 
 
-    <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/eEUvRrhmcxM">
+        <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/eEUvRrhmcxM">
 
-    </iframe>
-    <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-</div>
-
-
-
-    <div class="checkpoint">
-
-        <p>Checkpoint! Given that you are at the F locus, what would be the alleles for a recessive genotype?:</p>
-
-        <input id="domrec">
-
-        <button type="button" onclick="quizValidator('ff', 'domrec')">Submit</button>
-
-        <p id = "domrec-result">Are you correct?</p>
+        </iframe>
+        <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
     </div>
+    <div style="padding-bottom:100px;">
+        <p style="font-size:20px;font-weight:bold;padding-top:40px;">Inheritance Questions:</p>
+
+        <div class="checkpoint">
+
+            <p>An ellele is one of two or more alternative forms of a gene that arise by mutation and are found at the same place on a chromosome.</p>
+
+            <select id="alleleTF">
+                <option value="" selected>True or False?</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('alleleTF')" />
+            <p id="alleleTF_result"></p>
+        </div>
 
 
-    <div class="checkpoint">
-        <p>Checkpoint! In dogs, having a solid colored coat is dominant to spotting
-            A single dominant allele for coat density is sufficient for producing a solid coat.
-            A solid colored dog and a spotted dog produce a litter of puppies.</p>
+        <div class="checkpoint">
+            <p>How many copies of a gene in each cell are sufficient for a person to be affected by an autosomal dominant disorder?</p>
 
-        <p>True or false: the puppies will all be solid</p>
-        <form id="puppy">
-            <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
-            <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
-        </form>
-        <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
+            <select id="gene_copies" >
+                <option value="" selected>Number of copies?</option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+            </select>
 
-        <p id="puppy-result">Are you correct?</p>
+            <input type="button" value="Submit" onclick="inputValidator('gene_copies')" />
+            <p id="gene_copies_result"></p>
+        </div>
+
+
+
+        <div class="checkpoint">
+
+            <p><span style="font-weight:bold">X-linked recessive inheritance</span> is a mode of inheritance in which a mutation in a gene on the X chromosome causes the phenotype to be expressed in?</p>
+
+            <select id="genderID">
+                <option value="" selected>Male or Female?</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('genderID')" />
+            <p id="genderID_result"></p>
+        </div>
+
     </div>
-
 
 
 </main>

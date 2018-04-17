@@ -19,6 +19,69 @@
 
     <!--jquery color animation package-->
     <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
+
+
+    <script type="text/javascript" >
+
+        function inputValidator(id)
+        {
+            var is_correct = false;
+
+            var value = $('#'+id).find(":selected").text();
+            value = value.toLowerCase();
+
+
+            if(id==="carrierBlue")
+            {
+                //correct answer is true
+                if(value==="1/4")
+                    is_correct = true;
+            }
+            else if(id==="carrierBrown")
+            {
+                //correct answer is true
+                if(value==="3/4")
+                    is_correct = true;
+            }
+            else if(id==="carrierBrownGeno")
+            {
+                //correct answer is true
+                if(value==="2/4")
+                    is_correct = true;
+            }
+            else if(id==="numChildren")
+            {
+                //correct answer is true
+                if(value==="none")
+                    is_correct = true;
+            }
+            else if(id==="numChildren2")
+            {
+                //correct answer is true
+                if(value==="1/4")
+                    is_correct = true;
+            }
+
+
+            //if user got answer correct for id
+            if(is_correct)
+            {
+                console.log("is correct");
+                $('#'+id+"_result").text("You are correct!");
+                $('#'+id+"_result").attr('class', 'right');
+            }
+            else
+            {
+                $('#'+id+"_result").text("You are incorrect");
+                $('#'+id+"_result").attr('class', 'wrong');
+            }
+        }
+
+
+    </script>
+
+
+
 </head>
 <body class="container">
 <header>
@@ -73,7 +136,7 @@
 
     </iframe>
     <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
-</div>
+    </div>
 
     <p>
         The above example illustrates an important distinction. An individual with paring
@@ -89,6 +152,100 @@
         from one another. An individual with this type of pairing is called heterozygous.
 
     </p>
+
+
+
+
+
+    <div style="padding-bottom:100px;">
+        <p style="font-size:20px;font-weight:bold;padding-top:40px;">Punnett Square Questions:</p>
+
+        <div class="checkpoint">
+
+            <p>If you have two brown eyed parents that are both carriers for the blue eyed recessive phenotype, what is the likelihood they will have blue eyed offspring?</p>
+
+            <select id="carrierBlue">
+                <option value="" selected>Likelihood?</option>
+                <option value="4/4">4/4</option>
+                <option value="1/2">1/2</option>
+                <option value="1/4">1/4</option>
+                <option value="3/4">3/4</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('carrierBlue')" />
+            <p id="carrierBlue_result"></p>
+        </div>
+
+        <div class="checkpoint">
+
+            <p>How many will have brown eyed phenotypes?</p>
+
+            <select id="carrierBrown">
+                <option value="" selected>How many?</option>
+                <option value="2/4">2/4</option>
+                <option value="1/4">1/4</option>
+                <option value="3/4">3/4</option>
+                <option value="4/4">4/4</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('carrierBrown')" />
+            <p id="carrierBrown_result"></p>
+        </div>
+
+        <div class="checkpoint">
+
+            <p>How many will have the brown eyed heterozygous genotype?</p>
+
+            <select id="carrierBrownGeno">
+                <option value="" selected>How many?</option>
+                <option value="2/4">2/4</option>
+                <option value="1/4">1/4</option>
+                <option value="3/4">3/4</option>
+                <option value="4/4">4/4</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('carrierBrownGeno')" />
+            <p id="carrierBrownGeno_result"></p>
+        </div>
+
+        <div class="checkpoint">
+
+            <p>Now assume you have a heterozygous cat parent for black (dominant) fur and homozygous for intense fur color density, and a homozygous black fur cat with heterozygous intense fur density. How many of their children will be black dilute (for help use the punnett square tool)?</p>
+
+            <select id="numChildren">
+                <option value="" selected>How many children?</option>
+                <option value="1/9">1/9</option>
+                <option value="1/2">1/2</option>
+                <option value="all">all</option>
+                <option value="none">none</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('numChildren')" />
+            <p id="numChildren_result"></p>
+        </div>
+
+        <div class="checkpoint">
+
+            <p>Now assume you have a heterozygous cat parent for black (dominant) fur and homozygous for intense fur color density, and a heterozygous black fur cat with heterozygous intense fur density. How many of their children will be black dilute (for help use the punnett square tool)?</p>
+
+            <select id="numChildren2">
+                <option value="" selected>How many children?</option>
+                <option value="1/9">1/9</option>
+                <option value="1/2">1/2</option>
+                <option value="1/4">1/4</option>
+                <option value="all">all</option>
+            </select>
+
+            <input type="button" value="Submit" onclick="inputValidator('numChildren2')" />
+            <p id="numChildren2_result"></p>
+        </div>
+
+
+    </div>
+
+
+
+
 </main>
 
 </body>

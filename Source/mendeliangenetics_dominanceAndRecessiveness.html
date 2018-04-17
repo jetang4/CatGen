@@ -62,26 +62,31 @@
 <!--the 'container' class allows the bootstrap template to be applied -->
 <main>
 <div id="domAndRec" class="container">
+    <!--main page title is H1-->
     <h1>Mendelian Genetics</h1>
+    <!--subheaders are h2-->
     <h2>Dominance and Recessiveness</h2>
+
+    <!--lead in paragraph-->
     <p>How is it possible that two black cats have brown kittens?</p>
     <p>In the case of most traits, alleles come in both a <strong> dominant </strong> and a <strong> recessive </strong> form.
         Having two (or more) forms of each trait (alleles) allows for the level of variation we see in everything from hair color to taste certain foods.
         If you've ever wondered how out of two siblings, one has curly hair and the other straight, dominance and recessiveness can explain it.
     </p>
 
-
+    <!--video-->
     <iframe width="420" height="315"
             src="https://www.youtube.com/embed/G-_fwABa2BU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
     <!--<p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>-->
 
+    <!--all text content is contained within paragraphs-->
     <p>An organism's genotype for a certain trait is the pair of two alleles they have at that trait's locus (location on a gene).
         At each trait locus, you can have two forms of the alleles: both dominant, both recessive, or one of each.
         Dominant forms of an allele are represented by the CAPITAL form of a letter, and recessive forms are represented by the lowercase form.
         By convention, the dominant allele (if any) is written first</p>
 
-
+    <!--quizzes have the class 'checkpoint' which will apply a CSS class to give it a light background-->
     <div class="checkpoint">
         <p>Checkpoint! Given that you are at the F locus, what would be the alleles for a recessive genotype?:</p>
 
@@ -105,7 +110,7 @@
 
         <p>True or false: the puppies will all be solid</p>
         <form id="puppy">
-            <input type="radio" name="puppy-tf" id="puppy-true" value="true" checked> True<br>
+            <input type="radio" name="puppy-tf" id="puppy-true" value="true"> True<br>
             <input type="radio" name="puppy-tf" id="puppy-false" value="false"> False<br>
         </form>
         <button type="button" onclick="trueFalseValidator('puppy')">Submit</button>
@@ -117,6 +122,8 @@
     For each trait, we apply the same principle: one allele is passed from the mother, one allele is passed from the father.
         One allele per parent * two parents * two traits = 4 alleles total to keep track of.
     </p>
+
+    <!--all examples are given a 'example' class which gives them a light colored background-->
 <div class="example">
     <p>Example: we have a plant with genotype <span style="color:red">P</span><span style="color:blue">P</span><span style="color:red">S</span><span style="color:blue">s</span> <br>
     Let <span style="color:red"> red </span> indicate that the allele came from the mother <br>
@@ -131,7 +138,7 @@
     <div class="example">
         <p>Example: we have a female cat with the genotype BBdd and a male cat with the genotype bbDd <br>
             There are sixteen possible allele combinations the offspring can have <br>
-            Click the buttons below to highlight the different possible combinations <br>
+            Click the buttons below to highlight some of the different possible combinations <br>
             Remember, the offspring will always receive one B-locus allele from the mom, one B-locus allele from the dad, one D-locus alelle from the mom, and one D-locus allele from the dad. <br>
         </p>
         </div>
@@ -148,8 +155,56 @@
     <button id="combo3">Combination 3</button>
     <button id="combo4">Combination 4</button>
 
+    <div class="checkpoint">
+        <p>Checkpoint! In the above example, which one of these offspring genotypes is not possible?</p>
+        <form id="dihybridCross">
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-correct" value="dihybridCross-correct">BBDd<br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong1" value="incorrect"> BbDd<br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong2" value="incorrect"> Bbdd <br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong3" value="incorrect"> They are all possible<br>
+        </form>
+        <button type="button" onclick="multipleChoiceValidator('dihybridCross')">Submit</button>
+        <p id="dihybridCross-result">Are you correct?</p>
+    </div>
 
 </div>
+
+    <h2>Codominance</h2>
+    <p>Codominance occurs when heterozygous organisms show characteristics of both two alleles concurrently. <br>
+        Both alleles are considered dominant, and both are displayed in their entirity.
+        One major example of codominance is blood type. Blood has markers of A, B, or none<br>
+        The A marker and the B marker are both dominant; the recessive (Type O blood) has no markers at all <br>
+    </p>
+    <div class="bloodtype">
+        <div class="blood"><img class="bloodImg" src="typeA.png"/></div>
+        <div class="blood"><img class="bloodImg" src="typeB.png"/></div>
+        <div class="blood"><img class="bloodImg" src="typeO.png"/></div>
+    </div>
+
+    <div class="checkpoint">
+        <p>Checkpoint! With the knowledge that blood type is codominant, what would the phenotype of AB blood be?</p>
+        <form id="bloodtype">
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-correct" value="dihybridCross-correct"><img class="bloodImg" src="AO.png"><br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong1" value="incorrect"> <img class="bloodImg" src="ABAB.png"><br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong2" value="incorrect"> <img class="bloodImg" src="typeAB.png"> <br>
+            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong3" value="incorrect"> <img class="bloodImg" src="AB.png"><br>
+        </form>
+        <button type="button" onclick="multipleChoiceValidator('dihybridCross')">Submit</button>
+        <p id="dihybridCross-result">Are you correct?</p>
+
+    </div>
+    <h2>Incomplete Dominance</h2>
+    <p>Incomplete Dominance occurs when the dominant allele does not mask the effect of the recessive allele as it would in a normal case. <br>
+        In incomplete dominance, hints of both the dominant and the recessive allele are visible in the organisms’s phenotype. <br>
+        The offspring’s phenotype differs from both the dominant and the recessive phenotype, generally appearing to be an intermediate (or average) of the two. <br>
+        A common example is seen in flowers. In the case of certain flowers, crossing a red parental flower with a white parental flower yields offspring of an intermediate color: pink. <br>,
+        The offspring received an R allele from one parent, and r allele from the other parent, making its own phenotype Rr.
+        Evidence of both the red and white alleles are seen in the offspring’s pink coloration</p>
+    <img src = “http://media.web.britannica.com/eb-media/62/106862-004-C069979C.jpg”>
+    </p>
+    <div class="checkpoint">
+        <p>Cbeckpoint! Which of the organisms below displays an incompletely dominant phenotype?</p>
+    </div>
 </main>
 <script>
     $(document).ready(function(){
@@ -193,6 +248,8 @@
             document.getElementById('allele16ComboExampleOffspring').innerHTML = 'BbDd';
 
     });
+
+
     });
 </script>
 

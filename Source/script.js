@@ -3,7 +3,7 @@ function quizValidator(correctAnswer, inputBox) {
     console.log(inputBox);
     // Get the value of the input field with id="numb"
     x = document.getElementById(inputBox).value;
-
+    console.log(correctAnswer, x);
     // If x is Not a Number or less than one or greater than 10
     if (x !== correctAnswer) {
         text = "Try again";

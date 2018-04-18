@@ -8,6 +8,7 @@
     <!--link to stylesheet-->
     <link rel="stylesheet" type="text/css" href="lessonStylesheet.css">
     <link rel="stylesheet" href="generalPageStructure.css" />
+    <script src="script.js"> </script>
 
     <!-- Bootstrap CSS -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"-->
@@ -82,24 +83,27 @@
 
     <div class="checkpoint">
         Checkpoint! In a litter of eight kittens, four are female and four are male. Three are black, two are white, one is gray, and two are brown.
-        What is the probability that the kitten I select is a brown female? <br>
-        <p>Probability of female</p>
+        What is the probability that the kitten I select is a brown female? Please convert fractions to lowest form.<br>
+        <p><strong>Probability of female</strong></p>
         <input id="sex_numerator"> /
         <input id="sex_denominator">
-
         <button type="button" onclick="quizValidator('1', 'sex_numerator'); quizValidator('2', 'sex_denominator')">Submit</button>
+        <p id = "sex_numerator-result">Numerator correct?</p>
+        <p id = "sex_denominator-result">Denominator correct?</p>
 
-
-        <p id = "multiplicative_sex">Let's check your ratio</p>
-
-
-
+        <p><strong>Probability of having brown fur</strong></p>
         <input id="color_numerator"> /
         <input id="color_denominator">
+        <button type="button" onclick="quizValidator('1', 'color_numerator'); quizValidator('4', 'color_denominator');">Submit</button>
+        <p id = "color_numerator-result">Numerator correct?</p>
+        <p id = "color_denominator-result">Denominator correct?</p>
 
-        <button type="button" onclick="quizValidator('1', 'color_numerator'); quizValidator('4', 'color_numerator');">Submit</button>
-
-        <p id = "multiplicative_color">Are you correct?</p>
+        <p><strong>Probability of having a female with brown fur</strong></p>
+        <input id="both_numerator"> /
+        <input id="both_denominator">
+        <button type="button" onclick="quizValidator('1', 'both_numerator'); quizValidator('8', 'both_denominator');">Submit</button>
+        <p id = "both_numerator-result">Numerator correct?</p>
+        <p id = "both_denominator-result">Denominator correct?</p>
     </div>
 
 </div>

@@ -60,16 +60,48 @@
     <h1>Mendelian Genetics</h1>
     <h2>Probability</h2>
     <p>Applying the principles of probability to genetics problems</p>
-    <p>Probability refers to the likelihood of an event occurring. In the simplest case, we can calculate the probability of an event occurring by
-        dividing the chance of your event of interest occurring by total number of possible events.</p>
-    <p>For example, what is the probability that a couple's baby is female? We have two possible events: male and female, and one of the two events is 'female'.
-        Thus, we divide 1 by 2, resulting in the probability of having a female being 1/2 or 50%</p>
-    <p>As you learned in an earlier lesson, traits can be either dominant or recessive, which is how offspring are able to look different than their parents and each other. </p>
+
     <iframe width="420" height="315"
             src="https://www.youtube.com/embed/uzkc-qNVoOk">
-
     </iframe>
     <p>All Khan Academy content is available for free at <a href="https://www.khanacademy.org/">khanacademy.org</a></p>
+
+
+    <p>Probability refers to the likelihood of an event occurring. In the simplest case, we can calculate the probability of an event occurring by
+        dividing the chance of your event of interest occurring by total number of possible events.</p>
+    <div class="example">Example: what is the probability that a couple's baby is female? We have two possible events: male and female, and one of the two events is 'female'.
+        Thus, we divide 1 by 2, resulting in the probability of having a female being 1/2 or 50%</div>
+    <p>As you learned in an earlier lesson, traits can be either dominant or recessive, which is how offspring are able to look different than their parents and each other. </p>
+
+    <div>
+        <p>Multiplicative probabilities: when you want to take calculate the probability of an organism having two or more traits, the multiplicative property is used. <br>
+        Remember that multiplying two fractions results in an even smaller fraction, indicating a lower probability of an event occurring <br>
+            This makes sense intuitively: the chance of having a female child of any eye color is greater than the chance of having a female child with green eyes specifically. </p>
+    <p>How do we calculate multiplicative probabilities? Simply take the probability of each trait and multiply them together (multiply the numerators, then multiply the denominators).</p>
+    </div>
+
+    <div class="checkpoint">
+        Checkpoint! In a litter of eight kittens, four are female and four are male. Three are black, two are white, one is gray, and two are brown.
+        What is the probability that the kitten I select is a brown female? <br>
+        <p>Probability of female</p>
+        <input id="sex_numerator"> /
+        <input id="sex_denominator">
+
+        <button type="button" onclick="quizValidator('1', 'sex_numerator'); quizValidator('2', 'sex_denominator')">Submit</button>
+
+
+        <p id = "multiplicative_sex">Let's check your ratio</p>
+
+
+
+        <input id="color_numerator"> /
+        <input id="color_denominator">
+
+        <button type="button" onclick="quizValidator('1', 'color_numerator'); quizValidator('4', 'color_numerator');">Submit</button>
+
+        <p id = "multiplicative_color">Are you correct?</p>
+    </div>
+
 </div>
 </main>
 </body>

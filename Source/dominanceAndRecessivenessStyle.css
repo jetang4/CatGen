@@ -1,0 +1,22 @@
+.bloodImg
+{
+    width: 100px;
+    height: 120px;
+}
+
+.bloodtype {
+    position:relative;
+    width:100%;
+    max-width:600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align:center;}
+
+.bloodImg {
+    position:relative;
+    display:inline-block;
+    width:30%;
+    max-width:180px;
+    margin: 0 auto;
+    padding: 0px 10px 0px 10px;
+}

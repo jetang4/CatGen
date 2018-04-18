@@ -31,3 +31,20 @@ function trueFalseValidator(formName)
     var inputResult = formName + '-result';
     document.getElementById(inputResult).innerHTML = text;
 }
+
+function multipleChoiceValidator(formName)
+{
+    var text;
+    var correctValue = formName + '-correct';
+
+    if(document.getElementById(correctValue).checked === true)
+    {
+        text = "Correct!";
+    }
+    else
+    {
+        text = "Please review the above activity and try again!"
+    }
+    var inputResult = formName + '-result';
+    document.getElementById(inputResult).innerHTML = text;
+}

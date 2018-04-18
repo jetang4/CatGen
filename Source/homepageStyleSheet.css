@@ -65,3 +65,12 @@ td
 {
     padding: 0;
 }
+
+p{
+    font-size: 1.3em;
+}
+
+th
+{
+    font-size: 1.6em;
+}

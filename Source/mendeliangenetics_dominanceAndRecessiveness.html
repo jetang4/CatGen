@@ -10,6 +10,7 @@
     <!--link to stylesheet-->
     <link rel="stylesheet" type="text/css" href="lessonStylesheet.css">
     <link rel="stylesheet" type="text/css" href="generalPageStructure.css">
+    <link rel="stylesheet" type="text/css" href="dominanceAndRecessivenessStyle.css">
 
     <!-- Bootstrap CSS -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"-->
@@ -175,22 +176,25 @@
         One major example of codominance is blood type. Blood has markers of A, B, or none<br>
         The A marker and the B marker are both dominant; the recessive (Type O blood) has no markers at all <br>
     </p>
-    <div class="bloodtype">
-        <div class="blood"><img class="bloodImg" src="typeA.png"/></div>
-        <div class="blood"><img class="bloodImg" src="typeB.png"/></div>
-        <div class="blood"><img class="bloodImg" src="typeO.png"/></div>
+
+    <div class="container">
+        <div class="row">
+        <img class="bloodImg" src="typeA.png"/>
+        <img class="bloodImg" src="typeB.png"/>
+       <img class="bloodImg" src="typeO.png"/>
+        </div>
     </div>
 
     <div class="checkpoint">
         <p>Checkpoint! With the knowledge that blood type is codominant, what would the phenotype of AB blood be?</p>
-        <form id="bloodtype">
-            <input type="radio" name="dihybridCross-mc" id="dihybridCross-correct" value="dihybridCross-correct"><img class="bloodImg" src="AO.png"><br>
-            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong1" value="incorrect"> <img class="bloodImg" src="ABAB.png"><br>
-            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong2" value="incorrect"> <img class="bloodImg" src="typeAB.png"> <br>
-            <input type="radio" name="dihybridCross-mc" id="dihybridCross-wrong3" value="incorrect"> <img class="bloodImg" src="AB.png"><br>
+        <form id="codominance">
+            <input type="radio" name="codominance-mc" id="codominance-wrong1" value="incorrect"><img class="bloodImg" src="AO.png"><br>
+            <input type="radio" name="codominance-mc" id="codominance-wrong2" value="incorrect"> <img class="bloodImg" src="ABAB.png"><br>
+            <input type="radio" name="codominance-mc" id="codominance-correct" value="codominance-correct"> <img class="bloodImg" src="typeAB.png"> <br>
+            <input type="radio" name="codominance-mc" id="codominance-wrong3" value="incorrect"> <img class="bloodImg" src="AB.png"><br>
         </form>
-        <button type="button" onclick="multipleChoiceValidator('dihybridCross')">Submit</button>
-        <p id="dihybridCross-result">Are you correct?</p>
+        <button type="button" onclick="multipleChoiceValidator('codominance')">Submit</button>
+        <p id="codominance-result">Are you correct?</p>
 
     </div>
     <h2>Incomplete Dominance</h2>
@@ -207,6 +211,7 @@
     </div>
 </main>
 <script>
+    //jquery for the highlighting alleles function
     $(document).ready(function(){
         $("#combo1").click(function(){
 

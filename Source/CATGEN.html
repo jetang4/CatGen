@@ -16,6 +16,27 @@
     <link rel="stylesheet" href ="styling.css" />
     <link rel="stylesheet" href="generalPageStructure.css" />
 
+    <script type="text/javascript" >
+        function toggleTrait(trait_name)
+        {
+            var trait = $('#'+trait_name+"_div");
+            //if only displaying one trait, display another
+            if(trait.is(":visible") == false)
+            {
+                trait.show();
+                $('#display_another_trait_button').attr('value', 'Remove Trait');
+            }
+            //if displaying two traits, remove the second
+            else
+            {
+                trait.hide();
+                $('#display_another_trait_button').attr('value', 'Add Another Trait');
+            }
+
+
+        }
+    </script>
+
 </head>
 
 
@@ -61,7 +82,7 @@
     <h1>CatGen</h1>
 
     <!--COAT COLOR-->
-    <div class="row">
+    <div id="coat_color_div" class="row">
         <div class="col-sm-6">
             <!--dropdown menu: choose color of female cat-->
             <!--the female cat icon has an id of "colorSelectorLeft" and is white by default-->
@@ -99,7 +120,11 @@
 
         <!--COAT INTENSITY-->
     </div>
-    <div class="row">
+
+    <input id="display_another_trait_button" type="button" value="Add Another Trait" onClick="toggleTrait('coat_intensity')" />
+
+
+    <div id="coat_intensity_div" style="display:none;" class="row">
         <div class="col-sm-6">
 
             <!--dropdown menu: choose dilution of female cat-->
@@ -145,58 +170,43 @@
     <!--creates the punnett square and the cat icon (white) within it-->
     <!--the id "gender_alleleX_punnettsquare" is the allele printed on the side of the punnett square-->
     <!--the id "locationlocationPunnettSquareProbability" is the probability that appears in the square once the form is submitted-->
-    <div class="row">
-        <div class="col-sm-12">
-            <table id="punnettsquare">
-                <tr>
-                    <td style="border:0px solid black; padding: 0px;"></td>
-                    <td class="square_title">
-                        <p id="female_allele1_punnettsquare" class="square_title_text"></p>
-                    </td>
-                    <td class="square_title">
-                        <p id="female_allele2_punnettsquare" class="square_title_text"></p>
-                    </td>
-                    <td style="padding:20px;"></td>
-                </tr>
-                <tr>
-                    <td class="square_title"><b><p id="male_allele1_punnettsquare" class="punnetsquare_square_title"></p></b></td>
-                    <td id= "0|0_square" class="punnettsquare_square">
-                        <img src="cat_white.png" />
-                        <p id="0|0_probability"></p>
-                    </td>
-                    <td id= "0|1_square"  class="punnettsquare_square">
-                        <img src="cat_white.png" />
-                        <p id="0|1_probability"></p>
-                    </td>
-                    <td style="padding:20px;">
-                    </td>
+    <div style="width:50%;margin:0 auto;height:500px;">
+        <table id="punnettsquare">
+            <tr>
+                <td id= "0|0_square" class="punnettsquare_square">
+                    <img src="cat_white.png" />
+                    <p id="0|0_probability"></p>
+                </td>
+                <td id= "0|1_square"  class="punnettsquare_square">
+                    <img src="cat_white.png" />
+                    <p id="0|1_probability"></p>
+                </td>
 
-                </tr>
-                <tr>
-                    <td class="square_title"><b><p id="male_allele2_punnettsquare" class="punnetsquare_square_title"></p></b></td>
-                    <td id= "1|0_square"  class="punnettsquare_square">
-                        <img src="cat_white.png"/>
-                        <p id="1|0_probability"></p>
-                    </td>
-                    <td id= "1|1_square"  class="punnettsquare_square">
-                        <img src="cat_white.png"/>
-                        <p id="1|1_probability"></p>
-                    </td>
-                    <td style="padding:20px;"></td>
+            </tr>
+            <tr>
+                <td id= "1|0_square"  class="punnettsquare_square">
+                    <img src="cat_white.png"/>
+                    <p id="1|0_probability"></p>
+                </td>
+                <td id= "1|1_square"  class="punnettsquare_square">
+                    <img src="cat_white.png"/>
+                    <p id="1|1_probability"></p>
+                </td>
 
-                </tr>
-            </table>
+            </tr>
+        </table>
+
+        <div id="offspring_images">
+            <!--these are the offspring that are shown at the calculations at the bottom-->
+            <img id="offspring1">
+            <img id="offspring2">
         </div>
+
+        <!--these are the calculations and percentages-->
+        <p id="data"></p>
     </div>
 
-    <div id="offspring_images">
-        <!--these are the offspring that are shown at the calculations at the bottom-->
-        <img id="offspring1">
-        <img id="offspring2">
-    </div>
 
-    <!--these are the calculations and percentages-->
-    <p id="data"></p>
 </main>
 
 </body>

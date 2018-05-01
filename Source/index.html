@@ -42,26 +42,26 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
-                        <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="navbar_text">Mendelian Genetics</span>
+                        <span class="caret navbar_text"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="mendeliangenetics_heredity">Heredity</a></li>
-                        <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
-                        <li><a href="mendeliangenetics_probability">Probability</a></li>
-                        <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                        <li><a href="mendeliangenetics_heredity"><span class="navbar_text">Heredity</span></a></li>
+                        <li><a href="mendeliangenetics_dominanceAndRecessiveness"><span class="navbar_text">Dominance and Recessiveness</span></a></li>
+                        <li><a href="mendeliangenetics_probability"><span class="navbar_text">Probability</span></a></li>
+                        <li><a href="mendeliangenetics_punnettSquares"><span class="navbar_text">Punnett Squares</span></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
-                        <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="navbar_text">Cat Genetics</span>
+                        <span class="caret navbar_text"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
-                        <li><a href="CATGEN">Cat Punnett Square </a></li>
+                        <li><a href="catgen_geneinfo"><span class="navbar_text">Cat Genetic Information</span></a></li>
+                        <li><a href="CATGEN"><span class="navbar_text">Cat Punnett Square</span></a></li>
                         <!--<li><a href="practice">Quiz</a></li>-->
                         <!--<li><a href="quiz">Punnett Squares</a></li>-->
                     </ul>
                 </li>
-                <li><a href="about">About Us</a></li>
+                <li><a href="about"><span class="navbar_text">About Us</span></a></li>
             </ul>
         </div>
     </nav>
@@ -71,7 +71,7 @@
 <h1> Welcome to CatGen!</h1>
         <div class="row">
             <div class= "col-sm-1"></div>
-       <div class= "col-sm-10">
+       <div class= "col-sm-12">
         <p>
             CatGen is a genetics simulator tool using cats to demonstrate the patterns of genetics and inheritance. <br>
             Please click below for lessons on various genetics topics.
@@ -82,14 +82,10 @@
 
         <!--The navigation squares-->
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
 
 
-                <table id= "mendelianGenetics" class="linkBox">
-                    <tr>
-                        <th colspan="2">Module 1: Mendelian Genetics</th>
-                    </tr>
-
+                <table id= "mendelianGenetics" class="linkBox" style="width:100%;">
 
                     <tr>
 
@@ -115,6 +111,19 @@
                                 <div class="overlay">
                                     <div class="caption">
                                         Dominance+Recessiveness
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td id= "topLeftBox" class="individualBoxes">
+                            <div class="container">
+                                <a href="catgen_geneinfo.html">
+                                    <img id= "coatColorGeneticsThumbnail" class="thumbnail" src="coatColorGeneticsThumbnail.jpg">
+                                </a>
+                                <div class="overlay">
+                                    <div class="caption">
+                                        Coat Color Genetics
                                     </div>
                                 </div>
                             </div>
@@ -148,35 +157,6 @@
                             </div>
                         </td>
 
-                    </tr>
-
-                </table>
-            </div>
-
-            <div class="col-sm-6">
-
-
-                <table id= "catgen" class="linkBox">
-                    <tr>
-                        <th colspan="2">Module 2: CatGen</th>
-                    </tr>
-
-                    <tr>
-
-                        <td id= "topLeftBox" class="individualBoxes">
-                            <div class="container">
-                                <a href="catgen_geneinfo.html">
-                                    <img id= "coatColorGeneticsThumbnail" class="thumbnail" src="coatColorGeneticsThumbnail.jpg">
-                                </a>
-                                <div class="overlay">
-                                    <div class="caption">
-                                        Coat Color Genetics
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-
-
                         <td id= "topRightBox" class="individualBoxes">
                             <div class="container">
                                 <a href="CATGEN">
@@ -185,34 +165,6 @@
                                 <div class="overlay">
                                     <div class="caption">
                                         Punnett Square Tool
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td id= "bottomLeftBox" class="individualBoxes">
-                            <div class="container">
-                                <!--<a href = "mendeliangenetics_probability">-->
-                                    <img id= "practiceThumbnail" class = "thumbnail" src="comingsoon.jpg">
-                                </a>
-                                <div class="overlay">
-                                    <div class="caption">
-                                        Practice
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-
-                        <td id= "bottomrightBox" class="individualBoxes">
-                            <div class="container">
-                                <!--<a href = "quiz">-->
-                                    <img id= "quizThumbnail" class= "thumbnail" src="comingsoon.jpg">
-                                </a>
-                                <div class="overlay">
-                                    <div class="caption">
-                                        Quiz
                                     </div>
                                 </div>
                             </div>

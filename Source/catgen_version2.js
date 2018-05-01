@@ -44,10 +44,9 @@ function changeTrait(trait, sex)
     //gets the select box and the user's selection
     var select_box_color = document.getElementById(sex+"_"+"coatColor" + "_select");
     var color_selection = select_box_color.value;
-    console.log(color_selection);
+
     var select_box_density = document.getElementById(sex+"_"+"coatColorDensity" + "_select");
     var density_selection = select_box_density.value;
-    console.log(density_selection);
 
     //console.log(images[trait+"_none"]);
 
@@ -162,21 +161,14 @@ function fillPunnetSquare()
     var possible_offspring = [];
     var possible_alleles = [];
 
+
+
     function box_calculation(trait_num, col, row, female_num, male_num)
     {
         var trait_show = female_selections[trait_num][female_num]*male_selections[trait_num][male_num];
-        if(trait_show == 0)
-        {
-            var left_allele = numberToAllele(male_selections[trait_num][male_num], trait_num);
-            var right_allele = numberToAllele(female_selections[trait_num][female_num], trait_num);
-            console.log("("+row+","+col+"): Dominant "+trait_num+" trait");
-        }
-        else
-        {
-            var left_allele = numberToAllele(male_selections[trait_num][male_num], trait_num);
-            var right_allele = numberToAllele(female_selections[trait_num][female_num], trait_num);
-            console.log("("+row+","+col+"): Recessive "+trait_num+" trait");
-        }
+
+        var left_allele = numberToAllele(male_selections[trait_num][male_num], trait_num);
+        var right_allele = numberToAllele(female_selections[trait_num][female_num], trait_num);
 
 
         //retrieves image from relevant square
@@ -260,7 +252,7 @@ function fillPunnetSquare()
 
         var combine_allele;
         //displays dominant allele first by checking if left is dominant, or if right is recessive
-        if(left_allele==left_allele.toUpperCase() || right_allele==right_allele.toLowerCase())
+        if(left_allele===left_allele.toUpperCase() || right_allele===right_allele.toLowerCase())
         {
             combine_allele = left_allele+right_allele;
             document.getElementById(row+'|'+col+'_probability').innerHTML += combine_allele;
@@ -286,9 +278,11 @@ function fillPunnetSquare()
     var trait_num = 0;
     var col = 0;
     var row = 0;
+    //tracks which part of female allele to consider
     var female_num = 0;
     var male_num = 0;
 
+    //user selected one trait
     if(num_traits_selected==1)
     {
         //(0,0)
@@ -298,20 +292,23 @@ function fillPunnetSquare()
         female_num++;
         box_calculation(trait_num, col, row, female_num, male_num);
 
-        //(0,2)
+        //(0,1)
         row++;
         col=0;
         female_num=0;
         male_num=1;
         box_calculation(trait_num, col, row, female_num, male_num);
-        //(2,2)
+        //(1,1)
         col++;
         female_num++;
         box_calculation(trait_num, col, row, female_num, male_num);
 
     }
+    //user selected two traits
     else
     {
+        //16 calculations for the first trait
+
         //(0,0)
         box_calculation(trait_num, col, row, female_num, male_num);
         //(1,0)
@@ -378,6 +375,7 @@ function fillPunnetSquare()
 
 
 
+        //redoes the 16 calculations for the 2nd trait
 
         var trait_num = 1;
         var col = 0;
@@ -385,6 +383,7 @@ function fillPunnetSquare()
         var female_num = 0;
         var male_num = 0;
         possible_offspring=[];
+
 
         //(0,0)
         female_num = 0;
@@ -465,10 +464,17 @@ function fillPunnetSquare()
 
     //first female's left allele
     //creates matrix where the left half is represented (1s make up the left side, and 0s on the right)
+    //female left allele
     //EX: [1,1,0,0],
     //    [1,1,0,0],
     //    [1,1,0,0],
     //    [1,1,0,0]
+
+    //female right allele (mirror version)
+    //EX: [0,0,1,1],
+    //    [0,0,1,1],
+    //    [0,0,1,1],
+    //    [0,0,1,1]
 
     var female_matrices=[];
     for(var trait_num = 1; trait_num <= num_traits_selected; trait_num++)
@@ -491,7 +497,12 @@ function fillPunnetSquare()
         }
         matrix_row.push(matrix);
 
-        //right allele
+        //right allele is mirror version
+        //female right allele (mirror version)
+        //EX: [0,0,1,1],
+        //    [0,0,1,1],
+        //    [0,0,1,1],
+        //    [0,0,1,1]
         matrix_row.push(mirror_matrix(matrix));
 
         female_matrices.push(matrix_row);
@@ -500,6 +511,17 @@ function fillPunnetSquare()
     console.log(female_matrices);
 
 
+    //EX: [1,0,1,0],
+    //    [1,0,1,0],
+    //    [1,0,1,0],
+    //    [1,0,1,0]
+
+    //to 
+
+    //EX: [0,0,0,0],
+    //    [1,1,1,1],
+    //    [0,0,0,0],
+    //    [1,1,1,1]
     var male_matrices=[];
     for(var trait_num = 0; trait_num < num_traits_selected; trait_num++)
     {
@@ -515,17 +537,19 @@ function fillPunnetSquare()
     console.log(male_matrices);
 
 
-    //matrix of represented alleles with each node being an array of female and male alleles
-    var matrix = [];
-    for(var x = 0; x < num_traits_selected*2; x++)
-    {
-        var row=[];
-        for(var y = 0; y < num_traits_selected*2; y++)
-            row.push([]);
-        matrix.push(row);
-    }
+    // //matrix of represented alleles with each node being an array of female and male alleles
+    // var matrix = [];
+    // for(var x = 0; x < num_traits_selected*2; x++)
+    // {
+    //     var row=[];
+    //     for(var y = 0; y < num_traits_selected*2; y++)
+    //         row.push([]);
+    //     matrix.push(row);
+    // }
 
-    console.log(matrix);
+    // console.log(matrix);
+
+
 
     //displays allele text
     for(var trait_num = 0; trait_num < num_traits_selected; trait_num++)
@@ -538,10 +562,12 @@ function fillPunnetSquare()
             var uppercase = allele_selections[trait_num];
             var lowercase = allele_selections[trait_num].toLowerCase();
 
+            //runs twice because 2 allele parts of each traita
             for(var y = 0; y < 2; y++)
             {
                 if(female_matrices[trait_num][y][0][x]==1)
                 {
+                    //if dominant display
                     if(female_selections[trait_num][y]==0)
                         female_text.innerHTML += uppercase
                     else
@@ -549,6 +575,7 @@ function fillPunnetSquare()
                 }
             }
 
+            //runs twice because 2 allele parts of each traita
             for(var y = 0; y < 2; y++)
             {
                 if(male_matrices[trait_num][y][x][0]==1)
@@ -567,8 +594,11 @@ function fillPunnetSquare()
     /* displays bottom data */
 
     //displays possible offspring
+
+    //wipes out previous results
     document.getElementById("offspring_images").innerHTML = "";
 
+    //counts the number of times we see each image
     var image_array = {};
     for(var x = 0; x < possible_offspring.length; x++)
     {
@@ -677,6 +707,7 @@ function rotate_matrix(matrix)
         var new_row=[]
         for(var y = matrix[x].length-1; y > -1; y--)
             new_row.push(matrix[y][x]);
+
         new_matrix.push(new_row);
     }
 

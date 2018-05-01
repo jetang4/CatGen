@@ -71,32 +71,53 @@
                 <a class="navbar-brand" href="/">CatGen</a>
             </div>
             <ul class="nav navbar-nav">
-
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mendelian Genetics
-                        <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="navbar_text">Mendelian Genetics</span>
+                        <span class="caret navbar_text"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="mendeliangenetics_heredity">Heredity</a></li>
-                        <li><a href="mendeliangenetics_dominanceAndRecessiveness">Dominance and Recessiveness</a></li>
-                        <li><a href="mendeliangenetics_probability">Probability</a></li>
-                        <li><a href="mendeliangenetics_punnettSquares">Punnett Squares</a></li>
+                        <li><a href="mendeliangenetics_heredity"><span class="navbar_text">Heredity</span></a></li>
+                        <li><a href="mendeliangenetics_dominanceAndRecessiveness"><span class="navbar_text">Dominance and Recessiveness</span></a></li>
+                        <li><a href="mendeliangenetics_probability"><span class="navbar_text">Probability</span></a></li>
+                        <li><a href="mendeliangenetics_punnettSquares"><span class="navbar_text">Punnett Squares</span></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cat Genetics
-                        <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="navbar_text">Cat Genetics</span>
+                        <span class="caret navbar_text"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="catgen_geneinfo">Cat Genetic Information</a></li>
-                        <li><a href="CATGEN">Cat Punnett Square </a></li>
+                        <li><a href="catgen_geneinfo"><span class="navbar_text">Cat Genetic Information</span></a></li>
+                        <li><a href="CATGEN"><span class="navbar_text">Cat Punnett Square</span></a></li>
                         <!--<li><a href="practice">Quiz</a></li>-->
                         <!--<li><a href="quiz">Punnett Squares</a></li>-->
                     </ul>
                 </li>
-                <li><a href="about">About Us</a></li>
+                <li><a href="about"><span class="navbar_text">About Us</span></a></li>
             </ul>
         </div>
     </nav>
 </header>
+
+<!-- Pop-up box for defintion display -->
+<div id="popup_box_container" style="display:none;">
+    <div id="popup_box_background" >
+        <div id="popup_box_body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p id="popup_box_title">Popup box title</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="popup_box_content">Popup Box defintion conte thtat will contain defitnions</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 <!--the 'container' class allows the bootstrap template to be applied -->
 <main>

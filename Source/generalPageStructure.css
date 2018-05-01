@@ -11,10 +11,6 @@ a
     font-size: 1.5em;
 }
 
-a.navbar-brand{
-    font-size: 1.9em;
-    font-weight: bold;
-}
 a:hover
 {
     background-color: lightskyblue !important;
@@ -40,4 +36,64 @@ header
 main
 {
     margin: 0px 15% 0px 15%;
+}
+
+.navbar-brand{
+    font-size:50px;
+    font-family:Arial;
+    font-weight: bold;
+    color:white;
+}
+
+.navbar_text{
+    color:white;
+}
+
+.navbar-nav{
+    background-color:deepskyblue;
+}
+
+.dropdown-menu{
+    background-color:deepskyblue;
+}
+
+p{
+    font-family:Arial;
+}
+
+span{
+    font-family:Arial;
+}
+
+body{
+    font-family:Arial;
+}
+
+#popup_box_container{
+    width:100%;
+    height:100%;
+    top:0px;
+    position:fixed;
+}
+#popup_box_background{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:rgba(0,0,0,0.3);
+}
+#popup_box_body{
+    border-radius:5px;
+    border:1px solid black;
+    padding:30px;
+    color:white;
+    width:500px;
+    background-color:rgba(50,50,50,0.7);
+    margin:0 auto;
+    margin-top:20%;
+}
+
+.text_clickable{
+    color:blue;
+    text-decoration:underline;
+    cursor:pointer;
 }

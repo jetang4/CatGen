@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mendelian Genetics: Heredity</title>
-
+    <!--link to js sheet-->
+    <script src="script.js"></script>
 
     <!--link to stylesheet-->
     <link rel="stylesheet" type="text/css" href="lessonStylesheet.css">
@@ -103,16 +104,16 @@
         <div id="popup_box_body">
             <table>
                 <tbody>
-                    <tr>
-                        <td>
-                            <p id="popup_box_title">Popup box title</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p id="popup_box_content">Popup Box defintion conte thtat will contain defitnions</p>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <p id="popup_box_title">Popup box title</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="popup_box_content">Popup Box defintion conte thtat will contain defitnions</p>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -125,24 +126,25 @@
         <h1>Mendelian Genetics</h1>
         <h2>Heredity</h2>
         <p>Heredity refers to the genetic transmission from a
-            parent organism to an offspring. Heredity helps explain
+            parent organism to an <span class="text_clickable" onClick="popupBox($(this).text())">offspring</span>.
+            Heredity helps explain
             why offspring resemble their parents, as well as how
             genetic diseases are passed down families. Some genetic
-            diseases for example are caused by mutations in genes. These
+            diseases for example are caused by <span class="text_clickable" onClick="popupBox($(this).text())">mutations</span> in genes. These
             conditions are usually inherited in one of several ways,
-            including autosomal dominant, autosomal recessive, X-linked
-            dominant, X-linked recessive, codominant, and in mitochondrial
+            including <span class="text_clickable" onClick="popupBox($(this).text())">autosomal dominant</span>, <span class="text_clickable" onClick="popupBox($(this).text())">autosomal recessive</span>,<span class="text_clickable" onClick="popupBox($(this).text())">X-linked dominant</span>
+            , <span class="text_clickable" onClick="popupBox($(this).text())">X-linked recessive</span>, <span class="text_clickable" onClick="popupBox($(this).text())">codominant</span>, and in mitochondrial
             inherit patters. While diseases can be inherited, they can also
             be caused by environmental factors. </p>
 
         <p>
-            Gene duplication, mutation, or other processes can produce new genes
-            and alleles and increase genetic variation. New genetic variation can
+            <span class="text_clickable" onClick="popupBox($(this).text())">Gene duplication</span>, mutation, or other processes can produce new genes
+            and <span class="text_clickable" onClick="popupBox($(this).text())">alleles</span> and increase <span class="text_clickable" onClick="popupBox($(this).text())">genetic variation</span>. New genetic variation can
             be created within generations in a population, so a population with rapid
-            reproduction rates will probably have high genetic variation. However,
-            existing genes can be arranged in new ways from chromosomal crossing over
-            and recombination in sexual reproduction. Overall, the main sources of
-            genetic variation are the formation of new alleles, the altering of gene
+            reproduction rates will probably have high <span class="text_clickable" onClick="popupBox($(this).text())">Genetic variation</span>. However,
+            existing genes can be arranged in new ways from <span class="text_clickable" onClick="popupBox($(this).text())">chromosomal crossing over</span>
+            and <span class="text_clickable" onClick="popupBox($(this).text())">recombination</span> in sexual reproduction. Overall, the main sources of
+            genetic variation are the formation of new <span class="text_clickable" onClick="popupBox($(this).text())">alleles</span>, the altering of gene
             number or position, rapid reproduction, and sexual reproduction. To learn more about
             inheritance, please refer to the video below and test what
             you’ve learned in our short quiz.
